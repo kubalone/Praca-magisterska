@@ -17,3 +17,5 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Web\bin\Debug\netc
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Web\bin\Debug\netcoreapp2.2\CRS.DAL.pdb
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Web\bin\Debug\netcoreapp2.2\CRS.Data.pdb
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Web\obj\Debug\netcoreapp2.2\CRS.Web.csproj.CopyComplete
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Web\bin\Debug\netcoreapp2.2\CRS.Service.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Web\bin\Debug\netcoreapp2.2\CRS.Service.pdb

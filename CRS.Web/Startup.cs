@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using CRS.DAL.DataContext;
 using CRS.DAL.Initializer;
 using CRS.Data.Users;
+using CRS.Service.UserAuthentication.Interfaces;
+using CRS.Service.UserAuthentication.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,7 +38,10 @@ namespace CRS.Web
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystem;Trusted_Connection=True;"));        }
+               options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystem;Trusted_Connection=True;"));
+            services.AddScoped<IUserService, UserService>();
+        }
+         
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context, RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager)

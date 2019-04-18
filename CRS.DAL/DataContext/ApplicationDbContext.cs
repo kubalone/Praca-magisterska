@@ -15,7 +15,7 @@ namespace CRS.DAL.DataContext
         {
 
         }
-        //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+       
 
 
     }

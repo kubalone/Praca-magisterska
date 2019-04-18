@@ -7,3 +7,8 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netstandard2.0\CRS.Service.AssemblyInfo.cs
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netstandard2.0\CRS.Service.dll
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netstandard2.0\CRS.Service.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\CRS.Data.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\CRS.Data.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netstandard2.0\CRS.Service.csproj.CopyComplete
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.xml
