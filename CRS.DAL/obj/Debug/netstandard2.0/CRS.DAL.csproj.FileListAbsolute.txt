@@ -1,0 +1,12 @@
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netstandard2.0\CRS.Data.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csprojAssemblyReference.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.AssemblyInfoInputs.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.AssemblyInfo.cs
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netstandard2.0\CRS.DAL.deps.json
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netstandard2.0\CRS.DAL.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netstandard2.0\CRS.DAL.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netstandard2.0\CRS.Data.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csproj.CopyComplete
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.pdb

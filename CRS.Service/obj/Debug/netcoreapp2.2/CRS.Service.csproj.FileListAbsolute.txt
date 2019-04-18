@@ -1,0 +1,9 @@
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Service.deps.json
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Service.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Service.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.csprojAssemblyReference.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.csproj.CoreCompileInputs.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.AssemblyInfoInputs.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.AssemblyInfo.cs
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.pdb

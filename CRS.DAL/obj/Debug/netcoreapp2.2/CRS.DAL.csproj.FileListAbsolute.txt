@@ -1,0 +1,14 @@
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.DAL.deps.json
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.DAL.runtimeconfig.json
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.DAL.runtimeconfig.dev.json
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.DAL.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.DAL.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.Data.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\netcoreapp2.2\CRS.Data.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.csprojAssemblyReference.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.AssemblyInfoInputs.cache
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.AssemblyInfo.cs
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.csproj.CopyComplete
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netcoreapp2.2\CRS.DAL.pdb
