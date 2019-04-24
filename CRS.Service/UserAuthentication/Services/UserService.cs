@@ -12,9 +12,9 @@ namespace CRS.Service.UserAuthentication.Services
 {
     public class UserService: IUserService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        public UserService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public UserService(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -22,17 +22,17 @@ namespace CRS.Service.UserAuthentication.Services
 
         public async Task<Object> Register(RegisterResourceModel model)
         {
-            var aplicationUser = new ApplicationUser
+            var aplicationUser = new IdentityUser
             {
                 UserName = model.UserName,
-                FirstName=model.FirstName,
-                LastName=model.LastName,
-                City=model.City,
-                TelephoneNumber=model.TelephoneNumber,
-                PostalCode=model.PostalCode,
-                Street=model.Street,
-                HouseNumber=model.HouseNumber,
-                ApartmentNumber=model.ApartmentNumber
+                //FirstName=model.FirstName,
+                //LastName=model.LastName,
+                //City=model.City,
+                //TelephoneNumber=model.TelephoneNumber,
+                //PostalCode=model.PostalCode,
+                //Street=model.Street,
+                //HouseNumber=model.HouseNumber,
+                //ApartmentNumber=model.ApartmentNumber
 
             };
             try
@@ -40,7 +40,7 @@ namespace CRS.Service.UserAuthentication.Services
                 var result = await _userManager.CreateAsync(aplicationUser, model.Password);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(aplicationUser, "Mechanic");
+                    await _userManager.AddToRoleAsync(aplicationUser, "Employee");
                 }
              
                 return new ObjectResult(result);

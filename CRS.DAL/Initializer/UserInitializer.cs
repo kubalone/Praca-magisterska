@@ -13,7 +13,7 @@ namespace CRS.DAL.Initializer
     {
 
         public static async Task Initialize(ApplicationDbContext context,
-                                UserManager<ApplicationUser> userManager,
+                                UserManager<IdentityUser> userManager,
                                 RoleManager<ApplicationRole> roleManager)
         {
             context.Database.EnsureCreated();
@@ -24,8 +24,8 @@ namespace CRS.DAL.Initializer
             string role1 = "Admin";
             string desc1 = "This is the administrator role";
 
-            string role2 = "Mechanic";
-            string desc2 = "This is the mechanic role";
+            string role2 = "Employee";
+            string desc2 = "This is the employee role";
 
             string password = "Muszlowa17!";
             //dodawanie roli administratora
@@ -33,7 +33,7 @@ namespace CRS.DAL.Initializer
             {
                 await roleManager.CreateAsync(new ApplicationRole(role1, desc1));
             }
-            //dodawanie roli pracownika (mechanika)
+            //dodawanie roli pracownika
             if (await roleManager.FindByNameAsync(role2) == null)
             {
                 await roleManager.CreateAsync(new ApplicationRole(role2, desc2));
@@ -42,7 +42,7 @@ namespace CRS.DAL.Initializer
             //tworzenie konta administratora
             if (await userManager.FindByNameAsync("Admin") == null)
             {
-                var user = new ApplicationUser
+                var user = new IdentityUser
                 {
                     UserName = "Administrator",
                     Email = "kubalone@gmail.com",
