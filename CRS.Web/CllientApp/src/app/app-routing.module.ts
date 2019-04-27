@@ -1,18 +1,32 @@
+import { LoginComponent } from './login/login.component';
+import { UserManagementComponent } from './userManagement/user-management.component';
+import { MainComponent } from './layout/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegistrationComponent } from './userManagement/user/registration/registration.component';
-import { UserComponent } from './userManagement/user/user.component';
-import { LoginComponent } from './userManagement/user/login/login.component';
+import { OrderComponent } from './carRepairShopManagement/order/order.component';
+import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/user/registration', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {
-    path: 'user', component: UserComponent,
+    path: '', component: MainComponent,
     children: [
-      {path: 'registration', component: RegistrationComponent},
-      {path: 'login', component: LoginComponent}
-    ]
-  }
+      {
+        path: 'panel-administracyjny', component: UserManagementComponent,
+        children: [
+          {path: 'rejestracja', component: RegistrationComponent}
+        ]
+      },
+      {
+        path: 'zlecenia', component: OrderComponent,
+        children: [
+          {path: 'wszystkie-zlecenia', component: AllOrdersComponent}
+        ]
+      }
+    ],
+  },
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

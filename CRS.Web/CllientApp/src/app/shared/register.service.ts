@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-
+export class RegisterService {
   constructor(private formbuilder: FormBuilder, private httpClient: HttpClient ) { }
   readonly URL = 'https://localhost:44359/api';
   formModel = this.formbuilder.group({
@@ -45,9 +45,7 @@ export class UserService {
     };
     return this.httpClient.post(this.URL + '/ApplicationUser/Register', user);
   }
-  login(userToLogin) {
-    return this.httpClient.post(this.URL + '/ApplicationUser/Login', userToLogin);
-  }
+
   getUserProfile() {
     return this.httpClient.get(this.URL + '/UserProfile');
   }

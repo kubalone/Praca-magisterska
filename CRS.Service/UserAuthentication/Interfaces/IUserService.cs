@@ -9,5 +9,8 @@ namespace CRS.Service.UserAuthentication.Interfaces
     public interface IUserService
     {
      Task<Object> Register(RegisterResourceModel model);
+     Task<Object> Login(LoginResourceModel model);
+    
+    
     }
 }

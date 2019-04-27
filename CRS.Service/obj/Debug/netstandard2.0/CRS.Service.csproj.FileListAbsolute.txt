@@ -12,3 +12,9 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\netstandard2.0\CRS.Service.csproj.CopyComplete
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.xml
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netstandard2.0\System.IdentityModel.Tokens.Jwt.xml

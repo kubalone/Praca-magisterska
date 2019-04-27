@@ -4,7 +4,9 @@ using System.Text;
 
 namespace CRS.Data.Users.ResourceModel
 {
-    class LoginResourceModel
+    public class LoginResourceModel
     {
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

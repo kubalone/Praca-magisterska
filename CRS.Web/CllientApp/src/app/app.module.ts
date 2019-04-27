@@ -1,22 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './userManagement/user/user.component';
+
 import { RegistrationComponent } from './userManagement/user/registration/registration.component';
-import { UserService } from './userManagement/shared/user.service';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './userManagement/user/login/login.component';
+
+
+import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
+import { OrderComponent } from './carRepairShopManagement/order/order.component';
+import { MainComponent } from './layout/main/main.component';
+import { UserManagementComponent } from './userManagement/user-management.component';
+
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './shared/login.service';
+import { RegisterService } from './shared/register.service';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
     RegistrationComponent,
     LoginComponent,
+    AllOrdersComponent,
+    OrderComponent,
+    MainComponent,
+    UserManagementComponent,
 
   ],
   imports: [
@@ -25,9 +37,10 @@ import { LoginComponent } from './userManagement/user/login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(),
+    FormsModule
   ],
-  providers: [UserService],
+  providers: [RegisterService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

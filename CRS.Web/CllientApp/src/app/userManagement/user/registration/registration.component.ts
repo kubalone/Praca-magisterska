@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../shared/user.service';
+
 import { ToastrService } from 'ngx-toastr';
+import { RegisterService } from 'src/app/shared/register.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public service: UserService, private communicate: ToastrService) { }
+  constructor(public service: RegisterService, private communicate: ToastrService) { }
 
   ngOnInit() {
   }

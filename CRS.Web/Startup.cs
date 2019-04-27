@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using CRS.DAL.DataContext;
 using CRS.DAL.Initializer;
 using CRS.Data.Users;
+using CRS.Data.Users.AplicationSetting;
 using CRS.Service.UserAuthentication.Interfaces;
 using CRS.Service.UserAuthentication.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,6 +20,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CRS.Web
 {
@@ -32,6 +36,7 @@ namespace CRS.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddIdentity<IdentityUser, ApplicationRole>()
@@ -41,6 +46,26 @@ namespace CRS.Web
                options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystem;Trusted_Connection=True;"));
             services.AddScoped<IUserService, UserService>();
             services.AddCors();
+            var key = Encoding.UTF8.GetBytes(Configuration["JWTSettings:JWT_Secret"].ToString());
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = false;
+                x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
+
         }
          
 
@@ -56,14 +81,15 @@ namespace CRS.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseCors(bulider => bulider.WithOrigins("http://localhost:4200")
+            app.UseCors(bulider => bulider.WithOrigins(Configuration["JWTSettings:Client_URL"].ToString())
             .AllowAnyMethod()
             .AllowAnyHeader());
 
             app.UseHttpsRedirection();
             UserInitializer.Initialize(context, userManager, roleManager).Wait();
-            app.UseMvc();
+       
             app.UseAuthentication();
+            app.UseMvc();
         }
     }
 }

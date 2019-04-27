@@ -64,3 +64,9 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Interactive.Async.dll
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.dll
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.xml
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.xml
