@@ -49,7 +49,7 @@ namespace CRS.Web.Controllers.UserAuthentication
         [HttpGet]
         [Authorize]
         [Route("GetUser")]
-        //GET : /api/UserProfile
+        //GET : /api/ApplicationUser/GetUser
         public async Task<Object> GetUserProfile()
         {
             string userId = User.Claims.First(c => c.Type == "UserID").Value;

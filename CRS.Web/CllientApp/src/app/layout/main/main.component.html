@@ -1,5 +1,65 @@
-<nav class="navbar navbar-dark bg-primary">
+<!--<nav class="navbar navbar-dark bg-primary">
   <a href="" class="navbar-brand text-white">Car repair system</a>
- <button class="btn btn-danger" (click)="onLogout()">Logout</button>
-</nav>
-<router-outlet></router-outlet>
+  <span class="text-white" *ngIf="user">Witaj: {{user.userName}}</span>
+
+</nav>-->
+<div class="d-flex" id="wrapper">
+
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">Start Bootstrap </div>
+    <div class="list-group list-group-flush">
+      <a routerLink="/panel-administracyjny/rejestracja" class="list-group-item list-group-item-action bg-light"  routerLinkActive="active">Panel administracyjny</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light " routerLinkActive="active">Shortcuts</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <!--<button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>-->
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+          <li class="nav-item">
+            <span  *ngIf="user">Witaj: {{user.userName}}</span>
+            <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<button class="btn btn-primary" id="rino" (click)="toggleTitle()">Toggle Menu</button>
+
+<!-- <script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script> -->
+
+
+
+

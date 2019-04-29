@@ -9,7 +9,7 @@ import { RegistrationComponent } from './userManagement/user/registration/regist
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
@@ -20,6 +20,7 @@ import { UserManagementComponent } from './userManagement/user-management.compon
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './shared/login.service';
 import { RegisterService } from './shared/register.service';
+import { AuthInterceptor } from './auth/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,11 @@ import { RegisterService } from './shared/register.service';
     ToastrModule.forRoot(),
     FormsModule
   ],
-  providers: [RegisterService, LoginService],
+  providers: [RegisterService, LoginService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

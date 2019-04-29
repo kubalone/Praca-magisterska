@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +46,4 @@ export class RegisterService {
     return this.httpClient.post(this.URL + '/ApplicationUser/Register', user);
   }
 
-  getUserProfile() {
-    return this.httpClient.get(this.URL + '/UserProfile');
-  }
 }

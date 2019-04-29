@@ -4,3 +4,11 @@ div.form-group.required>label:first-child:after{
   color: #dc3545;
   padding-left: 5px;
 }
+body {
+  overflow-x: hidden;
+}
+
+.list-group a.list-group-item-action.click {
+
+  background: red;
+}
