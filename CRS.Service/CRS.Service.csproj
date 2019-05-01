@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CRS.DAL\CRS.DAL.csproj" />
     <ProjectReference Include="..\CRS.Data\CRS.Data.csproj" />
   </ItemGroup>
 

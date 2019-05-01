@@ -4,7 +4,7 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { RegistrationComponent } from './userManagement/user/registration/registration.component';
+import { RegistrationComponent } from './userManagement/users/registration/registration.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -21,6 +21,11 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './shared/login.service';
 import { RegisterService } from './shared/register.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { EmployeesComponent } from './userManagement/employees/employees.component';
+import { UsersComponent } from './userManagement/users/users.component';
+import { AddEmployeeComponent } from './userManagement/employees/add-employee/add-employee.component';
+import { UserService } from './shared/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +35,10 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     OrderComponent,
     MainComponent,
     UserManagementComponent,
+    EmployeesComponent,
+    UsersComponent,
+    AddEmployeeComponent,
+
 
   ],
   imports: [
@@ -41,7 +50,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     ToastrModule.forRoot(),
     FormsModule
   ],
-  providers: [RegisterService, LoginService, {
+  providers: [RegisterService, LoginService, UserService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

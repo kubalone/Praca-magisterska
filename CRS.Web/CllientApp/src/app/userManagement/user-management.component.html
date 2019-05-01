@@ -1,2 +1,15 @@
 
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="true">Użytkownicy</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="employee-tab" data-toggle="tab" href="#employee" role="tab" aria-controls="employee" aria-selected="false">Pracownicy</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab"><app-users></app-users></div>
+  <div class="tab-pane fade" id="employee" role="tabpanel" aria-labelledby="employee-tab"><app-employees></app-employees></div>
+
+</div>

@@ -39,7 +39,8 @@ namespace CRS.Web
             services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddIdentity<IdentityUser, ApplicationRole>()
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddDbContext<ApplicationDbContext>(options =>

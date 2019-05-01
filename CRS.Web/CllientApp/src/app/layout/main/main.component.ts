@@ -1,6 +1,7 @@
 import { LoginService } from './../../shared/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
 declare var $: any;
 @Component({
   selector: 'app-main',
@@ -10,18 +11,18 @@ declare var $: any;
 export class MainComponent implements OnInit {
   user;
   title = 'KlientApp';
-  constructor(private router: Router, private service: LoginService){}
+  userRole: boolean;
+  constructor(private router: Router, private service: UserService){}
   ngOnInit(): void {
     this.service.getUserProfile().subscribe(
       res => {
         this.user = res;
-       // console.log(this.user.userName);
       },
       err => {
         console.log(err);
       }
     );
-
+    this.userRole = this.service.getUserRole() === 'Admin';
   }
 
 

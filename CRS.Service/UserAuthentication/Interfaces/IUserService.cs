@@ -1,4 +1,5 @@
 ﻿using CRS.Data.Users.ResourceModel;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,9 @@ namespace CRS.Service.UserAuthentication.Interfaces
     {
      Task<Object> Register(RegisterResourceModel model);
      Task<Object> Login(LoginResourceModel model);
-    
-    
+     Task<IEnumerable<IdentityUser>> GetUsers();
+
+
+
     }
 }

@@ -12,7 +12,5 @@ export class LoginService {
     return this.httpClient.post(this.URL + '/Login', userToLogin);
   }
 
-  getUserProfile() {
-    return this.httpClient.get(this.URL + '/GetUser');
-  }
+
 }

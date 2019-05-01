@@ -4,20 +4,19 @@ import { UserManagementComponent } from './userManagement/user-management.compon
 import { MainComponent } from './layout/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegistrationComponent } from './userManagement/user/registration/registration.component';
+import { RegistrationComponent } from './userManagement/users/registration/registration.component';
 import { OrderComponent } from './carRepairShopManagement/order/order.component';
 import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
+  //{path: '', redirectTo: 'wszystkie-zlecenia', pathMatch: 'full', canActivate: [AuthGuard]},
   {
     path: '', component: MainComponent, canActivate: [AuthGuard],
     children: [
       {
-        path: 'panel-administracyjny', component: UserManagementComponent,
-        children: [
-          {path: 'rejestracja', component: RegistrationComponent}
-        ]
+        path: 'panel-administracyjny', component: UserManagementComponent,  canActivate: [AuthGuard], data : {permittedRoles: ['Admin']}
+
       },
       {
         path: 'zlecenia', component: OrderComponent,

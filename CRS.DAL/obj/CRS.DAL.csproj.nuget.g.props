@@ -25,4 +25,7 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\kubalone\.nuget\packages\microsoft.entityframeworkcore.tools\2.2.4</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\kubalone\.nuget\packages\microsoft.entityframeworkcore.tools\2.2.4</PkgMicrosoft_EntityFrameworkCore_Tools>
+  </PropertyGroup>
 </Project>

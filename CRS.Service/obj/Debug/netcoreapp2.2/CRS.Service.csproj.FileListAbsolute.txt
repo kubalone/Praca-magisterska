@@ -18,3 +18,5 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.xml
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.pdb
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\CRS.DAL.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\netcoreapp2.2\CRS.DAL.pdb

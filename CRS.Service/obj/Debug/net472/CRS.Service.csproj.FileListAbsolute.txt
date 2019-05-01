@@ -70,3 +70,9 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.xml
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.pdb
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Data.SqlClient.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.DAL.dll
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.DAL.pdb
+C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.DAL.dll.config

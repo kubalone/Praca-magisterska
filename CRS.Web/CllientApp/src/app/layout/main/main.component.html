@@ -9,12 +9,15 @@
   <div class="bg-light border-right" id="sidebar-wrapper">
     <div class="sidebar-heading">Start Bootstrap </div>
     <div class="list-group list-group-flush">
-      <a routerLink="/panel-administracyjny/rejestracja" class="list-group-item list-group-item-action bg-light"  routerLinkActive="active">Panel administracyjny</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light " routerLinkActive="active">Shortcuts</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light " routerLinkActive="active">Shortcuts</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        <div *ngIf="userRole" >
+        <a routerLink="/panel-administracyjny" class="list-group-item list-group-item-action bg-light"  routerLinkActive="active">Panel administracyjny</a>
+      </div>
+
     </div>
   </div>
   <!-- /#sidebar-wrapper -->
@@ -51,7 +54,7 @@
 </div>
 <!-- /#wrapper -->
 
-<button class="btn btn-primary" id="rino" (click)="toggleTitle()">Toggle Menu</button>
+
 
 <!-- <script>
   $("#menu-toggle").click(function(e) {

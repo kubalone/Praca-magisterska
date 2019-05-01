@@ -32,6 +32,7 @@ namespace CRS.Web.Controllers.UserAuthentication
         }
 
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         [Route("Register")]
         //POST : /api/ApplicationUser/Register
         public async Task<Object> InsertNewUser(RegisterResourceModel registerResourceModel)
@@ -58,6 +59,13 @@ namespace CRS.Web.Controllers.UserAuthentication
             {
                 user.UserName
             };
+        }
+        [HttpGet]
+        //[Authorize(Roles = "Admin")]
+        [Route("GetUsers")]
+        public async Task<IEnumerable<IdentityUser>> GetUsers()
+        {
+            return await _userService.GetUsers();
         }
     }
 }

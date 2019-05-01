@@ -44,7 +44,7 @@ namespace CRS.DAL.Initializer
             {
                 var user = new IdentityUser
                 {
-                    UserName = "Administrator",
+                    UserName = "Admin",
                     Email = "kubalone@gmail.com",
                     
                   
