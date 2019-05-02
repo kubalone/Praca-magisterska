@@ -732,25 +732,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kubalone\\.nuget\\packages\\": {},
+    "C:\\Users\\Reno\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kubalone\\Desktop\\Praca dyplomowa\\CarRepairSystem\\CRS.Data\\CRS.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Data\\CRS.Data.csproj",
       "projectName": "CRS.Data",
-      "projectPath": "C:\\Users\\kubalone\\Desktop\\Praca dyplomowa\\CarRepairSystem\\CRS.Data\\CRS.Data.csproj",
-      "packagesPath": "C:\\Users\\kubalone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kubalone\\Desktop\\Praca dyplomowa\\CarRepairSystem\\CRS.Data\\obj\\",
+      "projectPath": "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Data\\CRS.Data.csproj",
+      "packagesPath": "C:\\Users\\Reno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Data\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kubalone\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Reno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472",
@@ -758,7 +758,10 @@
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Reno\\Desktop\\RSS\\RSS.DAL\\bin\\Debug": {},
+        "C:\\Users\\Reno\\Desktop\\RSS\\RSS.Data\\bin\\Debug": {},
+        "C:\\Users\\Reno\\Desktop\\RSS\\RSS.Service\\bin\\Debug": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

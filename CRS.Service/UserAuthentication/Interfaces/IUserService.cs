@@ -11,7 +11,7 @@ namespace CRS.Service.UserAuthentication.Interfaces
     {
      Task<Object> Register(RegisterResourceModel model);
      Task<Object> Login(LoginResourceModel model);
-     Task<IEnumerable<IdentityUser>> GetUsers();
+     Task<IEnumerable<UserResourceModel>> GetUsers();
 
 
 

@@ -10,3 +10,15 @@ C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\bin\Debug\nets
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csproj.CopyComplete
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.dll
 C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.pdb
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\bin\Debug\netstandard2.0\CRS.DAL.deps.json
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\bin\Debug\netstandard2.0\CRS.DAL.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\bin\Debug\netstandard2.0\CRS.DAL.pdb
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\bin\Debug\netstandard2.0\CRS.Data.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\bin\Debug\netstandard2.0\CRS.Data.pdb
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csprojAssemblyReference.cache
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.AssemblyInfoInputs.cache
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.AssemblyInfo.cs
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.csproj.CopyComplete
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.DAL\obj\Debug\netstandard2.0\CRS.DAL.pdb

@@ -63,7 +63,7 @@ namespace CRS.Web.Controllers.UserAuthentication
         [HttpGet]
         //[Authorize(Roles = "Admin")]
         [Route("GetUsers")]
-        public async Task<IEnumerable<IdentityUser>> GetUsers()
+        public async Task<IEnumerable<UserResourceModel>> GetUsers()
         {
             return await _userService.GetUsers();
         }

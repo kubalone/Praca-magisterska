@@ -82,11 +82,24 @@ namespace CRS.Service.UserAuthentication.Services
 
             }
         }
-        public async Task<IEnumerable<IdentityUser>> GetUsers()
+        public async Task<IEnumerable<UserResourceModel>> GetUsers()
         {
-           
+
+           var listOfResourceModel = new List<UserResourceModel>();
+
            var listOfUser = await _dbContext.Users.OrderBy(p => p.UserName).ToListAsync();
-           return listOfUser;
+            foreach (var item in listOfUser)
+            {
+
+                var role = await _userManager.GetRolesAsync(item);
+                listOfResourceModel.Add(new UserResourceModel
+                {
+                    Id = item.Id,
+                    UserName = item.UserName,
+                    Role = role.FirstOrDefault()
+                });
+            }
+           return listOfResourceModel;
         }
     }
 }

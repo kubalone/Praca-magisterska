@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { DataTablesModule } from 'angular-datatables';
 
 import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
 import { OrderComponent } from './carRepairShopManagement/order/order.component';
@@ -48,7 +48,8 @@ import { UserService } from './shared/user.service';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [RegisterService, LoginService, UserService, {
     provide: HTTP_INTERCEPTORS,

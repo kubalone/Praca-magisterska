@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from './model/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +32,7 @@ export class UserService {
     });
     return isMatch;
   }
-  getUsers(): Observable{
-    return this.httpClient.get(this.URL + '/GetUsers');
+  getUsers(): Observable<User[]>{
+    return this.httpClient.get<User[]>(this.URL + '/GetUsers');
   }
 }

@@ -1,3 +1,21 @@
-<p>
-  users works!
-</p>
+<div class="container">
+  <table id="userTable" class="table table-striped table-bordered" datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger" style="width:100%">
+    <thead>
+      <tr>
+        <th>Nazwa użytkownika</th>
+        <th>Rola</th>
+        <th>Operacja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users$">
+        <td>{{item.userName}}</td>
+        <td>{{item.role}}</td>
+        <td></td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
