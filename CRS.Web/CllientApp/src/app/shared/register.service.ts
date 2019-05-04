@@ -9,9 +9,9 @@ export class RegisterService {
   constructor(private formbuilder: FormBuilder, private httpClient: HttpClient ) { }
   readonly URL = 'https://localhost:44359/api';
   formModel = this.formbuilder.group({
-    UserName: ['', Validators.required],
+    UserName: ['', [Validators.required, Validators.minLength(3)]],
     Passwords: this.formbuilder.group({
-      Password: ['', [Validators.required, Validators.minLength(6), this.validatePassword]],
+      Password: ['', [Validators.required, Validators.minLength(4) ]],
       ConfirmPassword: ['', Validators.required]
     }, {validator: this.comparePasswords})
   });
@@ -27,17 +27,7 @@ export class RegisterService {
       }
     }
   }
-  validatePassword(fg: FormGroup) {
-    let hasNumber = /\d/.test(fg.value);
-    let hasUpper = /[A-Z]/.test(fg.value);
-    let hasLower = /[a-z]/.test(fg.value);
-    const valid = hasNumber && hasUpper && hasLower;
-    if (!valid) {
-      return {
-        errorText: true
-      };
-    }
-  }
+
   registerNewUser() {
     var user = {
       UserName: this.formModel.value.UserName,
@@ -45,5 +35,6 @@ export class RegisterService {
     };
     return this.httpClient.post(this.URL + '/ApplicationUser/Register', user);
   }
+  
 
 }

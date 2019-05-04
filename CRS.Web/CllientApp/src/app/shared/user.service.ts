@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './model/user';
 import { Observable } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,10 @@ export class UserService {
     return isMatch;
   }
   getUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(this.URL + '/GetUsers');
+    return this.httpClient.get<User[]>(this.URL + '/GetUsers').pipe(delay(2000));
+  }
+  deleteUser(id:string)
+  {
+    console.log(id);
   }
 }

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './userManagement/users/registration/registration.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
@@ -25,6 +24,8 @@ import { EmployeesComponent } from './userManagement/employees/employees.compone
 import { UsersComponent } from './userManagement/users/users.component';
 import { AddEmployeeComponent } from './userManagement/employees/add-employee/add-employee.component';
 import { UserService } from './shared/user.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalService } from './shared/modal.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UserService } from './shared/user.service';
     AddEmployeeComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -49,9 +51,14 @@ import { UserService } from './shared/user.service';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     FormsModule,
-    DataTablesModule
+    DataTablesModule,
+    NgbModule
+    
+    
+    
+    
   ],
-  providers: [RegisterService, LoginService, UserService, {
+  providers: [RegisterService, LoginService, UserService, ModalService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

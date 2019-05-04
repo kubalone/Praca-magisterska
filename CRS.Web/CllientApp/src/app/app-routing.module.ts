@@ -15,9 +15,10 @@ const routes: Routes = [
     path: '', component: MainComponent, canActivate: [AuthGuard],
     children: [
       {
-        path: 'panel-administracyjny', component: UserManagementComponent,  canActivate: [AuthGuard], data : {permittedRoles: ['Admin']}
-
+        path: 'panel-administracyjny', component: UserManagementComponent,  canActivate: [AuthGuard], data : {permittedRoles: ['Admin']},
+       
       },
+  
       {
         path: 'zlecenia', component: OrderComponent,
         children: [
@@ -26,7 +27,10 @@ const routes: Routes = [
       }
     ],
   },
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {
+    path: 'register', component: RegistrationComponent,
+  },
 ];
 
 @NgModule({

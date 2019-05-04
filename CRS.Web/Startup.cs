@@ -46,6 +46,14 @@ namespace CRS.Web
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystem;Trusted_Connection=True;"));
             services.AddScoped<IUserService, UserService>();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 4;
+            });
             services.AddCors();
             var key = Encoding.UTF8.GetBytes(Configuration["JWTSettings:JWT_Secret"].ToString());
             services.AddAuthentication(x =>

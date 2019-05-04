@@ -12,3 +12,26 @@ body {
 
   background: red;
 }
+
+input.ng-touched.ng-invalid{
+  border-color: #dc3545;
+}
+
+input.ng-valid{
+  border-color: #28a745;
+}
+
+.green-icon{
+  color: #28a745;
+}
+.red-icon{
+  color: #dc3545;
+}
+.input-group-text-invalid {
+  border: 1px solid #dc3545;
+ 
+}
+.input-group-text-valid {
+  border: 1px solid #28a745;
+ 
+}

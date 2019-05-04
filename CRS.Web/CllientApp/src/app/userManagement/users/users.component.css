@@ -1,0 +1,23 @@
+#userTable .fa-user-edit, .fa-user-times:hover{
+    cursor:pointer;
+}
+#userTable .fa-user-times {
+    color:#C21807;
+}
+#userTable .fa-user-edit {
+    color:#0E4D92;
+
+}
+#user-table-container{ 
+    margin-top: 2em;
+}
+#addUserSection{
+    margin-bottom: 2em;
+    padding-right: 15px;
+}
+#userTable{
+    margin-right: 122em;
+}
+.spinner-border {
+    width: 3rem; height: 3rem;
+}

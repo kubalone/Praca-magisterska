@@ -1,45 +1,81 @@
-﻿<div class="col-md-7">
+﻿<div>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Dodaj nowego użytkownika</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
 
-  <form [formGroup]="service.formModel" (submit)="onSubmit()">
-    <div class="form-group required">
-      <label for="formGroupExampleInput">Nazwa użytkownika</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
-        formControlName="UserName">
-        <span class="text-danger"
-          *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Nazwa użytkownika jest wymagana <br>
-          </span>
-    </div>
-
-    <div formGroupName="Passwords">
+    <form [formGroup]="service.formModel" (submit)="onSubmit()" autocomplete="off">
       <div class="form-group required">
-        <label for="exampleInputPassword1">Hasło</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-          formControlName="Password">
+        <div class="input-group ">
+          <div class="input-group-prepend">
+              <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': (service.formModel.get('UserName').touched  && service.formModel.get('UserName').errors?.required) ||  (service.formModel.get('UserName').errors?.minlength && service.formModel.get('UserName').touched), 'input-group-text-valid': service.formModel.get('UserName').dirty && !service.formModel.get('UserName').errors?.required && !service.formModel.get('UserName').errors?.minlength}">
+                  <i class="fas fa-key" [ngClass]="{'red-icon': (service.formModel.get('UserName').touched  && service.formModel.get('UserName').errors?.required) ||  (service.formModel.get('UserName').errors?.minlength && service.formModel.get('UserName').touched),'green-icon': service.formModel.get('UserName').dirty && !service.formModel.get('UserName').errors?.required && !service.formModel.get('UserName').errors?.minlength }" ></i>
+                </div>
+            
+          </div>
+          <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Nazwa użytkownika"
+            formControlName="UserName">
+        </div>
         <span class="text-danger"
-          *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Hasło jest wymagane <br>
-          </span>
+        *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Nazwa
+          użytkownika jest wymagana <br>
+        </span>
         <span class="text-danger"
-          *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Hasło musi zawierać minimum 6 znaków <br>
+        *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.minlength">Nazwa użytkownika musi zawierać co najmniej trzy znaki <br>
+      </span>
+      </div>
+
+      <div formGroupName="Passwords">
+        <div class="form-group required">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': (service.formModel.get('Passwords.Password').touched  && service.formModel.get('Passwords.Password').errors?.required) ||  (service.formModel.get('Passwords.Password').errors?.minlength && service.formModel.get('Passwords.Password').touched), 'input-group-text-valid': service.formModel.get('Passwords.Password').dirty && !service.formModel.get('Passwords.Password').errors?.required && !service.formModel.get('Passwords.Password').errors?.minlength}">
+                <i class="fas fa-key" [ngClass]="{'red-icon': (service.formModel.get('Passwords.Password').touched  && service.formModel.get('Passwords.Password').errors?.required) ||  (service.formModel.get('Passwords.Password').errors?.minlength && service.formModel.get('Passwords.Password').touched),'green-icon': service.formModel.get('Passwords.Password').dirty && !service.formModel.get('Passwords.Password').errors?.required && !service.formModel.get('Passwords.Password').errors?.minlength }" ></i>
+              </div>
+            </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło"
+              formControlName="Password" autocomplete="new-password">
+          </div>
+          <span class="text-danger"
+            *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Hasło
+            jest wymagane <br>
           </span>
           <span class="text-danger"
-          *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.errorText">Hasło musi zawierać co najmniej jedną małą oraz dużą literę oraz znak specjalny
+            *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Hasło
+            musi zawierać minimum 4 znaki <br>
           </span>
 
-      </div>
-      <div class="form-group required">
-        <label for="exampleInputPassword1">Confirm password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-          formControlName="ConfirmPassword">
-        <span class="text-danger"
-          *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">
-          Password is required</span>
-        <span class="text-danger"
-          *ngIf="service.formModel.get('Passwords.ConfirmPassword').dirty && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">
-          Password is not equal</span>
 
-      </div>
-    </div>
+        </div>
+        <div class="form-group required">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required || service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch , 'input-group-text-valid': service.formModel.get('Passwords.ConfirmPassword').dirty && !service.formModel.get('Passwords.ConfirmPassword').errors?.required && !service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch}">
+                    <i class="fas fa-key" [ngClass]="{'red-icon': service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required || service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch,'green-icon': service.formModel.get('Passwords.ConfirmPassword').dirty && !service.formModel.get('Passwords.ConfirmPassword').errors?.required && !service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch}" ></i>
+                </div>
+            </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Potwierdź hasło"
+              formControlName="ConfirmPassword">
+          </div>
+          <span class="text-danger"
+            *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">
+            Hasło jest wymagane</span>
+          <span class="text-danger"
+            *ngIf="service.formModel.get('Passwords.ConfirmPassword').dirty && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">
+            Podane hasła nie pasują do siebie</span>
 
-    <button type="submit" [disabled]="service.formModel.invalid" class="btn btn-primary">Submit</button>
-  </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+          <button class="btn btn-outline-success btn-lg btn-block" [disabled]="service.formModel.invalid" type="submit"><i
+              class="fas fa-database"></i> Submit</button>
+      
+      </div>
+    </form>
+  </div>
+
 </div>

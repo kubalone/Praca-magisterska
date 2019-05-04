@@ -54,6 +54,24 @@ namespace CRS.Service.UserAuthentication.Services
                 throw ex;
             }
         }
+        public async Task<Object> Delete(string id)
+        {
+           
+
+            try
+            {
+                var user = await _userManager.FindByIdAsync(id);
+               
+                var result = await _userManager.DeleteAsync(user);
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
+        }
         public async Task<Object> Login(LoginResourceModel model)
         {
             var user = await _userManager.FindByNameAsync(model.Username);
