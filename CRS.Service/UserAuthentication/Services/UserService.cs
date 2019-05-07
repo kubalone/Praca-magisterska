@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace CRS.Service.UserAuthentication.Services
             _dbContext = dbContext;
         }
 
-        public async Task<Object> Register(RegisterResourceModel model)
+        public async Task<ObjectResult> Register(RegisterResourceModel model)
         {
             var aplicationUser = new IdentityUser
             {
@@ -54,14 +55,18 @@ namespace CRS.Service.UserAuthentication.Services
                 throw ex;
             }
         }
-        public async Task<Object> Delete(string id)
+        public async Task<ObjectResult> Delete(string id)
         {
-           
+            var user = await _userManager.FindByIdAsync(id);
+            if(user==null)
+            {
+                return new ObjectResult(new { message = "Wybrany użytkownik nie istnieje w bazie." });
+
+            }
 
             try
             {
-                var user = await _userManager.FindByIdAsync(id);
-               
+
                 var result = await _userManager.DeleteAsync(user);
                 return new ObjectResult(result);
             }
@@ -72,7 +77,7 @@ namespace CRS.Service.UserAuthentication.Services
             }
            
         }
-        public async Task<Object> Login(LoginResourceModel model)
+        public async Task<ObjectResult> Login(LoginResourceModel model)
         {
             var user = await _userManager.FindByNameAsync(model.Username);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
@@ -100,6 +105,27 @@ namespace CRS.Service.UserAuthentication.Services
 
             }
         }
+        public async Task<ObjectResult> ChangePassword(ChangePasswordResourceModel userToUpdate)
+        {
+            var user = await _userManager.FindByNameAsync(userToUpdate.Username);
+            if (user == null)
+            {
+                return new ObjectResult(new { message = "Wybrany użytkownik nie istnieje w bazie." });
+
+            }
+            try
+            {
+                var newPassword = _userManager.PasswordHasher.HashPassword(user, userToUpdate.Password);
+                user.PasswordHash = newPassword;
+                var result = await _userManager.UpdateAsync(user);
+                return new ObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public async Task<IEnumerable<UserResourceModel>> GetUsers()
         {
 
@@ -120,6 +146,7 @@ namespace CRS.Service.UserAuthentication.Services
            return listOfResourceModel;
         }
     }
+   
 }
 //FirstName=model.FirstName,
 //LastName=model.LastName,

@@ -26,6 +26,12 @@ import { AddEmployeeComponent } from './userManagement/employees/add-employee/ad
 import { UserService } from './shared/user.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from './shared/modal.service';
+import { ChangePasswordComponent } from './userManagement/users/change-password/change-password.component';
+import { ChangePasswordService } from './shared/change-password.service';
+
+import { FormValidatorService } from './shared/validator/form-validator.service';
+import { DeleteUserComponent } from './userManagement/users/delete-user/delete-user.component';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +45,9 @@ import { ModalService } from './shared/modal.service';
     EmployeesComponent,
     UsersComponent,
     AddEmployeeComponent,
+    ChangePasswordComponent,
+    DeleteUserComponent,
+
 
 
 
@@ -58,11 +67,12 @@ import { ModalService } from './shared/modal.service';
     
     
   ],
-  providers: [RegisterService, LoginService, UserService, ModalService, {
+  providers: [RegisterService, LoginService, UserService, ModalService, ChangePasswordService, FormValidatorService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

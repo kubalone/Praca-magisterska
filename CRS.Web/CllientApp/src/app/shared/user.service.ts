@@ -3,16 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './model/user';
 import { Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
   readonly URL = 'https://localhost:44359/api/ApplicationUser';
-  getUserProfile() {
-    return this.httpClient.get(this.URL + '/GetUser');
+  getUserProfile(): Observable<User> {
+    return this.httpClient.get<User>(this.URL + '/GetUser');
   }
   getUserRole(): string {
     if (localStorage.getItem('token') != null) {
@@ -34,10 +35,16 @@ export class UserService {
     return isMatch;
   }
   getUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(this.URL + '/GetUsers').pipe(delay(2000));
+    return this.httpClient.get<User[]>(this.URL + '/GetUsers');
   }
-  deleteUser(id:string)
+  deleteUser(id: string )
   {
-    console.log(id);
+   
+        return this.httpClient.delete(`${this.URL}/${'DeleteUser/'}${id}`);
+ 
+  }
+  onLogout() {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/login');
   }
 }

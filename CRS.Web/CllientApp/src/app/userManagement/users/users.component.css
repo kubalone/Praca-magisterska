@@ -18,6 +18,12 @@
 #userTable{
     margin-right: 122em;
 }
-.spinner-border {
-    width: 3rem; height: 3rem;
-}
+
+.fa-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    
+  }
+.fa-disabled i:hover {
+    cursor: not-allowed!important;
+  }

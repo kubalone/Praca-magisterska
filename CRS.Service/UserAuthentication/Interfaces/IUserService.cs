@@ -1,5 +1,6 @@
 ﻿using CRS.Data.Users.ResourceModel;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +10,11 @@ namespace CRS.Service.UserAuthentication.Interfaces
 {
     public interface IUserService
     {
-     Task<Object> Register(RegisterResourceModel model);
-     Task<Object> Login(LoginResourceModel model);
+     Task<ObjectResult> Register(RegisterResourceModel model);
+     Task<ObjectResult> Login(LoginResourceModel model);
      Task<IEnumerable<UserResourceModel>> GetUsers();
+     Task<ObjectResult> Delete(string id);
+        Task<ObjectResult> ChangePassword(ChangePasswordResourceModel userToUpdate);
 
 
 

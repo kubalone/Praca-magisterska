@@ -35,17 +35,24 @@ namespace CRS.Web.Controllers.UserAuthentication
         [Authorize(Roles ="Admin")]
         [Route("Register")]
         //POST : /api/ApplicationUser/Register
-        public async Task<Object> InsertNewUser(RegisterResourceModel registerResourceModel)
+        public async Task<ObjectResult> InsertNewUser(RegisterResourceModel registerResourceModel)
         {
            return await _userService.Register(registerResourceModel);
         }
         [HttpPost]
         [Route("Login")]
         //POST : /api/ApplicationUser/Login
-        public async Task<Object> Login(LoginResourceModel model)
+        public async Task<ObjectResult> Login(LoginResourceModel model)
         {
 
             return await _userService.Login(model);     
+        }
+        [HttpDelete]
+        [Route("DeleteUser/{id}")]
+        //POST: /api/ApplicationUser/DeleteUser
+        public async Task<ObjectResult> Delete(string id)
+        {
+            return await _userService.Delete(id);
         }
         [HttpGet]
         [Authorize]
@@ -66,6 +73,13 @@ namespace CRS.Web.Controllers.UserAuthentication
         public async Task<IEnumerable<UserResourceModel>> GetUsers()
         {
             return await _userService.GetUsers();
+        }
+        [HttpPut]
+        //[Authorize(Roles = "Admin")]
+        [Route("ChangePassword")]
+        public async Task<ObjectResult> ChangePassword(ChangePasswordResourceModel model)
+        {
+            return await _userService.ChangePassword(model);
         }
     }
 }

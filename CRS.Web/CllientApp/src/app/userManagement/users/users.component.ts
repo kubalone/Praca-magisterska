@@ -1,10 +1,12 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/shared/user.service';
 import { User } from 'src/app/shared/model/user';
 import { Subject } from 'rxjs';
 import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { RegisterService } from 'src/app/shared/register.service';
+
 import { ModalService } from 'src/app/shared/modal.service';
+import { ToastrService } from 'ngx-toastr';
+
 declare var $: any;
 @Component({
   selector: 'app-users',
@@ -13,11 +15,11 @@ declare var $: any;
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private service: UserService, private modalService: ModalService,   private changeDetectorRefs: ChangeDetectorRef ) { }
+  constructor(private service: UserService, private modalService: NgbModal, private communicate: ToastrService) { }
 
   dataTable: any;
 
-  users$: any[] = [];
+  users$: User[] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
   showLoading: boolean = true;
@@ -40,23 +42,30 @@ export class UsersComponent implements OnInit {
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
-  open(content) {
   
-    this.modalService.open(content);
-  }
   getUsers() {
+
     this.service.getUsers().subscribe(res => {
       this.users$ = res;
-      this.showLoading = false;
-      this.showTable=true;
-      });
+      this.showLoading= false;
+      this.showTable = true;
+      } );
+  
   }
   close() {
-    this.modalService.close();
+    this.modalService.dismissAll();
   }
-  deleteUser(id:string) {
-    this.service.deleteUser(id);
-    this.getUsers();
+  openRegisterModal(content) {
+    this.modalService.open(content);
   }
+  confirmDeleteModal(content) {
+    this.modalService.open(content);
+  }
+  changePasswordModal(content) {
+    this.modalService.open(content);
+  }
+
+ 
+
   
 }

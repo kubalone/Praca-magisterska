@@ -11,8 +11,8 @@
       <div class="form-group required">
         <div class="input-group ">
           <div class="input-group-prepend">
-              <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': (service.formModel.get('UserName').touched  && service.formModel.get('UserName').errors?.required) ||  (service.formModel.get('UserName').errors?.minlength && service.formModel.get('UserName').touched), 'input-group-text-valid': service.formModel.get('UserName').dirty && !service.formModel.get('UserName').errors?.required && !service.formModel.get('UserName').errors?.minlength}">
-                  <i class="fas fa-key" [ngClass]="{'red-icon': (service.formModel.get('UserName').touched  && service.formModel.get('UserName').errors?.required) ||  (service.formModel.get('UserName').errors?.minlength && service.formModel.get('UserName').touched),'green-icon': service.formModel.get('UserName').dirty && !service.formModel.get('UserName').errors?.required && !service.formModel.get('UserName').errors?.minlength }" ></i>
+              <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': validator.checkErrorDataEntry(service.userName), 'input-group-text-valid': validator.checkCorrectDataEntry(service.userName)}">
+                  <i class="fas fa-user" [ngClass]="{'red-icon': validator.checkErrorDataEntry(service.userName),'green-icon': validator.checkCorrectDataEntry(service.userName)  }" ></i>
                 </div>
             
           </div>
@@ -20,11 +20,12 @@
             formControlName="UserName">
         </div>
         <span class="text-danger"
-        *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Nazwa
-          użytkownika jest wymagana <br>
+        *ngIf="validator.checkRequired(service.userName)">
+        użytkownika jest wymagana <br>
         </span>
         <span class="text-danger"
-        *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.minlength">Nazwa użytkownika musi zawierać co najmniej trzy znaki <br>
+        *ngIf="validator.checkMinLength(service.userName)">
+        Nazwa użytkownika musi zawierać co najmniej trzy znaki <br>
       </span>
       </div>
 
@@ -32,20 +33,22 @@
         <div class="form-group required">
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': (service.formModel.get('Passwords.Password').touched  && service.formModel.get('Passwords.Password').errors?.required) ||  (service.formModel.get('Passwords.Password').errors?.minlength && service.formModel.get('Passwords.Password').touched), 'input-group-text-valid': service.formModel.get('Passwords.Password').dirty && !service.formModel.get('Passwords.Password').errors?.required && !service.formModel.get('Passwords.Password').errors?.minlength}">
-                <i class="fas fa-key" [ngClass]="{'red-icon': (service.formModel.get('Passwords.Password').touched  && service.formModel.get('Passwords.Password').errors?.required) ||  (service.formModel.get('Passwords.Password').errors?.minlength && service.formModel.get('Passwords.Password').touched),'green-icon': service.formModel.get('Passwords.Password').dirty && !service.formModel.get('Passwords.Password').errors?.required && !service.formModel.get('Passwords.Password').errors?.minlength }" ></i>
+              <div class="input-group-text bg-white" 
+              [ngClass]="{'input-group-text-invalid': validator.checkErrorDataEntry(service.password) , 'input-group-text-valid': validator.checkCorrectDataEntry(service.password)}">
+                <i class="fas fa-key" 
+                [ngClass]="{'red-icon':  validator.checkErrorDataEntry(service.password), 'green-icon':  validator.checkCorrectDataEntry(service.password)}"></i>
               </div>
             </div>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło"
               formControlName="Password" autocomplete="new-password">
           </div>
           <span class="text-danger"
-            *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Hasło
-            jest wymagane <br>
+          *ngIf="validator.checkRequired(service.password)">
+            Hasło jest wymagane <br>
           </span>
           <span class="text-danger"
-            *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Hasło
-            musi zawierać minimum 4 znaki <br>
+          *ngIf="validator.checkMinLength(service.password)">
+            Hasło musi zawierać minimum 4 znaki <br>
           </span>
 
 
@@ -53,27 +56,34 @@
         <div class="form-group required">
           <div class="input-group">
             <div class="input-group-prepend">
-                <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required || service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch , 'input-group-text-valid': service.formModel.get('Passwords.ConfirmPassword').dirty && !service.formModel.get('Passwords.ConfirmPassword').errors?.required && !service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch}">
-                    <i class="fas fa-key" [ngClass]="{'red-icon': service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required || service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch,'green-icon': service.formModel.get('Passwords.ConfirmPassword').dirty && !service.formModel.get('Passwords.ConfirmPassword').errors?.required && !service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch}" ></i>
-                </div>
+                <div class="input-group-text bg-white" 
+                [ngClass]="{'input-group-text-invalid': validator.checkErrorDataEntryInConfirmationPassword(service.cofirmPassword) , 'input-group-text-valid': validator.checkCorrectDataEntryInConfirmationPassword(service.cofirmPassword) }">
+                <i class="fas fa-key"
+                [ngClass]="{'red-icon': validator.checkErrorDataEntryInConfirmationPassword(service.cofirmPassword), 'green-icon': validator.checkCorrectDataEntryInConfirmationPassword(service.cofirmPassword)}"></i>
+              </div>
             </div>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Potwierdź hasło"
-              formControlName="ConfirmPassword">
+              formControlName="ConfirmPassword" >
           </div>
           <span class="text-danger"
-            *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">
-            Hasło jest wymagane</span>
-          <span class="text-danger"
-            *ngIf="service.formModel.get('Passwords.ConfirmPassword').dirty && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">
-            Podane hasła nie pasują do siebie</span>
+          *ngIf="validator.checkRequired(service.cofirmPassword)">
+          Hasło jest wymagane</span>
+        <span class="text-danger"
+          *ngIf="validator.checkPasswords(service.cofirmPassword)">
+          Podane hasła nie pasują do siebie</span>
+        
+     
+
+
 
         </div>
       </div>
       <div class="modal-footer">
         
-          <button class="btn btn-outline-success btn-lg btn-block" [disabled]="service.formModel.invalid" type="submit"><i
-              class="fas fa-database"></i> Submit</button>
-      
+          <button class="btn btn-outline-success btn-lg btn-block" [disabled]="service.formModel.invalid" type="submit">
+           
+          <span class="spinner-border spinner-border-button" role="status" aria-hidden="true" *ngIf="showSpinner"></span>
+            Dodaj użytkownika</button>
       </div>
     </form>
   </div>

@@ -6,6 +6,7 @@ import { NgForm } from '@angular/forms';
 import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { UsersComponent } from '../users.component';
 import { EventEmitter } from 'protractor';
+import { FormValidatorService } from 'src/app/shared/validator/form-validator.service';
 
 @Component({
   selector: 'app-registration',
@@ -13,20 +14,19 @@ import { EventEmitter } from 'protractor';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  closeResult: string;
-  constructor(public service: RegisterService, private communicate: ToastrService, private com: UsersComponent) { }
-  private modalService: NgbModal
-  str: string ="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required";
  
- 
+  constructor(public service: RegisterService, private communicate: ToastrService, private com: UsersComponent,  private validator: FormValidatorService) { }
+
+  showSpinner = false;
   ngOnInit() {
-    
+  
   }
   onSubmit() {
+    this.showSpinner = true;
     this.service.registerNewUser().subscribe((form: any) => {
       if (form.succeeded) {
-        this.service.formModel.reset();
         this.com.close();
+        this.service.formModel.reset();
         this.com.getUsers();
         this.communicate.success('Nowy użytkownik został dodany', 'Rejestracja zakończona');
       } else {
@@ -45,6 +45,7 @@ export class RegistrationComponent implements OnInit {
     err => {
       console.log(err);
     });
+  
    
   }
  
