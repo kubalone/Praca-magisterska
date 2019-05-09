@@ -42,10 +42,17 @@ namespace CRS.Web.Controllers.UserAuthentication
         [HttpPost]
         [Route("Login")]
         //POST : /api/ApplicationUser/Login
-        public async Task<ObjectResult> Login(LoginResourceModel model)
+        public async Task<IActionResult> Login(LoginResourceModel model)
         {
-
-            return await _userService.Login(model);     
+            if (await _userService.CheckPassword(model))
+            {
+                var user = await _userService.FindUserByUserName(model.Username);
+                return await _userService.GenerateToken(user);
+            }
+            else
+            {
+                return BadRequest(new { message = "Nazwa użytkownika jest niepoprawna" });
+            }
         }
         [HttpDelete]
         [Route("DeleteUser/{id}")]
@@ -81,5 +88,6 @@ namespace CRS.Web.Controllers.UserAuthentication
         {
             return await _userService.ChangePassword(model);
         }
+     
     }
 }

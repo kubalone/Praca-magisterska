@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 
 namespace CRS.Service.UserAuthentication.Services
 {
+
     public class UserService: IUserService
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -77,42 +78,38 @@ namespace CRS.Service.UserAuthentication.Services
             }
            
         }
-        public async Task<ObjectResult> Login(LoginResourceModel model)
-        {
-            var user = await _userManager.FindByNameAsync(model.Username);
-            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
-            {
-                var role = await _userManager.GetRolesAsync(user);
-               IdentityOptions _options = new IdentityOptions();
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(new Claim[]
-                  {
-                        new Claim("UserID",user.Id.ToString()),
-                       new Claim(_options.ClaimsIdentity.RoleClaimType,role.FirstOrDefault())
-                  }),
-                    Expires = DateTime.UtcNow.AddDays(1),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
-                };
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                var token = tokenHandler.WriteToken(securityToken);
-                return new ObjectResult(new { token });
-            }
-            else
-            {
-                return new ObjectResult(new { message = "Podane hasło jest nieprawidłowe." });
+        //public async Task<ObjectResult> Login(LoginResourceModel model)
+        //{
+        //    var user = await _userManager.FindByNameAsync(model.Username);
 
-            }
-        }
+        //    if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+        //    {
+        //        var role = await _userManager.GetRolesAsync(user);
+        //       IdentityOptions _options = new IdentityOptions();
+        //        var tokenDescriptor = new SecurityTokenDescriptor
+        //        {
+        //            Subject = new ClaimsIdentity(new Claim[]
+        //          {
+        //                new Claim("UserID",user.Id.ToString()),
+        //               new Claim(_options.ClaimsIdentity.RoleClaimType,role.FirstOrDefault())
+        //          }),
+        //            Expires = DateTime.UtcNow.AddDays(1),
+        //            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
+        //        };
+        //        var tokenHandler = new JwtSecurityTokenHandler();
+        //        var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+        //        var token = tokenHandler.WriteToken(securityToken);
+        //        return new ObjectResult(new { token });
+        //    }
+        //    else
+        //    {
+        //        return Forbidden()           
+        //            }
+        //}
         public async Task<ObjectResult> ChangePassword(ChangePasswordResourceModel userToUpdate)
         {
-            var user = await _userManager.FindByNameAsync(userToUpdate.Username);
-            if (user == null)
-            {
-                return new ObjectResult(new { message = "Wybrany użytkownik nie istnieje w bazie." });
-
-            }
+            var user = await FindUserByUserName(userToUpdate.Username);
+          
             try
             {
                 var newPassword = _userManager.PasswordHasher.HashPassword(user, userToUpdate.Password);
@@ -145,14 +142,45 @@ namespace CRS.Service.UserAuthentication.Services
             }
            return listOfResourceModel;
         }
+
+
+        public async Task<bool> CheckPassword(LoginResourceModel model)
+        {
+            var user = await FindUserByUserName(model.Username);
+
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public async Task<IdentityUser> FindUserByUserName(string name)
+        {
+            return await _userManager.FindByNameAsync(name);
+        }
+        public async Task<ObjectResult> GenerateToken(IdentityUser user)
+        {
+            var role = await _userManager.GetRolesAsync(user);
+            IdentityOptions _options = new IdentityOptions();
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+              {
+                        new Claim("UserID",user.Id.ToString()),
+                       new Claim(_options.ClaimsIdentity.RoleClaimType,role.FirstOrDefault())
+              }),
+                Expires = DateTime.UtcNow.AddDays(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+            var token = tokenHandler.WriteToken(securityToken);
+            return new ObjectResult(new { token });
+        }
+
     }
    
 }
-//FirstName=model.FirstName,
-//LastName=model.LastName,
-//City=model.City,
-//TelephoneNumber=model.TelephoneNumber,
-//PostalCode=model.PostalCode,
-//Street=model.Street,
-//HouseNumber=model.HouseNumber,
-//ApartmentNumber=model.ApartmentNumber

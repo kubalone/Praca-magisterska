@@ -20,9 +20,9 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './shared/login.service';
 import { RegisterService } from './shared/register.service';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { EmployeesComponent } from './userManagement/employees/employees.component';
+
 import { UsersComponent } from './userManagement/users/users.component';
-import { AddEmployeeComponent } from './userManagement/employees/add-employee/add-employee.component';
+
 import { UserService } from './shared/user.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from './shared/modal.service';
@@ -31,6 +31,7 @@ import { ChangePasswordService } from './shared/change-password.service';
 
 import { FormValidatorService } from './shared/validator/form-validator.service';
 import { DeleteUserComponent } from './userManagement/users/delete-user/delete-user.component';
+import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -42,11 +43,11 @@ import { DeleteUserComponent } from './userManagement/users/delete-user/delete-u
     OrderComponent,
     MainComponent,
     UserManagementComponent,
-    EmployeesComponent,
     UsersComponent,
-    AddEmployeeComponent,
+
     ChangePasswordComponent,
     DeleteUserComponent,
+    ResetPasswordComponent,
 
 
 

@@ -1,15 +1,38 @@
-<form #form='ngForm' class="col-md-5" (submit)="onSubmit(form)">
-  <div class="form-group">
-    <label>Username</label>
-    <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
+<div class="container  login-container">
+  <div class="login-header">
+    <span>Zaloguj się</span>
   </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
+  <div class="row  justify-content-center ">
+
+    <form #form='ngForm' class="col-md-4" (submit)="onSubmit(form)" autocomplete="off">
+      <div class=" login-form">
+        <div class="form-group">
+          <label>Nazwa użytkownika</label>
+          <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
+        </div>
+        <div class="form-group">
+            <label for="res-add-1">
+                <div class="d-flex justify-content-between" >
+                    <div>Hasło</div>
+                    <div id="forgot-password" (click)="open(reset)">Zapomniałem hasła</div>
+                </div>
+            </label>
+          <input type="password" class="form-control" #Password="ngModel" name="Password"
+            [(ngModel)]="formModel.Password" required>
+        </div>
+
+
+        <button type="submit" class="btn  btn-outline-primary btn-block" [disabled]="form.invalid">
+          <span class="spinner-border spinner-border-button" role="status" aria-hidden="true"
+            *ngIf="showSpinner"></span>
+          Login</button>
+        
+
+      </div>
+    </form>
+
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-8 offset-md-2">
-      <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="form.invalid">Login</button>
-    </div>
-  </div>
-</form>
+</div>
+<ng-template #reset let-modal>
+    <app-reset-password></app-reset-password>
+  </ng-template>

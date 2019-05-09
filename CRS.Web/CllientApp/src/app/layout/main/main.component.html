@@ -6,16 +6,20 @@
 <div class="d-flex" id="wrapper">
 
   <!-- Sidebar -->
-  <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading">Start Bootstrap </div>
+  <div class="border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading"><span>Twój</span> warsztat </div>
     <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light " routerLinkActive="active">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        <a href="#" class="list-group-item list-group-item-action" id="first-nav-element">
+            <i class="fas fa-plus"></i><span>Dodaj zlecenie</span></a>
+        <a routerLink="/wszystkie-zlecenia" class="list-group-item list-group-item-action " routerLinkActive="active">
+            <i class="fas fa-tools"></i><span>Warsztat</span></a>
+        <a href="#" class="list-group-item list-group-item-action ">
+            <i class="fas fa-users"></i><span>Klienci</span></a>
+        <a href="#" class="list-group-item list-group-item-action ">
+            <i class="fas fa-car"></i><span>Pojazdy</span></a>
         <div *ngIf="userRole" >
-        <a routerLink="/panel-administracyjny" class="list-group-item list-group-item-action bg-light"  routerLinkActive="active">Panel administracyjny</a>
+        <a routerLink="/panel-administracyjny" class="list-group-item list-group-item-action "  routerLinkActive="active">
+          <i class="fas fa-user-shield"></i><span>Panel administracyjny</span></a>
       </div>
 
     </div>
@@ -25,20 +29,22 @@
   <!-- Page Content -->
   <div id="page-content-wrapper">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light  border-bottom" id="main-navbar">
       <!--<button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>-->
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
 
           <li class="nav-item">
-            <span  *ngIf="user">Witaj: {{user.userName}}</span>
-            <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+            <span  *ngIf="user">Witaj &nbsp; {{user.userName}}</span>
           </li>
+          <li class="nav-item" id="singout">
+              <i class="fas fa-sign-out-alt"  (click)="onLogout()"></i>
+            </li>
 
 
         </ul>

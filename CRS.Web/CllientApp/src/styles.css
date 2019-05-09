@@ -6,6 +6,7 @@ div.form-group.required>label:first-child:after{
 }
 body {
   overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
 }
 
 .list-group a.list-group-item-action.click {
@@ -52,4 +53,10 @@ input.ng-valid{
 
 .button-modal-footer.modal-footer>:not(:last-child) {
   margin-right:3rem!important;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: 	#f1f1f1;
 }
