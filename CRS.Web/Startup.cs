@@ -7,6 +7,8 @@ using CRS.DAL.DataContext;
 using CRS.DAL.Initializer;
 using CRS.Data.Users;
 using CRS.Data.Users.AplicationSetting;
+using CRS.Service.EmailConfiguration.Interfaces;
+using CRS.Service.EmailConfiguration.Services;
 using CRS.Service.UserAuthentication.Interfaces;
 using CRS.Service.UserAuthentication.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -37,15 +39,23 @@ namespace CRS.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
+
+            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("AuthMessageSenderOptions"));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddRoles<ApplicationRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
+            //var appSettingsSection = Configuration.GetSection("AppSettings");
+            //services.Configure<AppSettings>(appSettingsSection);
+
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystem;Trusted_Connection=True;"));
-            services.AddScoped<IUserService, UserService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IEmailSender, EmailSender>();
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -90,6 +100,7 @@ namespace CRS.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseCors(bulider => bulider.WithOrigins(Configuration["JWTSettings:Client_URL"].ToString())
             .AllowAnyMethod()
             .AllowAnyHeader());
@@ -98,7 +109,12 @@ namespace CRS.Web
             UserInitializer.Initialize(context, userManager, roleManager).Wait();
        
             app.UseAuthentication();
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action=Index}/{id?}");
+            });
         }
     }
 }

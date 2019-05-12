@@ -1,0 +1,4 @@
+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
+
+
+https://westeurope.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceAttributes=age,gender

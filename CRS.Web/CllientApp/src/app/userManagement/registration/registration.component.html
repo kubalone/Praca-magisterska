@@ -1,0 +1,88 @@
+<div>
+  <div class="modal-header">
+      <h5 class='col-12 modal-title text-center'>
+          Dodaj nowego użytkownika
+          <button type='button' class='close' (click)="close()"aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+          </button>
+        </h5>
+  </div>
+  <div class="modal-body">
+
+    <form [formGroup]="service.formModel" (submit)="onSubmit()" autocomplete="off">
+      <div class="form-group required">
+        <div class="input-group ">
+          <div class="input-group-prepend">
+              <div class="input-group-text bg-white" [ngClass]="{'input-group-text-invalid': validator.checkErrorDataEntry(service.userName), 'input-group-text-valid': validator.checkCorrectDataEntry(service.userName)}">
+                  <i class="fas fa-user" [ngClass]="{'red-icon': validator.checkErrorDataEntry(service.userName),'green-icon': validator.checkCorrectDataEntry(service.userName)  }" ></i>
+                </div>
+            
+          </div>
+          <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Nazwa użytkownika"
+            formControlName="UserName">
+        </div>
+        <span class="text-danger"
+        *ngIf="validator.checkRequired(service.userName)">
+        użytkownika jest wymagana <br>
+        </span>
+        <span class="text-danger"
+        *ngIf="validator.checkMinLength(service.userName)">
+        Nazwa użytkownika musi zawierać co najmniej trzy znaki <br>
+      </span>
+      </div>
+
+      <div formGroupName="Passwords">
+        <div class="form-group required">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white" 
+              [ngClass]="{'input-group-text-invalid': validator.checkErrorDataEntry(service.password) , 'input-group-text-valid': validator.checkCorrectDataEntry(service.password)}">
+                <i class="fas fa-key" 
+                [ngClass]="{'red-icon':  validator.checkErrorDataEntry(service.password), 'green-icon':  validator.checkCorrectDataEntry(service.password)}"></i>
+              </div>
+            </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło"
+              formControlName="Password" autocomplete="new-password">
+          </div>
+          <span class="text-danger"
+          *ngIf="validator.checkRequired(service.password)">
+            Hasło jest wymagane <br>
+          </span>
+          <span class="text-danger"
+          *ngIf="validator.checkMinLength(service.password)">
+            Hasło musi zawierać minimum 4 znaki <br>
+          </span>
+
+
+        </div>
+        <div class="form-group required">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white" 
+                [ngClass]="{'input-group-text-invalid': validator.checkErrorDataEntryInConfirmationPassword(service.cofirmPassword) , 'input-group-text-valid': validator.checkCorrectDataEntryInConfirmationPassword(service.cofirmPassword) }">
+                <i class="fas fa-key"
+                [ngClass]="{'red-icon': validator.checkErrorDataEntryInConfirmationPassword(service.cofirmPassword), 'green-icon': validator.checkCorrectDataEntryInConfirmationPassword(service.cofirmPassword)}"></i>
+              </div>
+            </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Potwierdź hasło"
+              formControlName="ConfirmPassword" >
+          </div>
+          <span class="text-danger"
+          *ngIf="validator.checkRequired(service.cofirmPassword)">
+          Hasło jest wymagane</span>
+        <span class="text-danger"
+          *ngIf="validator.checkPasswords(service.cofirmPassword)">
+          Podane hasła nie pasują do siebie</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+          <button class="btn btn-outline-success btn-lg btn-block" [disabled]="service.formModel.invalid" type="submit">
+           
+          <span class="spinner-border spinner-border-button" role="status" aria-hidden="true" *ngIf="showSpinner"></span>
+            Dodaj użytkownika</button>
+      </div>
+    </form>
+  </div>
+
+</div>

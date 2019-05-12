@@ -123,6 +123,7 @@ namespace CRS.Service.UserAuthentication.Services
                 throw ex;
             }
         }
+
         public async Task<IEnumerable<UserResourceModel>> GetUsers()
         {
 
@@ -180,6 +181,12 @@ namespace CRS.Service.UserAuthentication.Services
             var token = tokenHandler.WriteToken(securityToken);
             return new ObjectResult(new { token });
         }
+        public async Task<string> GeneratePasswordResetToken(IdentityUser user)
+        {
+            return await _userManager.GeneratePasswordResetTokenAsync(user);
+
+        }
+      
 
     }
    

@@ -4,9 +4,9 @@ import { UserManagementComponent } from './userManagement/user-management.compon
 import { MainComponent } from './layout/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegistrationComponent } from './userManagement/users/registration/registration.component';
 import { OrderComponent } from './carRepairShopManagement/order/order.component';
 import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -28,9 +28,6 @@ const routes: Routes = [
     ],
   },
   {path: 'login', component: LoginComponent},
-  {
-    path: 'register', component: RegistrationComponent,
-  },
 ];
 
 @NgModule({

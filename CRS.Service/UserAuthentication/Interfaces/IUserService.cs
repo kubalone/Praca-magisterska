@@ -18,6 +18,7 @@ namespace CRS.Service.UserAuthentication.Interfaces
      Task<bool> CheckPassword(LoginResourceModel model);
     Task<ObjectResult> GenerateToken(IdentityUser user);
     Task<IdentityUser> FindUserByUserName(string name);
+        Task<string> GeneratePasswordResetToken(IdentityUser user);
 
 
 

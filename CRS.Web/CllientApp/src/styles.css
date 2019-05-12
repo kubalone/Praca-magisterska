@@ -60,3 +60,61 @@ html, body {
 body {
   background-color: 	#f1f1f1;
 }
+
+
+
+caption{
+   
+   caption-side: top;
+   text-align: left;
+   padding: 12px 15px 12px 15px;
+   background-color: rgb(33, 150, 243);
+   color: #fff;
+   font-weight: 600;
+   font-family: 'lato';
+   letter-spacing: 0.05em;
+   font-size: 1.3rem;
+  
+   margin-bottom: 0;
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+   border: 1px solid #dee2e6;
+   border-bottom: none;
+  
+}
+
+.dataTables_filter{
+    right:10px;
+    
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    padding-top:0.8rem;
+}
+.dataTables_length {
+  padding-top:0.8rem;
+  right:280px;
+  
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+}
+
+
+.dataTables_wrapper {
+  position: relative;
+}
+.dataTables_wrapper th {
+  color:rgb(33, 150, 243);
+ border-top: none;
+}
+
+.dataTables_wrapper th.sorting_asc, .dataTables_wrapper th .sorting_desc{
+  color: #fff;
+  background-color:#4dabf5;
+}
+.dataTables_wrapper .table {
+  border-top: none!important;
+}
+
+

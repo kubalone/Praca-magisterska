@@ -42,3 +42,5 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Se
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.AssemblyInfoInputs.cache
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.AssemblyInfo.cs
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.csproj.CopyComplete
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.UI.xml

@@ -4,10 +4,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using CRS.Data.Users.AplicationSetting;
 using CRS.Data.Users.ResourceModel;
+using CRS.Service.EmailConfiguration.Interfaces;
 using CRS.Service.UserAuthentication.Interfaces;
+using CRS.Web.Areas.Identity.Pages.Account;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -24,20 +27,22 @@ namespace CRS.Web.Controllers.UserAuthentication
         private readonly IUserService _userService;
         UserManager<IdentityUser> _userManager;
         private readonly JWTSettings _jwtSettings;
-        public ApplicationUserController(IUserService userService, UserManager<IdentityUser> userManager, IOptions<JWTSettings> jwtSettings)
+        private readonly IEmailSender _emailSender;
+        public ApplicationUserController(IUserService userService, UserManager<IdentityUser> userManager, IOptions<JWTSettings> jwtSettings, IEmailSender emailSender)
         {
             _userService = userService;
-            _userManager=userManager;
+            _userManager = userManager;
             _jwtSettings = jwtSettings.Value;
+            _emailSender = emailSender;
         }
 
         [HttpPost]
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [Route("Register")]
         //POST : /api/ApplicationUser/Register
         public async Task<ObjectResult> InsertNewUser(RegisterResourceModel registerResourceModel)
         {
-           return await _userService.Register(registerResourceModel);
+            return await _userService.Register(registerResourceModel);
         }
         [HttpPost]
         [Route("Login")]
@@ -88,6 +93,38 @@ namespace CRS.Web.Controllers.UserAuthentication
         {
             return await _userService.ChangePassword(model);
         }
-     
+        [HttpGet]
+        [Route("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword()
+        {
+            var user = await _userService.FindUserByUserName("Admin");
+            if (user == null || user.Email == null)
+            {
+                return NotFound();
+            }
+            
+            var code = await _userService.GeneratePasswordResetToken(user);
+            var callbackUrl = Url.Action("ResetPassword", "ApplicationUser", new { userId = user.Id, code }, protocol: HttpContext.Request.Scheme);
+
+        
+            try
+            {
+                var result = await _emailSender.SendEmailAsync("renoamareno1@o2.pl", "Resetowanie hasła", "Aby zresetować hasło kliknij w podany <a href=\"" + callbackUrl + "\">link</a>");
+                return new ObjectResult(result);
+
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+
+        }
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public IActionResult ResetPassword(string userId, string code)
+        {
+            return RedirectToAction("ResetPassword", "Notification", new { userId, code });
+        }
     }
 }

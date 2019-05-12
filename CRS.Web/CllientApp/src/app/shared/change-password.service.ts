@@ -9,7 +9,7 @@ import { FormValidatorService } from './validator/form-validator.service';
 export class ChangePasswordService {
 
   constructor(private formbuilder: FormBuilder, private httpClient: HttpClient, private validator: FormValidatorService ) { }
-  readonly URL = 'https://localhost:44359/api';
+  readonly URL = 'https://localhost:44359/api/ApplicationUser';
   formModel = this.formbuilder.group({
     Passwords: this.formbuilder.group({
       Password: ['', [Validators.required, Validators.minLength(4) ]],
@@ -22,6 +22,9 @@ export class ChangePasswordService {
   get cofirmPassword() { return this.formModel.get('Passwords.ConfirmPassword'); }
 
   changePassword(user) {
-    return this.httpClient.put(this.URL + '/ApplicationUser/ChangePassword', user);
+    return this.httpClient.put(this.URL + '/ChangePassword', user);
+  }
+  resetPasswordForAdmin() {
+    return this.httpClient.get(this.URL+ '/ForgotPassword')
   }
 }

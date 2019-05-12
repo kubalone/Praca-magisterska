@@ -154,3 +154,7 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.c
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfoInputs.cache
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfo.cs
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CopyComplete
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Newtonsoft.Json.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\SendGrid.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.xml
