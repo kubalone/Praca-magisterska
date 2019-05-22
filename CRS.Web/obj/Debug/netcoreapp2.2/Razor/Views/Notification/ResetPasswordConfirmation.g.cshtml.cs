@@ -18,13 +18,8 @@ using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
-#line 2 "C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\Views\_ViewImports.cshtml"
-using CRS.Web.Areas.Identity;
-
-#line default
-#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"160e31286e1fb4a9ad060c98c474a2abe473b0b3", @"/Views/Notification/ResetPasswordConfirmation.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f918b7cdc660690a6b99264d215afd9b5f3f5e14", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"65137898163df437b6eda0f3261c520b88e8982b", @"/Views/_ViewImports.cshtml")]
     public class Views_Notification_ResetPasswordConfirmation : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

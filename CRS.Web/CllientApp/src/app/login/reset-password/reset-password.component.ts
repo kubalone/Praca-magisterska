@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ChangePasswordService } from 'src/app/shared/change-password.service';
+import { ChangePasswordService } from 'src/app/shared/user/change-password.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

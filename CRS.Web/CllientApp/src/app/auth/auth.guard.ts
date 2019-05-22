@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserService } from '../shared/user.service';
+import { UserService } from '../shared/user/user.service';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Injectable({

@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild, Output } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
-import { RegisterService } from 'src/app/shared/register.service';
+
 import { FormValidatorService } from 'src/app/shared/validator/form-validator.service';
 import { UserManagementComponent } from '../user-management.component';
+import { RegisterService } from 'src/app/shared/user/register.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +14,7 @@ import { UserManagementComponent } from '../user-management.component';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public service: RegisterService, private communicate: ToastrService, private com: UserManagementComponent,  private validator: FormValidatorService) { }
+  constructor(public service: RegisterService, private communicate: ToastrService, private com: UserManagementComponent,  private validator: FormValidatorService, private modalService: NgbModal) { }
 
   showSpinner = false;
   ngOnInit() {
@@ -22,11 +24,12 @@ export class RegistrationComponent implements OnInit {
     this.showSpinner = true;
     this.service.registerNewUser().subscribe((form: any) => {
       if (form.succeeded) {
-        this.com.close();
-        this.service.formModel.reset();
+        this.close();
+       // this.service.formModel.reset();
         this.com.getUsers();
         this.communicate.success('Nowy użytkownik został dodany', 'Rejestracja zakończona');
       } else {
+      
         this.showSpinner = false;
         form.errors.forEach(element => {
           switch(element.code) {
@@ -46,7 +49,7 @@ export class RegistrationComponent implements OnInit {
   }
  
   close() {
-   this.com.close();
+   this.modalService.dismissAll();
    this.service.formModel.reset();
   }
   

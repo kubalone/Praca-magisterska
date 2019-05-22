@@ -7,6 +7,7 @@ div.form-group.required>label:first-child:after{
 body {
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
+  background-color: 	#f1f1f1;
 }
 
 .list-group a.list-group-item-action.click {
@@ -18,7 +19,7 @@ input.ng-touched.ng-invalid{
   border-color: #dc3545;
 }
 
-input.ng-valid{
+input.ng-dirty.ng-valid{
   border-color: #28a745;
 }
 
@@ -57,12 +58,10 @@ input.ng-valid{
 html, body {
   height: 100%;
 }
-body {
-  background-color: 	#f1f1f1;
+.invalid {
+  border-color: #dc3545;
+
 }
-
-
-
 caption{
    
    caption-side: top;
@@ -118,3 +117,67 @@ caption{
 }
 
 
+.container {
+    max-width: 100%;;
+}
+#header-main-card{
+  background-color: rgb(33, 150, 243);
+  color: #fff;
+  font-weight: 500;
+  font-family: 'lato';
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+}
+.card-header {
+  font-weight: 400;
+  font-family: 'lato';
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+.card-footer{
+  padding: .65rem 1rem!important;
+}
+.card-header > i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: #7a7a7a;
+}
+.col-card-body,.col-card-body .form-control{
+  font-size: 0.9rem;
+}
+.col-card-body {
+  padding: 0 5px 0 5px!important;
+ 
+}
+.button-navigation {
+  list-style: none;
+  padding:0;
+}
+.button-navigation li {
+  display: inline;
+  margin-right: 1rem;
+ 
+}
+.button-navigation li a{
+  color: #141414;
+  font: 'lato','sans-serif';
+  font-size: 0.8rem;
+  letter-spacing: 0.03rem;
+}
+.button-navigation li a:hover, .button-navigation li a.active{
+  text-decoration: none;
+  background-color:  rgb(33, 150, 243);
+  color: #e7eff4;
+}
+.button-navigation .button {
+  background-color: #efefef;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 0.35rem 0.55rem;
+  
+ 
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}

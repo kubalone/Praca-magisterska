@@ -8,7 +8,7 @@
       <div class=" login-form">
         <div class="form-group">
           <label>Nazwa użytkownika</label>
-          <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
+          <input class="form-control" #userName="ngModel" name="userName" [(ngModel)]="formModel.userName" required>
         </div>
         <div class="form-group">
             <label for="res-add-1">
@@ -17,8 +17,8 @@
                     <div id="forgot-password" (click)="open(reset)">Zapomniałem hasła</div>
                 </div>
             </label>
-          <input type="password" class="form-control" #Password="ngModel" name="Password"
-            [(ngModel)]="formModel.Password" required>
+          <input type="password" class="form-control" #password="ngModel" name="password"
+            [(ngModel)]="formModel.password" required>
         </div>
 
 

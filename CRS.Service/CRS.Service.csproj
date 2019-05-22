@@ -1,18 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp2.2;net472</TargetFrameworks>
+    <!--<TargetFrameworks>netstandard2.0;netcoreapp2.2;net472</TargetFrameworks>-->
+    <TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
     <PackageReference Include="Sendgrid" Version="9.11.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CRS.DAL\CRS.DAL.csproj" />
-    <ProjectReference Include="..\CRS.Data\CRS.Data.csproj" />
+    <ProjectReference Include="..\CRS.Repository\CRS.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

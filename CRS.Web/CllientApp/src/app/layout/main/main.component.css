@@ -3,7 +3,7 @@ body {
 }
 #main-content{
   margin-top:2rem;
-  margin-left:20px;
+
 }
 #sidebar-wrapper {
   min-height: 100vh;
@@ -89,7 +89,7 @@ background-color: #676a77;
   border-right: none!important;
 }
 #first-nav-element{
-  margin-bottom: 3.2rem;
+
   background-color: #252733;
   border-top: 1px solid #252733 ;
   border-bottom: 1px solid #252733 ;

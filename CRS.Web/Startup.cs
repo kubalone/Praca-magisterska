@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using CRS.DAL.DataContext;
-using CRS.DAL.Initializer;
+using AutoMapper;
+using CRS.Data.Entities;
 using CRS.Data.Users;
 using CRS.Data.Users.AplicationSetting;
-using CRS.Service.EmailConfiguration.Interfaces;
-using CRS.Service.EmailConfiguration.Services;
-using CRS.Service.UserAuthentication.Interfaces;
-using CRS.Service.UserAuthentication.Services;
+using CRS.Repository.Data;
+
+using CRS.Service.Infrastructure;
+using CRS.Service.Infrastructure.AutoMapper;
+using CRS.Service.Interfaces;
+using CRS.Service.Services;
+using CRS.Web.Exceptions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,19 +47,23 @@ namespace CRS.Web
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("AuthMessageSenderOptions"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAutoMapper(typeof(AutoMapperConfiguration));
 
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddRoles<ApplicationRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.Stores.MaxLengthForKeys = 128)
+             .AddEntityFrameworkStores<CRSDbContext>()
+             .AddDefaultTokenProviders();
 
-
+       
             //var appSettingsSection = Configuration.GetSection("AppSettings");
             //services.Configure<AppSettings>(appSettingsSection);
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystem;Trusted_Connection=True;"));
+            services.AddDbContext<CRSDbContext>(options =>
+               options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystemDB;Trusted_Connection=True;"));
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IEmailSender, EmailSender>();
+
+            //services.AddTransient<ITypeOfCustomerService, TypeOfCustomerService>();
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -89,8 +97,9 @@ namespace CRS.Web
          
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context, RoleManager<ApplicationRole> roleManager, UserManager<IdentityUser> userManager)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, CRSDbContext context, RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -106,9 +115,12 @@ namespace CRS.Web
             .AllowAnyHeader());
 
             app.UseHttpsRedirection();
-            UserInitializer.Initialize(context, userManager, roleManager).Wait();
-       
+            Initializer.InitializeUser(context, userManager, roleManager).Wait();
+            Initializer.InitializeTypeOfCustomer(context).Wait();
+
+
             app.UseAuthentication();
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

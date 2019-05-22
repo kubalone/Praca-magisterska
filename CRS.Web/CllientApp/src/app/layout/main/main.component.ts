@@ -1,7 +1,7 @@
-import { LoginService } from './../../shared/login.service';
+import { LoginService } from '../../shared/user/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from 'src/app/shared/user/user.service';
 declare var $: any;
 @Component({
   selector: 'app-main',

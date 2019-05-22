@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="card-header" id="header-main-card">
+    Dodaj zlecenie
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col col-md-4 col-card-body">
+        <div class="card">
+          <div class="card-header">
+
+            Klient
+          </div>
+          <div class="card-body">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text  bg-white">
+                  <i class="fab fa-searchengin"></i>
+                </div>
+              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Wyszukaj klienta"
+                aria-describedby="inputGroupPrepend2" required>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-4 col-card-body">
+        <div class="card">
+          <div class="card-header">
+
+            Pojazd
+          </div>
+          <div class="card-body">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text  bg-white">
+                  <i class="fab fa-searchengin"></i>
+                </div>
+              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Wyszukaj pojazdu"
+                aria-describedby="inputGroupPrepend2" required>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col col-md-4 col-card-body">
+        <div class="card">
+          <div class="card-header">
+            Szczegóły naprawy
+          </div>
+          <div class="card-body">
+
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label">Data przyjęcia</label>
+              <div class="col-md-4">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col-md-4">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label">Data odbioru</label>
+              <div class="col-md-4">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col-md-4">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+            </div>
+
+
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-md-4 pt-0">Powiadomienie</legend>
+                <div class="col-md-8">
+
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked data-toggle="collapse" data-target="#collapseExample.show">
+                    <label class="custom-control-label" for="customRadio1">SMS</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"  data-toggle="collapse" data-target="#collapseExample:not(.show)">
+                    <label class="custom-control-label" for="customRadio2">Inny</label>
+                  </div>
+
+                  <div class="form-group collapse" id="collapseExample">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                    </div>
+                </div>
+              </div>
+            </fieldset>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-primary float-right">Dodaj zlecenie</button>
+  </div>
+</div>

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRS.Data", "CRS.Data\CRS.Data.csproj", "{774D6545-136F-4D30-9772-9C249FC1A1C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRS.Data", "CRS.Data\CRS.Data.csproj", "{774D6545-136F-4D30-9772-9C249FC1A1C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRS.DAL", "CRS.DAL\CRS.DAL.csproj", "{1037B65B-F05F-47D7-9DF5-01A2C4BCF693}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRS.Service", "CRS.Service\CRS.Service.csproj", "{34C936A7-DE87-4A75-A898-11D167B6186D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRS.Service", "CRS.Service\CRS.Service.csproj", "{34C936A7-DE87-4A75-A898-11D167B6186D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRS.Web", "CRS.Web\CRS.Web.csproj", "{F2587A24-8B5C-4BDA-ADEB-DCAE98FF98A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRS.Web", "CRS.Web\CRS.Web.csproj", "{F2587A24-8B5C-4BDA-ADEB-DCAE98FF98A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRS.Repository", "CRS.Repository\CRS.Repository.csproj", "{DDCC3215-F25B-4532-8CEA-2804987850E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{774D6545-136F-4D30-9772-9C249FC1A1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{774D6545-136F-4D30-9772-9C249FC1A1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{774D6545-136F-4D30-9772-9C249FC1A1C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1037B65B-F05F-47D7-9DF5-01A2C4BCF693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1037B65B-F05F-47D7-9DF5-01A2C4BCF693}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1037B65B-F05F-47D7-9DF5-01A2C4BCF693}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1037B65B-F05F-47D7-9DF5-01A2C4BCF693}.Release|Any CPU.Build.0 = Release|Any CPU
 		{34C936A7-DE87-4A75-A898-11D167B6186D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34C936A7-DE87-4A75-A898-11D167B6186D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34C936A7-DE87-4A75-A898-11D167B6186D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{F2587A24-8B5C-4BDA-ADEB-DCAE98FF98A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2587A24-8B5C-4BDA-ADEB-DCAE98FF98A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2587A24-8B5C-4BDA-ADEB-DCAE98FF98A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

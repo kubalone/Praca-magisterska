@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { LoginService } from '../shared/login.service';
+import { LoginService } from '../shared/user/login.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -13,16 +13,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
   showSpinner=false; 
-  formModel = {
-    UserName: '',
-    Password: ''
-  };
+ 
   constructor(private service: LoginService, private communicate: ToastrService, private router: Router, private modalService: NgbModal) { }
 
   ngOnInit() {
     if (localStorage.getItem('token') != null) {
       this.router.navigateByUrl('/zlecenia/wszystkie-zlecenia');
     }
+  }
+  formModel = {
+    userName: '',
+    password: ''
   }
   onSubmit(form: NgForm) {
     this.showSpinner = true;
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
   open(content) {
     this.modalService.open(content);
   }

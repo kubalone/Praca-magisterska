@@ -136,13 +136,10 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Securi
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Security.Permissions.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Security.Principal.Windows.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Text.Encodings.Web.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.DAL.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Data.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.DAL.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.DAL.dll.config
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Data.pdb
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.xml
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.pdb
@@ -158,3 +155,7 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Newtonsoft.Js
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\SendGrid.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.xml
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Repository.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Repository.pdb
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Repository.dll.config
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\AutoMapper.dll

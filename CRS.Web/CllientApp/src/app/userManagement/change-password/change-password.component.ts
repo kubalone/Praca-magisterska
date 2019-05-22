@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from 'src/app/shared/user/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/shared/model/user';
-import { ChangePasswordService } from 'src/app/shared/change-password.service';
+import { ChangePasswordService } from 'src/app/shared/user/change-password.service';
 import { FormGroup } from '@angular/forms';
 
 import { FormValidatorService } from 'src/app/shared/validator/form-validator.service';
@@ -20,7 +20,7 @@ export class ChangePasswordComponent implements OnInit {
   @Input() public user: User;
   currentUser: User;
   ngOnInit() {
-    console.log(this.user.id)
+  console.log(this.user.id);
 
   }
   showSpinner=false; 

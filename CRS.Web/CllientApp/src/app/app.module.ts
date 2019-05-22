@@ -17,16 +17,16 @@ import { MainComponent } from './layout/main/main.component';
 import { UserManagementComponent } from './userManagement/user-management.component';
 
 import { LoginComponent } from './login/login.component';
-import { LoginService } from './shared/login.service';
-import { RegisterService } from './shared/register.service';
+import { LoginService } from './shared/user/login.service';
+
 import { AuthInterceptor } from './auth/auth.interceptor';
 
 
-import { UserService } from './shared/user.service';
+import { UserService } from './shared/user/user.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from './shared/modal.service';
 
-import { ChangePasswordService } from './shared/change-password.service';
+import { ChangePasswordService } from './shared/user/change-password.service';
 
 import { FormValidatorService } from './shared/validator/form-validator.service';
 
@@ -34,6 +34,14 @@ import { ResetPasswordComponent } from './login/reset-password/reset-password.co
 import { RegistrationComponent } from './userManagement/registration/registration.component';
 import { ChangePasswordComponent } from './userManagement/change-password/change-password.component';
 import { DeleteUserComponent } from './userManagement/delete-user/delete-user.component';
+import { AddJobComponent } from './carRepairShopManagement/add-job/add-job.component';
+import { CustomerComponent } from './carRepairShopManagement/customer/customer.component';
+import { AddCustomerComponent } from './carRepairShopManagement/customer/add-customer/add-customer.component';
+import { AllCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/all-customer/all-customer.component';
+import { PrivateCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/private-customer/private-customer.component';
+import { BusisnessCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/busisness-customer/busisness-customer.component';
+import { RegisterService } from './shared/user/register.service';
+import { CustomerService } from './shared/customer/customer.service';
 
 
 @NgModule({
@@ -48,6 +56,12 @@ import { DeleteUserComponent } from './userManagement/delete-user/delete-user.co
     ChangePasswordComponent,
     DeleteUserComponent,
     ResetPasswordComponent,
+    AddJobComponent,
+    CustomerComponent,
+    AddCustomerComponent,
+    AllCustomerComponent,
+    PrivateCustomerComponent,
+    BusisnessCustomerComponent,
 
 
 
@@ -68,7 +82,7 @@ import { DeleteUserComponent } from './userManagement/delete-user/delete-user.co
     
     
   ],
-  providers: [RegisterService, LoginService, UserService, ModalService, ChangePasswordService, FormValidatorService,{
+  providers: [RegisterService, LoginService, UserService, ModalService, ChangePasswordService, CustomerService, FormValidatorService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

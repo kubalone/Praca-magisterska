@@ -1,8 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp2.2;net472</TargetFrameworks>
+   <!--<TargetFrameworks>netstandard2.0;netcoreapp2.2;net472</TargetFrameworks>-->
+    <TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Customers\**" />
+    <Compile Remove="Employees\**" />
+    <Compile Remove="Orders\**" />
+    <Compile Remove="Vehicles\**" />
+    <EmbeddedResource Remove="Customers\**" />
+    <EmbeddedResource Remove="Employees\**" />
+    <EmbeddedResource Remove="Orders\**" />
+    <EmbeddedResource Remove="Vehicles\**" />
+    <None Remove="Customers\**" />
+    <None Remove="Employees\**" />
+    <None Remove="Orders\**" />
+    <None Remove="Vehicles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.Identity.Stores">

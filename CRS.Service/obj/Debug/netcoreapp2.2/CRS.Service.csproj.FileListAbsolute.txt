@@ -25,12 +25,10 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Se
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Service.deps.json
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Service.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Service.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.DAL.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Data.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Core.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.DAL.pdb
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Data.pdb
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Core.xml
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.IdentityModel.Tokens.pdb
@@ -44,3 +42,5 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Se
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\netcoreapp2.2\CRS.Service.csproj.CopyComplete
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Identity.UI.xml
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Repository.dll
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\netcoreapp2.2\CRS.Repository.pdb

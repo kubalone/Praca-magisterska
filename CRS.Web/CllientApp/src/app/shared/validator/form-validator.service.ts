@@ -73,7 +73,42 @@ export class FormValidatorService {
   passwordMismatch(field: AbstractControl): boolean {
     return field.hasError('passwordMismatch');
   }
+
   
+
+  logValidationErrors(group: FormGroup, formErrors, validationMessages): void {
+    Object.keys(group.controls).forEach((key: string) => {
+      const abstractControl = group.get(key);
+      formErrors[key] = '';
+      // Loop through nested form groups and form controls to check
+      // for validation errors. For the form groups and form controls
+      // that have failed validation, retrieve the corresponding
+      // validation message from validationMessages object and store
+      // it in the formErrors object. The UI binds to the formErrors
+      // object properties to display the validation errors.
+      if (abstractControl && !abstractControl.valid
+        && (abstractControl.touched || abstractControl.dirty)) {
+        const messages =validationMessages[key];
+        for (const errorKey in abstractControl.errors) {
+          if (errorKey) {
+            formErrors[key] += messages[errorKey] + ' ';
+          }
+        }
+      }
+  
+      if (abstractControl instanceof FormGroup) {
+        this.logValidationErrors(abstractControl,formErrors, validationMessages);
+      }
+    });
+  }
+
+  
+
+  
+
+ 
+
+
 }
 
 

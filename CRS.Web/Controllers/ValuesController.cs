@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CRS.DAL.DataContext;
+
 using CRS.Service.UserAuthentication.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,18 +12,18 @@ namespace CRS.Web.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly IUserService _userService;
-        private ApplicationDbContext context;
-        public ValuesController(ApplicationDbContext context, IUserService userService)
-        {
-            _userService = userService;
-            this.context = context;
-        }
+       // private readonly IUserService _userService;
+       //// private ApplicationDbContext context;
+       // public ValuesController(ApplicationDbContext context, IUserService userService)
+       // {
+       //     _userService = userService;
+       //     this.context = context;
+       // }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var reno = _userService.GetUsers();
+          //  var reno = _userService.GetUsers();
           // var value= context.ApplicationUsers.Where(p => p.Id == "1").Select(p => p.UserName).ToString();
             return new string[] { "value1", "value2" };
         }

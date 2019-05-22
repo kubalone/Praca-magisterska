@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AutoMapper/8.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "8.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4733,40 +4759,42 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "CRS.DAL/1.0.0": {
+      "CRS.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4"
+        },
+        "compile": {
+          "bin/placeholder/CRS.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRS.Data.dll": {}
+        }
+      },
+      "CRS.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "CRS.Data": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore": "2.2.4",
           "Microsoft.EntityFrameworkCore.Design": "2.2.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4"
         },
         "compile": {
-          "bin/placeholder/CRS.DAL.dll": {}
+          "bin/placeholder/CRS.Repository.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CRS.DAL.dll": {}
-        }
-      },
-      "CRS.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/CRS.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CRS.Data.dll": {}
+          "bin/placeholder/CRS.Repository.dll": {}
         }
       },
       "CRS.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "CRS.DAL": "1.0.0",
-          "CRS.Data": "1.0.0",
+          "AutoMapper": "8.1.0",
+          "CRS.Repository": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Sendgrid": "9.11.0"
@@ -4781,6 +4809,36 @@
     }
   },
   "libraries": {
+    "AutoMapper/8.1.0": {
+      "sha512": "Go75WXHE7p/8CtRaxZnvVEfcSh7xpE6zx9wkgN4I1BxvlzP0hoiTLHSXDYXgv9CoxaRj4ahwzCA/iwdpvyQyOA==",
+      "type": "package",
+      "path": "automapper/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.8.1.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/6.1.0": {
+      "sha512": "vqbyqXknln1NFn80fbyJVPqJ3LMZhhhq8wMAl4BGTIH6GmK3gtGofuvo8bnWXXuD07y1lnMEuCmiNacvdtxPkw==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.microsoft.dependencyinjection.6.1.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "91JMnE9zdIDphG00qgRvl8ZwKEjqAbNlJdfXUoMiIWPfpYyH7fyCsTSj6/aynRdw/Qr/K70xC7QC6MOJ1vFBJQ==",
       "type": "package",
@@ -13008,15 +13066,15 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "CRS.DAL/1.0.0": {
-      "type": "project",
-      "path": "../CRS.DAL/CRS.DAL.csproj",
-      "msbuildProject": "../CRS.DAL/CRS.DAL.csproj"
-    },
     "CRS.Data/1.0.0": {
       "type": "project",
       "path": "../CRS.Data/CRS.Data.csproj",
       "msbuildProject": "../CRS.Data/CRS.Data.csproj"
+    },
+    "CRS.Repository/1.0.0": {
+      "type": "project",
+      "path": "../CRS.Repository/CRS.Repository.csproj",
+      "msbuildProject": "../CRS.Repository/CRS.Repository.csproj"
     },
     "CRS.Service/1.0.0": {
       "type": "project",
@@ -13026,7 +13084,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "CRS.DAL >= 1.0.0",
+      "AutoMapper >= 8.1.0",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.1.0",
+      "CRS.Repository >= 1.0.0",
       "CRS.Service >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Cors >= 2.2.0",
@@ -13068,8 +13128,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.DAL\\CRS.DAL.csproj": {
-              "projectPath": "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.DAL\\CRS.DAL.csproj"
+            "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Repository\\CRS.Repository.csproj": {
+              "projectPath": "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Repository\\CRS.Repository.csproj"
             },
             "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Service\\CRS.Service.csproj": {
               "projectPath": "C:\\Users\\Reno\\Desktop\\Praca dyplomowa\\CRS.Service\\CRS.Service.csproj"
@@ -13086,6 +13146,14 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[8.1.0, )"
+          },
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[6.1.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
