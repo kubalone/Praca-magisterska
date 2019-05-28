@@ -17,8 +17,10 @@ export class MainComponent implements OnInit {
     this.service.getUserProfile().subscribe(
       res => {
         this.user = res;
+       
       },
       err => {
+        
         console.log(err);
       }
     );

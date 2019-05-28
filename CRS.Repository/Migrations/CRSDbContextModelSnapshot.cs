@@ -117,6 +117,8 @@ namespace CRS.Repository.Migrations
 
                     b.Property<string>("CompanyName");
 
+                    b.Property<DateTime>("DateTimeAddCustomer");
+
                     b.Property<string>("Email");
 
                     b.Property<string>("Name");
@@ -133,7 +135,7 @@ namespace CRS.Repository.Migrations
 
                     b.Property<string>("Surname");
 
-                    b.Property<int?>("TypeOfCustomerID");
+                    b.Property<int>("TypeOfCustomerID");
 
                     b.Property<string>("ZipCode");
 
@@ -290,7 +292,8 @@ namespace CRS.Repository.Migrations
                 {
                     b.HasOne("CRS.Data.Entities.TypeOfCustomer", "TypeOfCustomer")
                         .WithMany("Customers")
-                        .HasForeignKey("TypeOfCustomerID");
+                        .HasForeignKey("TypeOfCustomerID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CRS.Data.Entities.Order", b =>

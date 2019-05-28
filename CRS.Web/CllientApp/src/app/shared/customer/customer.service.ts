@@ -13,9 +13,7 @@ export class CustomerService {
   privateListOfCum = new BehaviorSubject<Array<Customer>>([]);
   
   constructor(private fb: FormBuilder, private httpClient: HttpClient) {
-    this.privateListOfCum.next([
-      {name: "Reno", surname:"Rino", province:"Bielsko"}
-    ]);
+   
    }
   
   readonly URL = 'https://localhost:44359/api/Customer';
@@ -31,8 +29,8 @@ export class CustomerService {
   formModel = this.fb.group({
     typeOfCustomerID: ['', Validators.required],
     companyName: [''],
-    name: ['', Validators.pattern(this.letterAndSpaces)],
-    surname: ['', Validators.pattern(this.letterAndSpaces)],
+    name: ['', [Validators.pattern(this.letterAndSpaces), Validators.required]],
+    surname: ['', [Validators.pattern(this.letterAndSpaces), Validators.required]],
     adress: this.fb.group({
       province: ['', Validators.pattern(this.letterAndSpaces)],
       city: ['', Validators.pattern(this.letterSpacesAndSpecificCharacters)],
@@ -56,42 +54,31 @@ export class CustomerService {
     return throwError('Service problem');
   }
 
-  addCustomer() {
-    var customer: Customer = {
-      typeOfCustomerID: this.formModel.value.typeOfCustomerID,
-      companyName: this.formModel.value.companyName,
-      name: this.formModel.value.name,
-      surname: this.formModel.value.surname,
-      province: this.formModel.value.adress.province,
-      city: this.formModel.value.adress.city,
-      zipCode: this.formModel.value.adress.zipCode,
-      street: this.formModel.value.adress.street,
-      numberOfBuilding: this.formModel.value.adress.numberOfBuilding,
-      numberOfApartment: this.formModel.value.adress.numberOfApartment,
-      email: this.formModel.value.contact.email,
-      phone: this.formModel.value.contact.phone
-    };
-    const list =this.privateListOfCum.getValue();
-    list.push(customer)
-    this.privateListOfCum.next(list);
-    //return this.httpClient.post(this.URL + "/AddCustomer", customer).pipe(catchError(this.handleError));
+  addCustomer(customer: Customer) {
+   return this.httpClient.post(this.URL + "/AddCustomer", customer);
   }
-  //do usunięcia
-  getList():Observable<Array<Customer>>{
-    return this.privateListOfCum.asObservable();
-  }
+
   //daje typy klientów
   getTypesOfCustomer() {
     return this.httpClient.get<TypeOfCustomer>(this.URL + '/GetTypes').pipe(catchError(this.handleError));
   }
+  //zwróc listę klientów
+  getCustomers() {
+    return this.httpClient.get<Customer>(this.URL + '/GetAllCustomers').pipe((catchError(this.handleError)));
+  }
+  //zwroc liste konkretnych klientów
+  getConcreteCustomers(id:number) {
+    return this.httpClient.get<Customer>(`${this.URL}/${'GetConcreteCustomers/'}${id}`);
+  }
 
   
   checkRequiredInstitutionName(id: number) {
-   
+    console.log(id);
     const companyNameControl = this.formModel.get('companyName');
     if(id == 2) {
       companyNameControl.setValidators(Validators.required);
       this.check=true;
+      console.log('required');
      
     } else {
       companyNameControl.clearValidators();
@@ -119,12 +106,15 @@ export class CustomerService {
       'required': 'Typ klienta jest wymagany.',
     },
     'companyName': {
+      'required:': 'Nazwa przedsiębiorstwa jest wymagana.'
     },
     'name': {
       'pattern': 'Nieprawidłowa sekwencja znaków. Sprawdź pisownię.',
+      'required': 'Imię jest wymagane.'
     },
     'surname': {
       'pattern': 'Nieprawidłowa sekwencja znaków. Sprawdź pisownię.',
+      'required': 'Nazwisko jest wymagane.'
     },
     'province': {
       'pattern': 'Nieprawidłowa sekwencja znaków. Sprawdź pisownię.',
@@ -145,7 +135,7 @@ export class CustomerService {
       'pattern': 'Nieprawidłowa sekwencja znaków. Sprawdź pisownię.',
     },
     'email': {
-      'email': 'Proficiency is required.',
+      'email': 'Nieprawidłowa sekwencja znaków. Sprawdź pisownię',
     },
     'phone': {
       'pattern': 'Nieprawidłowa sekwencja znaków. Sprawdź pisownię.',
@@ -153,3 +143,19 @@ export class CustomerService {
     },
   };
 }
+
+
+//var customer= {
+  //typeOfCustomerID: this.formModel.value.typeOfCustomerID,
+  ///companyName: this.formModel.value.companyName,
+  //name: this.formModel.value.name,
+  //surname: this.formModel.value.surname,
+  //province: this.formModel.value.adress.province,
+  //city: this.formModel.value.adress.city,
+  //zipCode: this.formModel.value.adress.zipCode,
+  //street: this.formModel.value.adress.street,
+  //numberOfBuilding: this.formModel.value.adress.numberOfBuilding,
+  //numberOfApartment: this.formModel.value.adress.numberOfApartment,
+  //email: this.formModel.value.contact.email,
+  //phone: this.formModel.value.contact.phone
+//};

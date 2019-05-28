@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center" *ngIf="showLoading">
+    <div class="spinner-border text-primary spinner-border-table" role="status">
+    </div>
+  </div>
+  
+  <table class="table table-striped table-bordered" datatable [dtOptions]="dtOptions" *ngIf="showTable" id="client-table">
+    <caption>{{header}}</caption>
+    <thead>
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+  
+        <th *ngIf="showTypeOfCustomer">Typ klienta</th>
+        <th *ngIf="showInstitutionName">Nazwa instytucji</th>
+  
+        <th>Email</th>
+        <th>Telefon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of customers;" class="customer-details" (click)="viewCustomer(item.id)">
+        <td >{{item.name}}</td>
+        <td>{{item.surname}}</td>
+  
+        <td *ngIf="showTypeOfCustomer">{{getTypeOfClient(item.typeOfCustomerID)}}</td>
+        <td *ngIf="showInstitutionName">{{checkIsNull(item.companyName)}}</td>
+  
+        <td>{{checkIsNull(item.email)}}</td>
+        <td>{{checkIsNull(item.phone)}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

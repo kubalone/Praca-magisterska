@@ -24,13 +24,14 @@ namespace CRS.Service.Services
 
     public class UserService : Repository<ApplicationUser>, IUserService
     {
-        //rivate readonly CRSDbContext _context;
+      
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
         private readonly JWTSettings _jwtSettings;
         private readonly IMapper _mapper;
         private readonly IEmailSender _emailSender;
-        public UserService(CRSDbContext repositoryContext, IMapper mapper, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IOptions<JWTSettings> jwtSettings, IEmailSender emailSender) : base(repositoryContext)
+        public UserService(CRSDbContext repositoryContext, IMapper mapper, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IOptions<JWTSettings> jwtSettings, IEmailSender emailSender) 
+            : base(repositoryContext)
         {
             _mapper = mapper;
             _jwtSettings = jwtSettings.Value;
@@ -72,7 +73,7 @@ namespace CRS.Service.Services
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
-                return new ObjectResult(token);
+                return new ObjectResult(new { token });
             }
             else
                 throw new BadRequestException();
@@ -85,13 +86,13 @@ namespace CRS.Service.Services
             {
                 UserName = userDataToRegister.UserName,
             };
-            var result = await _userManager.CreateAsync(aplicationUser, userDataToRegister.Password);
+            var result=await _userManager.CreateAsync(aplicationUser, userDataToRegister.Password);
             await _userManager.AddToRoleAsync(aplicationUser, "Pracownik");
             return new ObjectResult(result);
 
         }
 
-        public async Task<ObjectResult> Delete(string id)
+        public async Task Delete(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
@@ -99,12 +100,12 @@ namespace CRS.Service.Services
                 throw new NotFoundException("user to delete");
             }
 
-            var result = await _userManager.DeleteAsync(user);
-            return new ObjectResult(result);
+           await _userManager.DeleteAsync(user);
+           
 
         }
 
-        public async Task<ObjectResult> ChangePassword(AuthenticationDto userToUpdate)
+        public async Task ChangePassword(AuthenticationDto userToUpdate)
         {
             var user = await _userManager.FindByNameAsync(userToUpdate.UserName);
             if (user==null)
@@ -113,8 +114,8 @@ namespace CRS.Service.Services
             }
             var newPassword = _userManager.PasswordHasher.HashPassword(user, userToUpdate.Password);
             user.PasswordHash = newPassword;
-            var result = await _userManager.UpdateAsync(user);
-            return new ObjectResult(result);
+             await _userManager.UpdateAsync(user);
+           
         }
       
 

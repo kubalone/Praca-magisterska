@@ -18,51 +18,47 @@ declare var $: any;
 export class ChangePasswordComponent implements OnInit {
   constructor(private service: ChangePasswordService, private modalService: NgbModal, private communicate: ToastrService, private com: UserManagementComponent, private validator: FormValidatorService, private userService: UserService) { }
   @Input() public user: User;
-  currentUser: User;
+  currentUser;
+  userName: string;
   ngOnInit() {
-  console.log(this.user.id);
+  
 
   }
-  showSpinner=false; 
+  showSpinner = false;
   onSubmit() {
-    this.showSpinner=true;
+    this.showSpinner = true;
     const userToUpdate = {
       userName: this.user.userName,
       password: this.service.formModel.value.Passwords.Password
-    
-    }
-    this.service.changePassword(userToUpdate).subscribe((res:any) => {
-      if (res.succeeded) {
-        this.close();
-        this.com.getUsers();
-        this.communicate.success('Hasło użytkownika zostało zmienione', 'Operacja przebiegła pomyślnie');
-        this.userService.getUserProfile().subscribe(
-          res => {
-            this.currentUser = res;
-            if(this.currentUser.userName === userToUpdate.userName) {
-              this.userService.onLogout();
-            }
-            
-          },
-          err => {
-            console.log(err);
-          }
-        );
-      
-      }
-      else {
-        this.communicate.error("Błąd podczas operacji", "Nie można zmienić hasła")
-      }
 
+    }
+    this.service.changePassword(userToUpdate).subscribe((res: any) => {
+
+      this.close();
+      this.com.getUsers();
+      this.communicate.success('Hasło użytkownika zostało zmienione', 'Operacja przebiegła pomyślnie');
+      this.userService.getUserProfile().subscribe(
+        (res:any) => {
+          this.currentUser = res;
+          if (this.currentUser.userName === userToUpdate.userName) {
+            this.userService.onLogout();
+          }
+
+        },
+        err => {
+          console.log(err);
+        }
+      );
     },
-    err => {
-      console.log(err);
-    });
-   
+      err => {
+        this.communicate.error("Błąd podczas operacji", "Nie można zmienić hasła")
+        console.log(err);
+      });
+
 
   }
- 
- 
+
+
   close() {
     this.modalService.dismissAll();
     this.service.formModel.reset();

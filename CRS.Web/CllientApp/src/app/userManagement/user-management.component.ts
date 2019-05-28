@@ -17,7 +17,7 @@ export class UserManagementComponent implements OnInit {
 
   dataTable: any;
 
-  users$: User[] = [];
+  users: User[];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
   showLoading: boolean = true;
@@ -59,7 +59,7 @@ export class UserManagementComponent implements OnInit {
   getUsers() {
 
     this.service.getUsers().subscribe(res => {
-      this.users$ = res;
+      this.users = res;
       this.showLoading= false;
       this.showTable = true;
       } );

@@ -42,6 +42,9 @@ import { PrivateCustomerComponent } from './carRepairShopManagement/customer/typ
 import { BusisnessCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/busisness-customer/busisness-customer.component';
 import { RegisterService } from './shared/user/register.service';
 import { CustomerService } from './shared/customer/customer.service';
+import { TypeOfCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/type-of-customer.component';
+import { TypeOfCustomerTemplateComponent } from './carRepairShopManagement/customer/type-of-customer/type-of-customer-template/type-of-customer-template.component';
+import { CustomerDetailsComponent } from './carRepairShopManagement/customer/customer-details/customer-details.component';
 
 
 @NgModule({
@@ -62,6 +65,9 @@ import { CustomerService } from './shared/customer/customer.service';
     AllCustomerComponent,
     PrivateCustomerComponent,
     BusisnessCustomerComponent,
+    TypeOfCustomerComponent,
+    TypeOfCustomerTemplateComponent,
+    CustomerDetailsComponent,
 
 
 

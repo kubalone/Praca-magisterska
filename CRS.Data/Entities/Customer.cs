@@ -8,7 +8,8 @@ namespace CRS.Data.Entities
     {
        
         //typ użytkownika
-        public int? TypeOfCustomerID { get; set; }
+        public int TypeOfCustomerID { get; set; }
+        public DateTime DateTimeAddCustomer { get; set; }
         public string CompanyName { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

@@ -17,16 +17,16 @@ namespace CRS.Web.Controllers.User
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-    
-        public UserController(IUserService userService)
+        private UserManager<ApplicationUser> _userManager;
+        public UserController(IUserService userService, UserManager<ApplicationUser> userManager)
         {
             _userService = userService;
-     
+            _userManager = userManager;
+
         }
 
 
         [HttpGet]
-
         [Route("GetUsers")]
         //POST : /api/User/GetUsers
         public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
@@ -38,34 +38,35 @@ namespace CRS.Web.Controllers.User
         [HttpPost]
         [Route("Login")]
         //POST : /api/User/Login
-        public async Task<IActionResult> Login(AuthenticationDto userDataToLogin)
+        public async Task<ActionResult> Login(AuthenticationDto userDataToLogin)
         {
 
-            return Ok(await _userService.Login(userDataToLogin));
+            return await _userService.Login(userDataToLogin);
         }
 
         [HttpPost]
         [Route("Register")]
         //[Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Register(AuthenticationDto userDataToRegister)
+        public async Task<ActionResult> Register(AuthenticationDto userDataToRegister)
         {
 
-            return Ok(await _userService.Register(userDataToRegister));
+            return await _userService.Register(userDataToRegister);
         }
         [HttpDelete]
         [Route("DeleteUser/{id}")]
         //POST: /api/ApplicationUser/DeleteUser
         public async Task<IActionResult> Delete(string id)
         {
-
-            return Ok(await _userService.Delete(id));
+            await _userService.Delete(id);
+            return Ok();
         }
         [HttpPut]
         [Authorize(Roles = "Admin")]
         [Route("ChangePassword")]
         public async Task<IActionResult> ChangePassword(AuthenticationDto userToUpdate)
         {
-            return Ok(await _userService.ChangePassword(userToUpdate));
+            await _userService.ChangePassword(userToUpdate);
+            return Ok();
         }
         [HttpGet]
         [AllowAnonymous]
@@ -81,14 +82,13 @@ namespace CRS.Web.Controllers.User
         [Authorize]
         [Route("GetUser")]
         //GET : /api/User/GetUser
-        public async Task<ActionResult<object>> GetUserProfile()
+        public async Task<ActionResult> GetUserProfile()
         {
             string userId = User.Claims.First(c => c.Type == "UserID").Value;
             var userName = await _userService.FindUserNameById(userId);
-            return new
-            {
-                userName
-            };
+            return new ObjectResult (new { userName });
+
+
         }
         [HttpGet("[action]")]
         [AllowAnonymous]

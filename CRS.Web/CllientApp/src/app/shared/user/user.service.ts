@@ -11,17 +11,18 @@ import { Router } from '@angular/router';
 export class UserService {
 
   constructor(private httpClient: HttpClient, private router: Router) { }
-  readonly URL = 'https://localhost:44359/api/ApplicationUser';
-  getUserProfile(): Observable<User> {
-    return this.httpClient.get<User>(this.URL + '/GetUser');
+  readonly URL = 'https://localhost:44359/api/User';
+  getUserProfile() {
+    return this.httpClient.get(this.URL + '/GetUser');
   }
   getUserRole(): string {
+
     if (localStorage.getItem('token') != null) {
-    const roleLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-    return roleLoad.role;
+      const roleLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+      return roleLoad.role;
     }
   }
-  rolesMatch(roles): boolean  {
+  rolesMatch(roles): boolean {
     let isMatch = false;
 
     const userRole = this.getUserRole();
@@ -34,14 +35,13 @@ export class UserService {
     });
     return isMatch;
   }
-  getUsers(): Observable<User[]>{
+  getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.URL + '/GetUsers');
   }
-  deleteUser(id: string )
-  {
-   
-        return this.httpClient.delete(`${this.URL}/${'DeleteUser/'}${id}`);
- 
+  deleteUser(id: string) {
+
+    return this.httpClient.delete(`${this.URL}/${'DeleteUser/'}${id}`);
+
   }
   onLogout() {
     localStorage.removeItem('token');

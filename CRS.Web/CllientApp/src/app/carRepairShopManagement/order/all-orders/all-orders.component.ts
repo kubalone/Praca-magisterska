@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-all-orders',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllOrdersComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  
+
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit(): void {
+    
   }
 
 }

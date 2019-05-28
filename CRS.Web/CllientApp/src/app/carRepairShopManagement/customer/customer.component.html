@@ -3,54 +3,9 @@
     <button type="button" class="btn btn-outline-success" (click)="openAddCustomerModal(newCustomer)">Dodaj
       klienta</button>
   </div>
-
-  <ul class="button-navigation">
-    <li>
-        <a routerLink="/klienci/wszyscy-klienci" routerLinkActive="active" class="button">Wszyscy</a>
-    </li>
-    <li>
-        <a routerLink="/klienci/osoby-prywatne" routerLinkActive="active" class="button">Klienci prywatni</a>
-    </li>
-    <li>
-      <a routerLink="/klienci/klienci-firmowi" routerLinkActive="active" class="button">Klienci Firmowi</a>
-    </li>
-  </ul>
-  <router-outlet></router-outlet>
 </div>
-<div >
- 
-  <table class="table col-md-5">
- 
-  <thead>
-    <tr>
-      <th >imie</th>
-      <th >nazwisko</th>
-      <th >Województwo</th>
-      <th>btn</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item1 of customer">
-      <td>{{item1.name}}</td>
-      <td>{{item1.surname}}</td>
-      <td>{{item1.province}}</td>
-      <td><button class="btn btn-primary" (click)="openEditCustomerModal(item)">EDIT</button>
-      </td>
-      <ng-template #item let-modal>
-          <app-add-customer [customerToUpdate]="item1"></app-add-customer>
-        </ng-template>
-     
-    </tr>
-
-  </tbody>
-</table>
-
-
-
-
-
-<ng-template #newCustomer let-modal>
-  <app-add-customer></app-add-customer>
-</ng-template>
-
-
+<div>
+  <router-outlet></router-outlet>
+  <ng-template #newCustomer let-modal>
+    <app-add-customer></app-add-customer>
+  </ng-template>

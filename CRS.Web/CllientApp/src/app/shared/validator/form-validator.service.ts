@@ -75,7 +75,6 @@ export class FormValidatorService {
   }
 
   
-
   logValidationErrors(group: FormGroup, formErrors, validationMessages): void {
     Object.keys(group.controls).forEach((key: string) => {
       const abstractControl = group.get(key);
@@ -88,7 +87,7 @@ export class FormValidatorService {
       // object properties to display the validation errors.
       if (abstractControl && !abstractControl.valid
         && (abstractControl.touched || abstractControl.dirty)) {
-        const messages =validationMessages[key];
+        const messages = validationMessages[key];
         for (const errorKey in abstractControl.errors) {
           if (errorKey) {
             formErrors[key] += messages[errorKey] + ' ';
@@ -101,14 +100,6 @@ export class FormValidatorService {
       }
     });
   }
-
-  
-
-  
-
- 
-
-
 }
 
 

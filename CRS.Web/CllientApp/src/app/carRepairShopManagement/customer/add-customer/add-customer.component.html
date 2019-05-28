@@ -10,9 +10,9 @@
 <div class="modal-body">
   <form [formGroup]="service.formModel" (submit)="onSubmit()">
     <div class="form-group row">
-      <label for="typeOfClient" class="col-sm-3 col-form-label">Typ klienta</label>
+      <label for="typeOfClient" class="col-sm-3 col-form-label">Typ klienta <span class="required-field">*</span></label>
       <div class="col-sm-9">
-        <select class="form-control" id="typeOfClient" data-toggle="collapse" formControlName="typeOfCustomerID" (change)="service.checkRequiredInstitutionName($event.target.value)">
+        <select class="form-control" id="typeOfClient" data-toggle="collapse" formControlName="typeOfCustomerID" (change)="service.checkRequiredInstitutionName($event.target.value)" (blur)="validatorMessage()">
           <option value="" selected disabled hidden>Wybierz typ klienta</option>
           <option *ngFor="let type of typesOfCustomer" [value]="type.id">
             {{type.typeName}}
@@ -26,9 +26,9 @@
     </div>
 
     <div class="form-group row" id="collapseInstitutionName" style="display:none">
-      <label for="institution" class="col-sm-3 col-form-label">Nazwa instytucji</label>
+      <label for="institution" class="col-sm-3 col-form-label">Nazwa instytucji <span class="required-field">*</span></label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" id="institution" formControlName="companyName" [ngClass]="{'invalid':service.check && !service.formModel.get('companyName').dirty}">
+        <input type="text" class="form-control" id="institution" formControlName="companyName" [ngClass]="{'invalid':service.check && !service.formModel.get('companyName').dirty}" (blur)="validatorMessage()">
         <span class="text-danger"  *ngIf="service.check && !service.formModel.get('companyName').dirty">
           Nazwa instytucji jest wymagana
         </span>      
@@ -36,9 +36,9 @@
     </div>
 
     <div class="form-group row">
-      <label for="name" class="col-sm-3 col-form-label">Imię</label>
+      <label for="name" class="col-sm-3 col-form-label">Imię <span class="required-field">*</span></label>
       <div class="col-sm-9">
-        <input type="text " class="form-control" id="name" formControlName="name">
+        <input type="text " class="form-control" id="name" formControlName="name"  (blur)="validatorMessage()">
         <span class="text-danger" *ngIf="service.formErrors.name">
           {{service.formErrors.name}}
         </span>
@@ -46,9 +46,9 @@
     </div>
 
     <div class="form-group row">
-      <label for="surname" class="col-sm-3 col-form-label">Nazwisko</label>
+      <label for="surname" class="col-sm-3 col-form-label">Nazwisko <span class="required-field">*</span></label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" id="surname" formControlName="surname">
+        <input type="text" class="form-control" id="surname" formControlName="surname" (blur)="validatorMessage()">
         <span class="text-danger" *ngIf="service.formErrors.surname">
           {{service.formErrors.surname}}
         </span>
@@ -60,7 +60,7 @@
       <div class="form-group row">
         <label for="province" class="col-sm-3 col-form-label">Województwo</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="province" formControlName="province">
+          <input type="text" class="form-control" id="province" formControlName="province" (blur)="validatorMessage()">
           <span class="text-danger" *ngIf="service.formErrors.province">
             {{service.formErrors.province}}
           </span>
@@ -70,7 +70,7 @@
       <div class="form-group row">
         <label for="city" class="col-sm-3 col-form-label">Miasto</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="city" formControlName="city">
+          <input type="text" class="form-control" id="city" formControlName="city" (blur)="validatorMessage()">
           <span class="text-danger" *ngIf="service.formErrors.city">
             {{service.formErrors.city}}
           </span>
@@ -80,7 +80,7 @@
       <div class="form-group row">
         <label for="zip-code" class="col-sm-3 col-form-label">Kod pocztowy</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="zip-code" formControlName="zipCode">
+          <input type="text" class="form-control" id="zip-code" formControlName="zipCode" (blur)="validatorMessage()">
           <span class="text-danger" *ngIf="service.formErrors.zipCode">
             {{service.formErrors.zipCode}}
           </span>
@@ -90,7 +90,7 @@
       <div class="form-group row">
         <label for="street" class="col-sm-3 col-form-label">Ulica</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="street" formControlName="street">
+          <input type="text" class="form-control" id="street" formControlName="street" (blur)="validatorMessage()">
           <span class="text-danger" *ngIf="service.formErrors.street">
             {{service.formErrors.street}}
           </span>
@@ -100,14 +100,14 @@
       <div class="form-group row">
         <label for="number-of-building" class="col-sm-3 col-form-label">Nr budynku</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="number-of-building" formControlName="numberOfBuilding">
+          <input type="text" class="form-control" id="number-of-building" formControlName="numberOfBuilding" (blur)="validatorMessage()">
           <span class="text-danger" *ngIf="service.formErrors.numberOfBuilding">
             {{service.formErrors.numberOfBuilding}}
           </span>
         </div>
         <label for="number-of-apartment" class="col-sm-1 col-form-label">/</label>
         <div class="col-sm-3">
-          <input type="text" class="form-control" id="number-of-apartment" formControlName="numberOfApartment">
+          <input type="text" class="form-control" id="number-of-apartment" formControlName="numberOfApartment" (blur)="validatorMessage()">
           <span class="text-danger" *ngIf="service.formErrors.numberOfApartment">
             {{service.formErrors.numberOfApartment}}
           </span>
@@ -119,18 +119,18 @@
       <div class="form-group row">
         <label for="email" class="col-sm-3 col-form-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" id="email" formControlName="email">
-          <span class="help-block" *ngIf="service.formErrors.email">
+          <input type="email" class="form-control" id="email" formControlName="email" (blur)="validatorMessage()">
+          <span class="text-danger" *ngIf="service.formErrors.email">
             {{service.formErrors.email}}
           </span>
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="phoneNumber" class="col-sm-3 col-form-label">Telefon</label>
+        <label for="phoneNumber" class="col-sm-3 col-form-label">Telefon <span class="required-field">*</span></label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="phoneNumber" formControlName="phone">
-          <span class="help-block" *ngIf="service.formErrors.phone">
+          <input type="text" class="form-control" id="phoneNumber" formControlName="phone" (blur)="validatorMessage()">
+          <span class="text-danger" *ngIf="service.formErrors.phone">
             {{service.formErrors.phone}}
           </span>
         </div>
@@ -140,7 +140,7 @@
 
     <div class="modal-footer button-modal-footer justify-content-center">
       <button type="button" class="p-2 btn btn-outline-dark" style="width:20%" (click)="close()">Anuluj</button>
-      <button type="button" class="p-2 btn btn-outline-success" style="width:20%" [disabled]="!service.formModel.valid"
+      <button type="button" class="p-2 btn btn-outline-success" style="width:22%" [disabled]="!service.formModel.valid"
         type="submit">
         <span class="spinner-border spinner-border-button" role="status" aria-hidden="true" *ngIf="showSpinner"></span>
         Dodaj

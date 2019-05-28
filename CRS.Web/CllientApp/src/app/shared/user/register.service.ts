@@ -9,7 +9,7 @@ import { FormValidatorService } from '../validator/form-validator.service';
 })
 export class RegisterService {
   constructor(private formbuilder: FormBuilder, private httpClient: HttpClient, private validator: FormValidatorService ) { }
-  readonly URL = 'https://localhost:44359/api/ApplicationUser';
+  readonly URL = 'https://localhost:44359/api/User';
   formModel = this.formbuilder.group({
     UserName: ['', [Validators.required, Validators.minLength(3)]],
     Passwords: this.formbuilder.group({

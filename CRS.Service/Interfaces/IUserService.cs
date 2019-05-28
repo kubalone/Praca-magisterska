@@ -15,8 +15,8 @@ namespace CRS.Service.Interfaces
         Task<IEnumerable<UserDto>> GetUsers();
         Task<ObjectResult> Login(AuthenticationDto userDataToLogin);
         Task<ObjectResult> Register(AuthenticationDto userDataToRegister);
-        Task<ObjectResult> Delete(string id);
-        Task<ObjectResult> ChangePassword(AuthenticationDto userToUpdate);
+        Task Delete(string id);
+        Task ChangePassword(AuthenticationDto userToUpdate);
         Task<ResetPasswordDto> GetPasswordResetTokenForUser();
         Task<ObjectResult> SendEmail(string email, string callbackUrl);
         Task ResetPasswordComfirmation(string id, string code, string password);

@@ -181,3 +181,19 @@ caption{
   margin-left: 0;
   margin-right: 0;
 }
+.required-field{
+  color:red;
+}
+.spinner-border{
+margin-top: 5rem;
+}
+#client-table th{
+  font-size: 1rem;
+}
+#client-table td{
+  font-size: 0.95rem;
+}
+#client-table tbody tr :hover{
+  cursor: pointer;
+  color:rgb(33, 150, 243);
+}

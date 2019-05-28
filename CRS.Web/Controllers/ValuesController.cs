@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using CRS.Service.UserAuthentication.Interfaces;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRS.Web.Controllers

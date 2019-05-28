@@ -18,23 +18,18 @@ export class DeleteUserComponent implements OnInit {
   ngOnInit() {
     this.userName = this.userToDelete.userName.toLocaleUpperCase();
   }
-  showSpinner=false;
+  showSpinner = false;
   deleteUserConfirmation(id: string) {
     this.showSpinner = true;
-    this.service.deleteUser(id).subscribe((res:any) => {
-      if (res.succeeded) {
-        this.close();
-        this.com.getUsers();
-        this.communicate.success('Użytkownik został usunięty', 'Operacja przebiegła pomyślnie');
-      }
-      else {
-        this.communicate.error("Błąd podczas usuwania użytkownika", "Nie można usunąć użytkownika")
-      }
-
+    this.service.deleteUser(id).subscribe((res: any) => {
+      this.close();
+      this.com.getUsers();
+      this.communicate.success('Użytkownik został usunięty', 'Operacja przebiegła pomyślnie');
     },
-    err => {
-      console.log(err);
-    });
+      err => {
+        this.communicate.error("Błąd podczas usuwania użytkownika", "Nie można usunąć użytkownika")
+        console.log(err);
+      });
   }
   close() {
     this.modalService.dismissAll();
