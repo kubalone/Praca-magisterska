@@ -1,3 +1,61 @@
-<p>
-  customer-details works!
-</p>
+<div class="container">
+<div class="info-details col-md-12 row">
+  <div class="col-md-3">
+    <div class="row">
+      <span class="name-head">
+        <h5><i class="fas fa-user"></i> {{customer?.name}} {{customer?.surname}}
+          <i class="far fa-edit" ngbTooltip="Edytuj klienta" (click)="openEditModal(editCustomer)"></i></h5>
+      </span>
+    </div>
+    <div class="row">
+      <h6><span class="badge badge-secondary">{{getTypeOfClient(customer?.typeOfCustomerID)}}</span></h6>
+    </div>
+    <div class="row">
+      <label>Nazwa przedsiębiorstwa:</label> {{customer?.companyName}}
+    </div>
+    <div class="row">
+      <label>Dołączył:</label> {{customer?.dateTimeAddCustomer | date }}
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="row">
+      <span class="name-head">
+        <h5><i class="fas fa-map-marker-alt"></i> Dane adresowe:</h5>
+      </span>
+    </div>
+    <div class="row">
+      <label>Województwo:</label>{{checkIsNull(customer?.province)}}
+    </div>
+    <div class="row">
+      <label>Miasto:</label>{{checkIsNull(customer?.city)}}
+      <div *ngIf="customer?.city">
+        {{customer?.zipCode}}
+      </div>
+    </div>
+    <div class="row">
+      <label>Ulica:</label>{{checkIsNull(customer?.street)}}
+      <div *ngIf="customer?.street">
+        {{customer?.numberOfBuilding}} / {{customer?.numberOfApartment}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="row">
+      <span class="name-head">
+        <h5><i class="far fa-address-book"></i> Dane kontaktowe:</h5>
+      </span>
+    </div>
+    <div class="row">
+      <label>Telefon:</label> {{checkIsNull(customer?.phone)}}
+    </div>
+    <div class="row">
+      <label>Email:</label>{{checkIsNull(customer?.email)}}
+    </div>
+  </div>
+</div>
+</div>
+<ng-template #editCustomer let-modal>
+    <app-add-customer [customer]="customer"></app-add-customer>
+</ng-template>

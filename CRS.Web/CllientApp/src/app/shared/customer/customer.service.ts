@@ -68,10 +68,17 @@ export class CustomerService {
   }
   //zwroc liste konkretnych klientów
   getConcreteCustomers(id:number) {
-    return this.httpClient.get<Customer>(`${this.URL}/${'GetConcreteCustomers/'}${id}`);
+    return this.httpClient.get<Customer>(`${this.URL}/${'GetConcreteCustomers/'}${id}`).pipe((catchError(this.handleError)));
+  }
+  //Klinet po Id
+  getCustomer(id:number) {
+    return this.httpClient.get<Customer>(`${this.URL}/${'GetCustomer/'}${id}`).pipe((catchError(this.handleError)));
+  }
+  //updateCustomer
+  updateCustomer(customer: Customer) {
+    return this.httpClient.put<Customer>(`${this.URL}/${'PutCustomer/'}${customer.id}`, customer);
   }
 
-  
   checkRequiredInstitutionName(id: number) {
     console.log(id);
     const companyNameControl = this.formModel.get('companyName');

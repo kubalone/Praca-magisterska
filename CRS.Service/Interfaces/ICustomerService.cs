@@ -13,5 +13,7 @@ namespace CRS.Service.Interfaces
         Task AddCustomer(CustomerDto customerDto);
         Task<IEnumerable<CustomerDto>> GetCustomers();
         Task<IEnumerable<CustomerDto>> GetConcreteTypeOfCustomers(int id);
+        Task<CustomerDto> GetCustomerById(int id);
+        Task UpdateCustomer(int id, CustomerDto customerToUpdate);
     }
 }

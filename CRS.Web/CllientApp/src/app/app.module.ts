@@ -45,6 +45,10 @@ import { CustomerService } from './shared/customer/customer.service';
 import { TypeOfCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/type-of-customer.component';
 import { TypeOfCustomerTemplateComponent } from './carRepairShopManagement/customer/type-of-customer/type-of-customer-template/type-of-customer-template.component';
 import { CustomerDetailsComponent } from './carRepairShopManagement/customer/customer-details/customer-details.component';
+import { VehicleComponent } from './carRepairShopManagement/vehicle/vehicle.component';
+import { AddVehicleComponent } from './carRepairShopManagement/vehicle/add-vehicle/add-vehicle.component';
+import { VehicleDetailsComponent } from './carRepairShopManagement/vehicle/vehicle-details/vehicle-details.component';
+import { VehicleService } from './shared/vehicle/vehicle.service';
 
 
 @NgModule({
@@ -68,6 +72,9 @@ import { CustomerDetailsComponent } from './carRepairShopManagement/customer/cus
     TypeOfCustomerComponent,
     TypeOfCustomerTemplateComponent,
     CustomerDetailsComponent,
+    VehicleComponent,
+    AddVehicleComponent,
+    VehicleDetailsComponent,
 
 
 
@@ -88,7 +95,7 @@ import { CustomerDetailsComponent } from './carRepairShopManagement/customer/cus
     
     
   ],
-  providers: [RegisterService, LoginService, UserService, ModalService, ChangePasswordService, CustomerService, FormValidatorService,{
+  providers: [RegisterService, LoginService, UserService, ModalService, ChangePasswordService, VehicleService, CustomerService, FormValidatorService,{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

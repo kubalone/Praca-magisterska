@@ -107,6 +107,19 @@ namespace CRS.Repository.Migrations
                     b.ToTable("AspNetUserRoles");
                 });
 
+            modelBuilder.Entity("CRS.Data.Entities.Brand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brand");
+                });
+
             modelBuilder.Entity("CRS.Data.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
@@ -200,6 +213,23 @@ namespace CRS.Repository.Migrations
                     b.HasIndex("CustomerID");
 
                     b.ToTable("Vehicle");
+                });
+
+            modelBuilder.Entity("CRS.Data.Entities.VehicleModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BrandId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.ToTable("VehicleModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -321,6 +351,14 @@ namespace CRS.Repository.Migrations
                     b.HasOne("CRS.Data.Entities.Customer", "Customer")
                         .WithMany("Vehicles")
                         .HasForeignKey("CustomerID");
+                });
+
+            modelBuilder.Entity("CRS.Data.Entities.VehicleModel", b =>
+                {
+                    b.HasOne("CRS.Data.Entities.Brand", "Brand")
+                        .WithMany("VehicleModels")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -25,7 +25,7 @@ namespace CRS.Repository
             return _context.Set<T>().AsNoTracking();
         }
 
-        public async Task<T>  GetAsync(long id)
+        public async Task<T>  GetAsync(int id)
         {
             return await entities.FindAsync(id);
         }

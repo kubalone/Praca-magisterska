@@ -10,7 +10,7 @@ namespace CRS.Repository
     public interface IRepository<T> where T : class
     {
         IQueryable<T> GetAll();
-        Task<T> GetAsync(long id);
+        Task<T> GetAsync(int id);
         Task InsertAsync(T entity);
         void Update(T entity);
         void Delete(T entity);

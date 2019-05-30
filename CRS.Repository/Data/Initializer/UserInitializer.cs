@@ -2,21 +2,20 @@
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRS.Repository.Data
+namespace CRS.Repository.Data.Initializer
 {
-    public class Initializer
+    public class UserInitializer
     {
-        public static async Task InitializeUser(CRSDbContext context,
-                                   UserManager<ApplicationUser> userManager,
-                                   RoleManager<ApplicationRole> roleManager)
+        public static async Task Initialize(CRSDbContext context,
+                                UserManager<ApplicationUser> userManager,
+                                RoleManager<ApplicationRole> roleManager)
         {
             context.Database.EnsureCreated();
 
-           // String adminId1 = "";
+            // String adminId1 = "";
 
 
             string role1 = "Admin";
@@ -68,28 +67,6 @@ namespace CRS.Repository.Data
                 //adminId1 = user.Id;
 
             }
-
-        }
-        public static async Task InitializeTypeOfCustomer(CRSDbContext context)
-        {
-
-            var individualClient = "Osoba prywatna";
-            var institutionalClient = "Przedsiębiorca";
-            if (context.TypeofCustomer.Any())
-            {
-                return;
-            }
-            var typesOfCustomer = new TypeOfCustomer[]
-            {
-                new TypeOfCustomer {TypeName = individualClient},
-                new TypeOfCustomer {TypeName = institutionalClient}
-
-            };
-            foreach (var item in typesOfCustomer)
-            {
-                await context.AddAsync(item);
-            }
-            await context.SaveChangesAsync();
 
         }
     }

@@ -3,6 +3,7 @@
 export class Customer {
     id: number;
     typeOfCustomerID: number;
+    dateTimeAddCustomer?: Date;
     companyName: string;
     name: string;
     surname: string;

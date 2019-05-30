@@ -9,7 +9,7 @@ using CRS.Data.Entities;
 using CRS.Data.Users;
 using CRS.Data.Users.AplicationSetting;
 using CRS.Repository.Data;
-
+using CRS.Repository.Data.Initializer;
 using CRS.Service.Infrastructure;
 using CRS.Service.Infrastructure.AutoMapper;
 using CRS.Service.Interfaces;
@@ -123,9 +123,9 @@ namespace CRS.Web
             .AllowAnyHeader());
 
             app.UseHttpsRedirection();
-            Initializer.InitializeUser(context, userManager, roleManager).Wait();
-            Initializer.InitializeTypeOfCustomer(context).Wait();
-
+            UserInitializer.Initialize(context, userManager, roleManager).Wait();
+            TypeOfCustomerInitializer.Initialize(context).Wait();
+            CarModelInitializer.Initialize(context).Wait();
 
             app.UseAuthentication();
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));

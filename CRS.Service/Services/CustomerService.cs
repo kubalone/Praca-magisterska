@@ -3,6 +3,7 @@ using CRS.Data.Entities;
 using CRS.Repository;
 using CRS.Repository.Data;
 using CRS.Service.DTO;
+using CRS.Service.Exceptions;
 using CRS.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,8 +44,30 @@ namespace CRS.Service.Services
             var customers = await GetAll()
                 .Where(p => p.TypeOfCustomerID == id)
                 .ToListAsync();
+
             var customersDto = _mapper.Map<List<CustomerDto>>(customers);
             return customersDto;
         }
+        public async Task <CustomerDto> GetCustomerById(int id)
+        {
+            var customer = await GetAsync(id);
+            if (customer == null)
+            {
+                throw new NotFoundException("Customer");
+            }
+            var customerDto = _mapper.Map<CustomerDto>(customer);
+            return customerDto;
+        }
+        public async Task UpdateCustomer(int id, CustomerDto customerToUpdate)
+        {
+            if (id != customerToUpdate.Id)
+            {
+                throw new BadRequestException();
+            }
+            var customer = _mapper.Map<Customer>(customerToUpdate);
+            Update(customer);
+            await SaveChangesAsync();
+        }
+
     }
 }

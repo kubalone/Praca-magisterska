@@ -20,23 +20,39 @@ export class AddCustomerComponent implements OnInit {
   //do usunięcia
   @Input() public customer: Customer;
   typesOfCustomer: TypeOfCustomer[];
-  showSpinner = false
+  showSpinner = false;
+  modalHeader: string;
+  
   constructor(private service: CustomerService, private modalService: NgbModal, private validator: FormValidatorService, private communicate: ToastrService, private router: Router) { }
 
   ngOnInit() {
+      
     $(document).ready(function () {
       $('#typeOfClient').on('change', function () {
-        this.value == '1' ? $("#collapseInstitutionName").hide() : $("#collapseInstitutionName").show();
-      });
+        if(this.value == '1') {
+          $("#collapseInstitutionName").hide()
+          $("#institution").val("");
+        } else {
+          $("#collapseInstitutionName").show()
+        }
+        this.value == '1' ? $("#collapseInstitutionName").hide() : $("#collapseInstitutionName").show() ;
+      });   
     });
+
+    if(this.customer){
+      var value = this.customer.typeOfCustomerID;
+      value == 1 ? $("#collapseInstitutionName").hide() :$("#collapseInstitutionName").show();
+    }
+ 
     this.service.formModel.valueChanges.subscribe(() => {
       this.validatorMessage();
     });
+
     this.validatorMessage();
 
     if (this.customer) {
-      console.log('not null')
-      //this.getEmployee(customerId);
+      this.editCustomer(this.customer);
+      this.modalHeader = "Edytuj dane klienta"
     } else {
       this.customer = {
         id: 0,
@@ -53,6 +69,7 @@ export class AddCustomerComponent implements OnInit {
         email: '',
         phone: ''
       }
+      this.modalHeader = "Dodaj nowego klienta"
     }
 
     //pobieranie typów klientów do listy
@@ -76,6 +93,27 @@ export class AddCustomerComponent implements OnInit {
     this.customer.phone = this.service.formModel.value.contact.phone
   }
 
+  editCustomer(customer: Customer) {
+    this.service.formModel.patchValue({
+      typeOfCustomerID: customer.typeOfCustomerID,
+      companyName: customer.companyName,
+      name: customer.name,
+      surname: customer.surname,
+      adress: {
+        province: customer.province,
+        city: customer.city,
+        zipCode: customer.zipCode,
+        street: customer.street,
+        numberOfBuilding: customer.numberOfBuilding,
+        numberOfApartment: customer.numberOfApartment
+      },
+      contact: {
+        email: customer.email,
+        phone: customer.phone
+      }
+    });
+  }
+
   validatorMessage() {
     this.validator.logValidationErrors(this.service.formModel, this.service.formErrors, this.service.validationMessages)
   }
@@ -83,28 +121,37 @@ export class AddCustomerComponent implements OnInit {
   onSubmit() {
     this.showSpinner = true;
     this.mapFormValuesToCustomerModel();
-    this.service.addCustomer(this.customer).subscribe(() => {
-
- 
-  
+    if (this.customer.id == 0) {
+      this.service.addCustomer(this.customer).subscribe(() => {
         this.redirectTo('klienci/wszyscy-klienci');
-       
-      this.close();
-      this.communicate.success('Nowy Klient został dodany', 'Operacja zakończona pomyślnie');
+        this.close();
+        this.communicate.success('Nowy Klient został dodany', 'Operacja zakończona pomyślnie');
+      },
+        err => {
+          this.showSpinner = false;
+          this.communicate.error('Dodawanie nowego klienta niepowiodło się', 'Spróbój ponownie');
+          console.log(err);
+        });
+    } else {
+    
+      this.service.updateCustomer(this.customer).subscribe(() => {
+        this.close();
+        this.redirectTo(this.router.url);
+        this.communicate.success('Dane klienta zostały zaktualizowane', 'Operacja zakończona pomyślnie');
+      },
+        err => {
+          this.showSpinner = false;
+          this.communicate.error('Aktualizacja klienta nie powiodła się', 'Spróbój ponownie');
+          console.log(err);
+        });
+    }
 
-
-    },
-      err => {
-        this.showSpinner = false;
-        this.communicate.error('Dodawanie nowego klienta niepowiodło się', 'Spróbój ponownie');
-        console.log(err);
-      });
 
 
   }
   redirectTo(uri) {
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-    this.router.navigate([uri]));
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+      this.router.navigate([uri]));
   }
   close() {
     this.service.formModel.reset();

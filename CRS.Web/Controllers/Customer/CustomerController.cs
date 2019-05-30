@@ -50,5 +50,18 @@ namespace CRS.Web.Controllers.Customer
         {
             return Ok(await _customerService.GetConcreteTypeOfCustomers(id));
         }
+        [HttpGet]
+        [Route("GetCustomer/{id}")]
+        public async Task<ActionResult<CustomerDto>> GetCustomerById(int id)
+        {
+            return Ok(await _customerService.GetCustomerById(id));
+        }
+        [HttpPut]
+        [Route("PutCustomer/{id}")]
+        public async Task<IActionResult> PutCustomer(int id, CustomerDto customerToUpdate)
+        {
+            await _customerService.UpdateCustomer(id, customerToUpdate);
+            return Ok();
+        }
     }
 }

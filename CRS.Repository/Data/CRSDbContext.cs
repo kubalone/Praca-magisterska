@@ -25,14 +25,16 @@ namespace CRS.Repository.Data
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderVehicle> OrderVehicle { get; set; }
-       
+        public  DbSet<VehicleModel> VehicleModel{ get; set; }
+        public DbSet<Brand> Brand{ get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             base.OnModelCreating(modelBuilder);
-            // new CustomerConfiguration(modelBuilder.Entity<User>());
-            //modelBuilder.ApplyConfigurationsFromAssembly(typeof(CRSDbContext).Assembly);
-            //modelBuilder.ApplyConfiguration(new ApplicationUserRoleConfiguration());
+     
+            modelBuilder.ApplyConfiguration(new VehicleModelConfiguration());
             modelBuilder.ApplyConfiguration(new ApplicationRoleConfiguration());
             modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
