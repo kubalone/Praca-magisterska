@@ -20,6 +20,17 @@ namespace CRS.Service.Infrastructure.AutoMapper
             //klient
             CreateMap<Customer, CustomerDto>();
             CreateMap<CustomerDto, Customer>();
+            //pojazdy
+            CreateMap<Vehicle, VehicleDto>();
+            CreateMap<VehicleDto, Vehicle>();
+            //Brand
+            CreateMap<Brand, BrandDto>();
+            CreateMap<BrandDto, Brand>();
+            //VehicleModel
+            CreateMap<VehicleModel, VehicleModelDto>();
+            CreateMap<VehicleModelDto, VehicleModel>();
+
+
 
         }
     }

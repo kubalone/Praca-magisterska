@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-end">
-    <button type="button" class="btn btn-outline-succesnewVehicles" (click)="openAddVehicleModal()">Dodaj
+    <button type="button" class="btn btn-outline-success" (click)="openAddVehicleModal(newVehicle)">Dodaj
       pojazd</button>
   </div>
 </div>
@@ -9,3 +9,43 @@
   <ng-template #newVehicle let-modal>
     <app-add-vehicle></app-add-vehicle>
   </ng-template>
+  
+
+
+  <div class="form-group row">
+    <label for="brand" class="col-sm-3 col-form-label">Marka <span class="required-field">*</span></label>
+    <div class="col-sm-8">
+        <div class="row">
+      <span id="brand">
+         <select class="form-control"  (change)="getModelForBrand($event.target.value)">
+        <option value="" selected disabled hidden>Wybierz markę pojazdu</option>
+
+        <option  *ngFor="let brand of brands" [value]="brand.name"  >
+          {{brand.name}}
+        </option>
+      </select>
+    </span> 
+    
+    </div>
+    
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label for="model" class="col-sm-3 col-form-label">Model <span class="required-field">*</span></label>
+      <div class="col-sm-8">
+          <div class="row">
+        <span id="model">
+           <select class="form-control"    >
+          <option value="" selected disabled hidden>Wybierz model pojazdu</option>
+          <option  *ngFor="let item of models"  [value]="item.name" >
+            {{item.name}}
+          </option>
+        </select>
+      </span> 
+       
+      </div>
+     
+      </div>
+    </div>
+

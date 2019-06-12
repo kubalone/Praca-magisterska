@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,9 +12,10 @@ namespace CRS.Repository
     {
         IQueryable<T> GetAll();
         Task<T> GetAsync(int id);
-        Task InsertAsync(T entity);
+        void Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
+        IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression);
         Task SaveChangesAsync();
     }
 }

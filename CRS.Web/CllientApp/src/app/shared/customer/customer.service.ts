@@ -10,7 +10,6 @@ import { TypeOfCustomer } from '../model/Customers/typeOfCustomer';
   providedIn: 'root'
 })
 export class CustomerService {
-  privateListOfCum = new BehaviorSubject<Array<Customer>>([]);
   
   constructor(private fb: FormBuilder, private httpClient: HttpClient) {
    
@@ -151,18 +150,3 @@ export class CustomerService {
   };
 }
 
-
-//var customer= {
-  //typeOfCustomerID: this.formModel.value.typeOfCustomerID,
-  ///companyName: this.formModel.value.companyName,
-  //name: this.formModel.value.name,
-  //surname: this.formModel.value.surname,
-  //province: this.formModel.value.adress.province,
-  //city: this.formModel.value.adress.city,
-  //zipCode: this.formModel.value.adress.zipCode,
-  //street: this.formModel.value.adress.street,
-  //numberOfBuilding: this.formModel.value.adress.numberOfBuilding,
-  //numberOfApartment: this.formModel.value.adress.numberOfApartment,
-  //email: this.formModel.value.contact.email,
-  //phone: this.formModel.value.contact.phone
-//};

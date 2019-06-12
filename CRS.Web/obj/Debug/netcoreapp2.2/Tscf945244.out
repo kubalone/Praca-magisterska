@@ -62,6 +62,14 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\us
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\userManagement\delete-user\delete-user.component.js.map
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\customer\type-of-customer\type-of-customer-template\type-of-customer-template.component.js
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\customer\type-of-customer\type-of-customer-template\type-of-customer-template.component.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\vehicle\vehicle.component.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\vehicle\vehicle.component.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\vehicle\vehicle.service.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\vehicle\vehicle.service.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\vehicle\add-vehicle\add-vehicle.component.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\vehicle\add-vehicle\add-vehicle.component.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\vehicle\vehicle-details\vehicle-details.component.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\carRepairShopManagement\vehicle\vehicle-details\vehicle-details.component.js.map
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\app.module.js
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\app.module.js.map
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\environments\environment.js
@@ -78,3 +86,9 @@ C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\e2e\src\ap
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\e2e\src\app.e2e-spec.js.map
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\environments\environment.prod.js
 C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\environments\environment.prod.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\model\Vehicles\fuel.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\model\Vehicles\fuel.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\model\Vehicles\modelYear.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\model\Vehicles\modelYear.js.map
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\model\Vehicles\vehicle.js
+C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Web\CllientApp\dist\out-tsc\src\app\shared\model\Vehicles\vehicle.js.map

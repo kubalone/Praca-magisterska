@@ -183,9 +183,9 @@ caption{
 }
 .required-field{
   color:red;
+
 }
 .container .spinner-border{
-margin-top: 5rem;
 }
 #client-table th{
   font-size: 1rem;
@@ -229,4 +229,11 @@ margin-top: 5rem;
 .info-details  label {
   margin-right: 0.4rem;
   font-weight: 500;
+}
+.close-select{
+
+  cursor: pointer;
+  margin: auto 0 auto 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
 }

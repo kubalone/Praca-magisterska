@@ -14,6 +14,7 @@ import { BusisnessCustomerComponent } from './carRepairShopManagement/customer/t
 import { TypeOfCustomer } from './shared/model/Customers/typeOfCustomer';
 import { TypeOfCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/type-of-customer.component';
 import { CustomerDetailsComponent } from './carRepairShopManagement/customer/customer-details/customer-details.component';
+import { VehicleComponent } from './carRepairShopManagement/vehicle/vehicle.component';
 
 
 
@@ -31,6 +32,9 @@ const routes: Routes = [
       },
       {
         path: 'dodaj-zlecenie', component: AddJobComponent, canActivate: [AuthGuard]
+      },
+      {
+        path: 'pojazdy', component: VehicleComponent, canActivate: [AuthGuard]
       },
       {
         path: 'klienci', component: CustomerComponent, canActivate: [AuthGuard],

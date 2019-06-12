@@ -7,9 +7,95 @@
   </h5>
 </div>
 
+
+
+      
 <div class="modal-body">
+
+
+
   <form [formGroup]="service.formModel" (submit)="onSubmit()">
+
     <div class="form-group row">
+    <label for="modelYear" class="col-sm-3 col-form-label">Rocznik <span class="required-field">*</span></label>
+    <div class="col-sm-8">
+        <div class="row">
+      <span id="modelYear">
+         <select class="form-control"   formControlName="modelYear" (blur)="validatorMessage()" id="year"  class="selectpicker" data-live-search="true">
+        <option value="" selected disabled hidden>Wybierz rocznik pojadu</option>
+        <option *ngFor="let item of year">
+          {{item}}
+        </option>
+      </select>
+    </span> 
+      <input type="text" class="form-control d-none col-sm-11" id="modelYear" formControlName="modelYear" (blur)="validatorMessage()">
+      <span class="close-select"  ngbTooltip="Dodaj inny rocznik" (click)="showInput('#modelYear')">x
+      </span>
+    </div>
+      <span class="text-danger" *ngIf="service.formErrors.modelYear">
+        {{service.formErrors.modelYear}}
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label for="brand" class="col-sm-3 col-form-label">Marka <span class="required-field">*</span></label>
+      <div class="col-sm-8">
+          <div class="row">
+        <span id="brand">
+           <select class="form-control"  id="select-brand" formControlName="brand" (blur)="validatorMessage()"  class="selectpicker" data-live-search="true" (change)="getModelForBrand($event.target.value)">
+          <option value="" selected disabled hidden>Wybierz markę pojazdu</option>
+
+          <option  *ngFor="let brand of brands" [value]="brand.name"  >
+            {{brand.name}}
+          </option>
+        </select>
+      </span> 
+        <input type="text" class="form-control d-none col-sm-11" id="brand" formControlName="brand" (blur)="validatorMessage()">
+        <span class="close-select"  ngbTooltip="Dodaj inną markę" (click)="showInput('#modelYear')">x
+        </span>
+      </div>
+        <span class="text-danger" *ngIf="service.formErrors.brand">
+          {{service.formErrors.brand}}
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="model" class="col-sm-3 col-form-label">Model <span class="required-field">*</span></label>
+        <div class="col-sm-8">
+            <div class="row">
+          <span id="model">
+          
+             <select class="form-control" id="model-type"  formControlName="model" class="selectpicker" data-live-search="true" >
+            <option value="" selected disabled hidden>Wybierz model pojazdu</option>
+            <option  *ngFor="let item of models" [value]="item.name">
+              {{item.name}}
+            </option>
+          </select>
+        </span> 
+          <input type="text" class="form-control d-none col-sm-11" id="model" formControlName="model" (blur)="validatorMessage()">
+          <span class="close-select"  ngbTooltip="Dodaj inny model" (click)="showInput('#model')">x
+          </span>
+        </div>
+          <span class="text-danger" *ngIf="service.formErrors.model">
+            {{service.formErrors.model}}
+          </span>
+        </div>
+      </div>
+   
+
+  <div class="form-group row">
+      <label for="registration" class="col-sm-3 col-form-label">Rejestracja <span class="required-field">*</span></label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="registration" formControlName="registration" (blur)="validatorMessage()">
+        <span class="text-danger" *ngIf="service.formErrors.registration">
+          {{service.formErrors.registration}}
+        </span>
+      </div>
+    </div>
+  
+       <!--<div class="form-group row">
       <label for="typeOfClient" class="col-sm-3 col-form-label">Typ klienta <span class="required-field">*</span></label>
       <div class="col-sm-9">
         <select class="form-control" id="typeOfClient" data-toggle="collapse" formControlName="typeOfCustomerID" (change)="service.checkRequiredInstitutionName($event.target.value)" (blur)="validatorMessage()">
@@ -24,6 +110,7 @@
         </span>
       </div>
     </div>
+  
 
     <div class="form-group row" id="collapseInstitutionName" style="display:none">
       <label for="institution" class="col-sm-3 col-form-label">Nazwa instytucji <span class="required-field">*</span></label>
@@ -87,15 +174,7 @@
         </div>
       </div>
 
-      <div class="form-group row">
-        <label for="street" class="col-sm-3 col-form-label">Ulica</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="street" formControlName="street" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.street">
-            {{service.formErrors.street}}
-          </span>
-        </div>
-      </div>
+    
 
       <div class="form-group row">
         <label for="number-of-building" class="col-sm-3 col-form-label">Nr budynku</label>
@@ -135,7 +214,7 @@
           </span>
         </div>
       </div>
-    </div>
+    </div>-->
 
 
     <div class="modal-footer button-modal-footer justify-content-center">

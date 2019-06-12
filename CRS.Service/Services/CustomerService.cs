@@ -28,7 +28,7 @@ namespace CRS.Service.Services
         {
             customerDto.DateTimeAddCustomer = DateTime.Now;
             var customer = _mapper.Map<Customer>(customerDto);
-            await InsertAsync(customer);
+            Insert(customer);
             await SaveChangesAsync();
         }
         public async Task<IEnumerable<CustomerDto>> GetCustomers()
@@ -41,9 +41,11 @@ namespace CRS.Service.Services
         }
         public async Task<IEnumerable<CustomerDto>> GetConcreteTypeOfCustomers(int id)
         {
-            var customers = await GetAll()
-                .Where(p => p.TypeOfCustomerID == id)
-                .ToListAsync();
+            var customers = await FindByCondition(p => p.TypeOfCustomerID.Equals(id)).ToListAsync();
+          
+            //var  = await GetAll()
+            //    .Where(p => p.TypeOfCustomerID == id)
+            //    .ToListAsync();
 
             var customersDto = _mapper.Map<List<CustomerDto>>(customers);
             return customersDto;

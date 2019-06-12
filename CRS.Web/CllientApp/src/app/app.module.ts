@@ -89,7 +89,8 @@ import { VehicleService } from './shared/vehicle/vehicle.service';
     ToastrModule.forRoot(),
     FormsModule,
     DataTablesModule,
-    NgbModule
+    NgbModule,
+  
     
     
     

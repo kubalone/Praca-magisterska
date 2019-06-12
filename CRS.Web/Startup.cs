@@ -71,6 +71,9 @@ namespace CRS.Web
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<ITypeOfCustomerService, TypeOfCustomerService>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IVehicleService, VehicleService>();
+            services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<IVehicleModelService, VehicleModelService>();
 
             services.Configure<IdentityOptions>(options =>
             {

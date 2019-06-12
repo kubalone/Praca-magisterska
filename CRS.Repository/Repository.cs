@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,29 +26,30 @@ namespace CRS.Repository
             return _context.Set<T>().AsNoTracking();
         }
 
+        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        {
+            return this._context.Set<T>()
+                .Where(expression);
+        }
         public async Task<T>  GetAsync(int id)
         {
             return await entities.FindAsync(id);
         }
 
-
-        public async Task InsertAsync(T entity)
+        public  void Insert(T entity)
         {
-            var set = _context.Set<T>();
-            await set.AddAsync(entity);
-        }
+            _context.Set<T>().Add(entity);
 
+        }
         public void Update(T entity)
         {
-            var set = _context.Set<T>();
-            set.Attach(entity);
-            _context.Entry(entity).State = EntityState.Modified;
+            _context.Set<T>().Update(entity);
+
         }
 
         public void Delete(T entity)
         {
-            var set = _context.Set<T>();
-            set.Remove(entity);
+            _context.Set<T>().Remove(entity);
         }
        
 
