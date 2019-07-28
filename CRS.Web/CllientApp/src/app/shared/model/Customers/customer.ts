@@ -1,3 +1,4 @@
+import { Vehicle } from '../Vehicles/vehicle';
 
 
 export class Customer {
@@ -15,4 +16,5 @@ export class Customer {
     numberOfApartment: string;
     email: string;
     phone: string;
+    vehicles: Vehicle[];
 }

@@ -206,7 +206,27 @@ namespace CRS.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Brand");
+
+                    b.Property<string>("Colour");
+
                     b.Property<int?>("CustomerID");
+
+                    b.Property<string>("DisplacementCapacity");
+
+                    b.Property<string>("Fuel");
+
+                    b.Property<string>("MileAge");
+
+                    b.Property<string>("Model");
+
+                    b.Property<string>("ModelYear");
+
+                    b.Property<string>("Power");
+
+                    b.Property<string>("Registration");
+
+                    b.Property<string>("VIN");
 
                     b.HasKey("Id");
 

@@ -31,6 +31,15 @@ namespace CRS.Repository
             return this._context.Set<T>()
                 .Where(expression);
         }
+        public IQueryable<T> GetIncludeItems(params string[] navigationProperties)
+        {
+            var query = _context.Set<T>().AsQueryable();
+            foreach (var property in navigationProperties)
+            {
+                query = query.Include(property);
+            }
+            return query;
+        }
         public async Task<T>  GetAsync(int id)
         {
             return await entities.FindAsync(id);

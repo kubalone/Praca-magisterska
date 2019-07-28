@@ -1,3 +1,58 @@
-<p>
-  vehicle-details works!
-</p>
+<div class="container">
+  <div class="info-details col-md-12 row">
+    <div class="col-md-3">
+      <div class="row">
+        <span class="name-head">
+          <h5><i class="fas fa-car"></i> {{vehicle?.brand}} {{vehicle?.model}}
+            <i class="far fa-edit" ngbTooltip="Edytuj pojazd" (click)="openEditModal(editVehicle)"></i></h5>
+        </span>
+      </div>
+      <div class="row">
+        <h6><span class="badge badge-secondary">Właściciel: </span></h6>
+      </div>
+      <div class="row">
+        <label>Numer rejestracyjny:</label> {{vehicle?.registration}}
+      </div>
+      <div class="row">
+        <label>Rocznik:</label> {{vehicle?.modelYear}}
+      </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="row">
+        <span class="name-head">
+          <h5><i class="fas fa-info-circle"></i> Podstawowe dane:</h5>
+        </span>
+      </div>
+      <div class="row">
+        <label>Przebieg:</label>{{checkIsNull(vehicle?.mileAge)}}
+      </div>
+      <div class="row">
+        <label>Kolor:</label>{{checkIsNull(vehicle?.colour)}}
+      </div>
+      <div class="row">
+        <label>Nr VIN:</label>{{checkIsNull(vehicle?.vin)}}
+      </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="row">
+        <span class="name-head">
+          <h5><i class="fas fa-cogs"></i> Dane techniczne:</h5>
+        </span>
+      </div>
+      <div class="row">
+        <label>Rodzaj paliwa:</label> {{checkIsNull(vehicle?.fuel)}}
+      </div>
+      <div class="row">
+        <label>Moc silnika (kW):</label> {{checkIsNull(vehicle?.power)}}
+      </div>
+      <div class="row">
+        <label>Poj. silnika (ccm<sup>3</sup>):</label>{{checkIsNull(vehicle?.displacementCapacity)}}
+      </div>
+    </div>
+  </div>
+  </div>
+  <ng-template #editVehicle let-modal>
+      <app-add-vehicle [vehicle]="vehicle"></app-add-vehicle>
+  </ng-template>

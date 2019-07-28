@@ -185,15 +185,14 @@ caption{
   color:red;
 
 }
-.container .spinner-border{
-}
-#client-table th{
+
+#client-table th, #vehicle-table th{
   font-size: 1rem;
 }
-#client-table td{
+#client-table td, #vehicle-table td{
   font-size: 0.95rem;
 }
-#client-table tbody tr :hover{
+#client-table tbody tr :hover, #vehicle-table  tbody tr :hover{
   cursor: pointer;
   color:rgb(33, 150, 243);
 }
@@ -236,4 +235,24 @@ caption{
   margin: auto 0 auto 0.5rem;
   font-weight: 600;
   font-size: 1rem;
+}
+#vehicle-table {
+  margin-top: 2rem!important;
+}
+.client-data {
+  padding-left: 1.3rem;
+  font-size: 16px;
+}
+.client-data .form-group div {
+  margin-right: 1.1rem;
+}
+.client-data .form-group {
+  margin-bottom: 0.1rem;
+}
+#card-vehicle {
+  min-height: 8.3rem;
+
+}
+#card-vehicle .client-data{
+  margin-top: 1.4rem;
 }

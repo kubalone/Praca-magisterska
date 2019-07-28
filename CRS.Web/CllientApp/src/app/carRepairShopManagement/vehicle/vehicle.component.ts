@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VehicleService } from 'src/app/shared/vehicle/vehicle.service';
 import { Brand } from 'src/app/shared/model/Vehicles/brand';
 import { VehicleModel } from 'src/app/shared/model/Vehicles/vehicleModel';
+import { Vehicle } from 'src/app/shared/model/Vehicles/vehicle';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle',
@@ -10,27 +12,11 @@ import { VehicleModel } from 'src/app/shared/model/Vehicles/vehicleModel';
   styleUrls: ['./vehicle.component.css']
 })
 export class VehicleComponent implements OnInit {
-  brands:  Brand [];
-  models: VehicleModel [];
-  constructor(private modalService: NgbModal,  private service: VehicleService) { }
+ 
+
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
-    this.service.getBrand().subscribe((res:any) => {
-  
-      this.brands=res;
-      
-     
-      
-     
-      });
-  }
-  getModelForBrand(brandName) {
-    let brand = this.brands.find(x => x.name === brandName);
-    this.service.getModel(brand.id).subscribe((res:any) => {
-    this.models=res;
-  //  $('select').selectpicker();
-    });
- 
   }
   openAddVehicleModal(newVehicle) {
     this.modalService.open(newVehicle);

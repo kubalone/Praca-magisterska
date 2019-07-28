@@ -9,7 +9,7 @@
 
 
 
-      
+
 <div class="modal-body">
 
 
@@ -17,44 +17,47 @@
   <form [formGroup]="service.formModel" (submit)="onSubmit()">
 
     <div class="form-group row">
-    <label for="modelYear" class="col-sm-3 col-form-label">Rocznik <span class="required-field">*</span></label>
-    <div class="col-sm-8">
-        <div class="row">
-      <span id="modelYear">
-         <select class="form-control"   formControlName="modelYear" (blur)="validatorMessage()" id="year"  class="selectpicker" data-live-search="true">
-        <option value="" selected disabled hidden>Wybierz rocznik pojadu</option>
-        <option *ngFor="let item of year">
-          {{item}}
-        </option>
-      </select>
-    </span> 
-      <input type="text" class="form-control d-none col-sm-11" id="modelYear" formControlName="modelYear" (blur)="validatorMessage()">
-      <span class="close-select"  ngbTooltip="Dodaj inny rocznik" (click)="showInput('#modelYear')">x
-      </span>
-    </div>
-      <span class="text-danger" *ngIf="service.formErrors.modelYear">
-        {{service.formErrors.modelYear}}
-      </span>
-    </div>
-  </div>
-
-  <div class="form-group row">
-      <label for="brand" class="col-sm-3 col-form-label">Marka <span class="required-field">*</span></label>
+      <label for="modelYear" class="col-sm-3 col-form-label">Rocznik <span class="required-field">*</span></label>
       <div class="col-sm-8">
-          <div class="row">
-        <span id="brand">
-           <select class="form-control"  id="select-brand" formControlName="brand" (blur)="validatorMessage()"  class="selectpicker" data-live-search="true" (change)="getModelForBrand($event.target.value)">
-          <option value="" selected disabled hidden>Wybierz markę pojazdu</option>
-
-          <option  *ngFor="let brand of brands" [value]="brand.name"  >
-            {{brand.name}}
-          </option>
-        </select>
-      </span> 
-        <input type="text" class="form-control d-none col-sm-11" id="brand" formControlName="brand" (blur)="validatorMessage()">
-        <span class="close-select"  ngbTooltip="Dodaj inną markę" (click)="showInput('#modelYear')">x
+        <div class="row">
+          <span id="modelYear">
+            <select class="form-control" formControlName="modelYear" (blur)="validatorMessage()" id="year"
+             >
+              <option value="" selected disabled hidden>Wybierz rocznik pojadu</option>
+              <option *ngFor="let item of year" [value]="item">
+                {{item}}
+              </option>
+            </select>
+          </span>
+          <input type="text" class="form-control d-none col-sm-10" id="modelYear" formControlName="modelYear"
+            (blur)="validatorMessage()">
+          <span class="close-select" ngbTooltip="Dodaj inny rocznik" (click)="showInput('#modelYear', '#year')">x
+          </span>
+        </div>
+        <span class="text-danger" *ngIf="service.formErrors.modelYear">
+          {{service.formErrors.modelYear}}
         </span>
       </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="brand" class="col-sm-3 col-form-label">Marka <span class="required-field">*</span></label>
+      <div class="col-sm-8">
+        <div class="row">
+          <span id="brand">
+            <select class="form-control" id="select-brand" formControlName="brand"  (change)="getModelForBrand($event.target.value)">
+              <option value="" selected disabled hidden>Wybierz markę pojazdu</option>
+
+              <option *ngFor="let brand of brands" [value]="brand.name">
+                {{brand.name}}
+              </option>
+            </select>
+          </span>
+          <input type="text" class="form-control d-none col-sm-10" id="brand" formControlName="brand"
+            (blur)="validatorMessage()">
+          <span class="close-select" ngbTooltip="Dodaj inną markę" (click)="showInput('#brand', '#select-brand')">x
+          </span>
+        </div>
         <span class="text-danger" *ngIf="service.formErrors.brand">
           {{service.formErrors.brand}}
         </span>
@@ -62,159 +65,113 @@
     </div>
 
     <div class="form-group row">
-        <label for="model" class="col-sm-3 col-form-label">Model <span class="required-field">*</span></label>
-        <div class="col-sm-8">
-            <div class="row">
+      <label for="model" class="col-sm-3 col-form-label">Model <span class="required-field">*</span></label>
+      <div class="col-sm-8">
+        <div class="row">
           <span id="model">
-          
-             <select class="form-control" id="model-type"  formControlName="model" class="selectpicker" data-live-search="true" >
-            <option value="" selected disabled hidden>Wybierz model pojazdu</option>
-            <option  *ngFor="let item of models" [value]="item.name">
-              {{item.name}}
-            </option>
-          </select>
-        </span> 
-          <input type="text" class="form-control d-none col-sm-11" id="model" formControlName="model" (blur)="validatorMessage()">
-          <span class="close-select"  ngbTooltip="Dodaj inny model" (click)="showInput('#model')">x
-          </span>
-        </div>
-          <span class="text-danger" *ngIf="service.formErrors.model">
-            {{service.formErrors.model}}
-          </span>
-        </div>
-      </div>
-   
 
-  <div class="form-group row">
-      <label for="registration" class="col-sm-3 col-form-label">Rejestracja <span class="required-field">*</span></label>
-      <div class="col-sm-9">
-        <input type="text" class="form-control" id="registration" formControlName="registration" (blur)="validatorMessage()">
+            <select class="form-control" id="model-type" formControlName="model">
+              <option value="" selected disabled hidden>Wybierz model pojazdu</option>
+              <option *ngFor="let item of models" [value]="item.name">
+                {{item.name}}
+              </option>
+            </select>
+          </span>
+          <input type="text" class="form-control d-none col-sm-10" id="model" formControlName="model"
+            (blur)="validatorMessage()">
+          <span class="close-select" ngbTooltip="Dodaj inny model" (click)="showInput('#model','#model-type')">x
+          </span>
+        </div>
+        <span class="text-danger" *ngIf="service.formErrors.model">
+          {{service.formErrors.model}}
+        </span>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="registration" class="col-sm-3 col-form-label">Rejestracja<span class="required-field">*</span></label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control  col-sm-10" id="registration" formControlName="registration"
+          (blur)="validatorMessage()">
         <span class="text-danger" *ngIf="service.formErrors.registration">
           {{service.formErrors.registration}}
         </span>
       </div>
     </div>
-  
-       <!--<div class="form-group row">
-      <label for="typeOfClient" class="col-sm-3 col-form-label">Typ klienta <span class="required-field">*</span></label>
-      <div class="col-sm-9">
-        <select class="form-control" id="typeOfClient" data-toggle="collapse" formControlName="typeOfCustomerID" (change)="service.checkRequiredInstitutionName($event.target.value)" (blur)="validatorMessage()">
-          <option value="" selected disabled hidden>Wybierz typ klienta</option>
-          <option *ngFor="let type of typesOfCustomer" [value]="type.id">
-            {{type.typeName}}
-          </option>
-
-        </select>
-        <span class="text-danger" *ngIf="service.formErrors.typeOfCustomerID">
-          {{service.formErrors.typeOfClient}}
-        </span>
-      </div>
-    </div>
-  
-
-    <div class="form-group row" id="collapseInstitutionName" style="display:none">
-      <label for="institution" class="col-sm-3 col-form-label">Nazwa instytucji <span class="required-field">*</span></label>
-      <div class="col-sm-9">
-        <input type="text" class="form-control" id="institution" formControlName="companyName" [ngClass]="{'invalid':service.check && !service.formModel.get('companyName').dirty}" (blur)="validatorMessage()">
-        <span class="text-danger"  *ngIf="service.check && !service.formModel.get('companyName').dirty">
-          Nazwa instytucji jest wymagana
-        </span>      
-      </div>
-    </div>
 
     <div class="form-group row">
-      <label for="name" class="col-sm-3 col-form-label">Imię <span class="required-field">*</span></label>
-      <div class="col-sm-9">
-        <input type="text " class="form-control" id="name" formControlName="name"  (blur)="validatorMessage()">
-        <span class="text-danger" *ngIf="service.formErrors.name">
-          {{service.formErrors.name}}
+      <label for="vin" class="col-sm-3 col-form-label">Numer VIN</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control  col-sm-10" id="registration" formControlName="vin"
+          (blur)="validatorMessage()">
+        <span class="text-danger" *ngIf="service.formErrors.vin">
+          {{service.formErrors.registration}}
         </span>
       </div>
     </div>
 
     <div class="form-group row">
-      <label for="surname" class="col-sm-3 col-form-label">Nazwisko <span class="required-field">*</span></label>
-      <div class="col-sm-9">
-        <input type="text" class="form-control" id="surname" formControlName="surname" (blur)="validatorMessage()">
-        <span class="text-danger" *ngIf="service.formErrors.surname">
-          {{service.formErrors.surname}}
+      <label for="colour" class="col-sm-3 col-form-label">Kolor</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control  col-sm-10" id="colour" formControlName="colour"
+          (blur)="validatorMessage()">
+        <span class="text-danger" *ngIf="service.formErrors.colour">
+          {{service.formErrors.colour}}
         </span>
       </div>
-
     </div>
 
-    <div formGroupName="adress">
-      <div class="form-group row">
-        <label for="province" class="col-sm-3 col-form-label">Województwo</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="province" formControlName="province" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.province">
-            {{service.formErrors.province}}
-          </span>
+    <div class="form-group row">
+      <label for="fuel" class="col-sm-3 col-form-label">Paliwo </label>
+      <div class="col-sm-8">
+        <div class="row">
+            <select class="form-control col-sm-10" formControlName="fuel">
+              <option value="" selected disabled hidden>Wybierz rodzaj paliwa</option>
+              <option *ngFor="let fuel of typesOfFuel" [value]="fuel.typeOfFuel">
+                {{fuel.typeOfFuel}}
+              </option>
+            </select>     
         </div>
+        <span class="text-danger" *ngIf="service.formErrors.fuel">
+          {{service.formErrors.fuel}}
+        </span>
       </div>
+    </div>
 
-      <div class="form-group row">
-        <label for="city" class="col-sm-3 col-form-label">Miasto</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="city" formControlName="city" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.city">
-            {{service.formErrors.city}}
-          </span>
-        </div>
+    <div class="form-group row">
+      <label for="mileAge" class="col-sm-3 col-form-label">Przebieg </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control  col-sm-10" id="mileAge" formControlName="mileAge"
+          (blur)="validatorMessage()">
+        <span class="text-danger" *ngIf="service.formErrors.mileAge">
+          {{service.formErrors.mileAge}}
+        </span>
       </div>
-
-      <div class="form-group row">
-        <label for="zip-code" class="col-sm-3 col-form-label">Kod pocztowy</label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="zip-code" formControlName="zipCode" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.zipCode">
-            {{service.formErrors.zipCode}}
-          </span>
-        </div>
-      </div>
+    </div>
 
     
-
-      <div class="form-group row">
-        <label for="number-of-building" class="col-sm-3 col-form-label">Nr budynku</label>
-        <div class="col-sm-3">
-          <input type="text" class="form-control" id="number-of-building" formControlName="numberOfBuilding" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.numberOfBuilding">
-            {{service.formErrors.numberOfBuilding}}
-          </span>
-        </div>
-        <label for="number-of-apartment" class="col-sm-1 col-form-label">/</label>
-        <div class="col-sm-3">
-          <input type="text" class="form-control" id="number-of-apartment" formControlName="numberOfApartment" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.numberOfApartment">
-            {{service.formErrors.numberOfApartment}}
-          </span>
-        </div>
+    <div class="form-group row">
+      <label for="power" class="col-sm-3 col-form-label">Moc silnika (kW)</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control  col-sm-10" id="power" formControlName="power"
+          (blur)="validatorMessage()">
+        <span class="text-danger" *ngIf="service.formErrors.power">
+          {{service.formErrors.power}}
+        </span>
       </div>
     </div>
 
-    <div formGroupName="contact">
-      <div class="form-group row">
-        <label for="email" class="col-sm-3 col-form-label">Email</label>
-        <div class="col-sm-9">
-          <input type="email" class="form-control" id="email" formControlName="email" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.email">
-            {{service.formErrors.email}}
-          </span>
-        </div>
+    <div class="form-group row">
+      <label for="displacementCapacity" class="col-sm-3 col-form-label">Poj. silnika (ccm<sup>3</sup>)</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control  col-sm-10" id="displacementCapacity" formControlName="displacementCapacity"
+          (blur)="validatorMessage()">
+        <span class="text-danger" *ngIf="service.formErrors.displacementCapacity">
+          {{service.formErrors.displacementCapacity}}
+        </span>
       </div>
-
-      <div class="form-group row">
-        <label for="phoneNumber" class="col-sm-3 col-form-label">Telefon <span class="required-field">*</span></label>
-        <div class="col-sm-9">
-          <input type="text" class="form-control" id="phoneNumber" formControlName="phone" (blur)="validatorMessage()">
-          <span class="text-danger" *ngIf="service.formErrors.phone">
-            {{service.formErrors.phone}}
-          </span>
-        </div>
-      </div>
-    </div>-->
+    </div>
 
 
     <div class="modal-footer button-modal-footer justify-content-center">

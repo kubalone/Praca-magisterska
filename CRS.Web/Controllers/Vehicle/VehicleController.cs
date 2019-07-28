@@ -42,7 +42,7 @@ namespace CRS.Web.Controllers.Vehicle
             await _vehicleService.CreateVehicle(vehicleDto);
             return Ok();
         }
-        [HttpPost]
+        [HttpPut]
         [Route("PutVehicle/{id}")]
         public async Task<IActionResult> PutVehicle(int id, VehicleDto vehicleDto)
         {

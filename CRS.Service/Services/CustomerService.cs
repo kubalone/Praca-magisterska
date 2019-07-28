@@ -24,18 +24,29 @@ namespace CRS.Service.Services
             _mapper = mapper;
         }
         
-        public async Task AddCustomer(CustomerDto customerDto)
+        public async Task<int> AddCustomer(CustomerDto customerDto)
         {
             customerDto.DateTimeAddCustomer = DateTime.Now;
             var customer = _mapper.Map<Customer>(customerDto);
             Insert(customer);
             await SaveChangesAsync();
+            return customer.Id;
         }
         public async Task<IEnumerable<CustomerDto>> GetCustomers()
         {
             var customers = await GetAll()
                 .OrderByDescending(p=>p.DateTimeAddCustomer)
                 .ToListAsync();
+            var customersDto = _mapper.Map<List<CustomerDto>>(customers);
+            return customersDto;
+        }
+        public async Task<IEnumerable<CustomerDto>> GetCustomersWithVehicles()
+        {
+            //var customers = await GetAll()
+            //    .OrderByDescending(p => p.DateTimeAddCustomer)
+            //    .Include(p=>p.Vehicles)
+            //    .ToListAsync();
+            var customers = await GetIncludeItems("Vehicles").ToListAsync();
             var customersDto = _mapper.Map<List<CustomerDto>>(customers);
             return customersDto;
         }
@@ -52,12 +63,19 @@ namespace CRS.Service.Services
         }
         public async Task <CustomerDto> GetCustomerById(int id)
         {
-            var customer = await GetAsync(id);
-            if (customer == null)
+
+            //var customer = await GetAsync(id);
+            var customerWithVehicles = await GetIncludeItems("Vehicles").ToListAsync();
+            var customerToGet = customerWithVehicles.Where(p => p.Id == id).FirstOrDefault();
+
+            //customer.Vehicles = vehicles.Where(p=>p.Id==id).Select(p=>p.)
+          
+            if (customerToGet == null)
             {
                 throw new NotFoundException("Customer");
             }
-            var customerDto = _mapper.Map<CustomerDto>(customer);
+
+            var customerDto = _mapper.Map<CustomerDto>(customerToGet);
             return customerDto;
         }
         public async Task UpdateCustomer(int id, CustomerDto customerToUpdate)

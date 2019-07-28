@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalService } from 'src/app/shared/modal.service';
 import { FormValidatorService } from 'src/app/shared/validator/form-validator.service';
@@ -9,6 +9,8 @@ import { CustomerService } from 'src/app/shared/customer/customer.service';
 import { TypeOfCustomer } from 'src/app/shared/model/Customers/typeOfCustomer';
 import { AllCustomerComponent } from '../type-of-customer/all-customer/all-customer.component';
 import { Router, RouterModule } from '@angular/router';
+import { AddJobComponent } from '../../add-job/add-job.component';
+import { OrderService } from 'src/app/shared/order/order.service';
 declare var $: any;
 @Component({
   selector: 'app-add-customer',
@@ -22,10 +24,16 @@ export class AddCustomerComponent implements OnInit {
   typesOfCustomer: TypeOfCustomer[];
   showSpinner = false;
   modalHeader: string;
+  @Input() addClientInAddOrderView =false;
+  @Input() editClientInAddOrderView = false;
+ 
+  customerTest: Customer;
   
-  constructor(private service: CustomerService, private modalService: NgbModal, private validator: FormValidatorService, private communicate: ToastrService, private router: Router) { }
-
+  constructor(private tests:OrderService, private service: CustomerService, private modalService: NgbModal, private validator: FormValidatorService, private communicate: ToastrService, private router: Router) { }
+  message:string;
   ngOnInit() {
+  // this.tests.currentCustomer.subscribe(customer => this.customerTest = customer)
+   
       
     $(document).ready(function () {
       $('#typeOfClient').on('change', function () {
@@ -67,7 +75,8 @@ export class AddCustomerComponent implements OnInit {
         numberOfBuilding: '',
         numberOfApartment: '',
         email: '',
-        phone: ''
+        phone: '',
+        vehicles:null
       }
       this.modalHeader = "Dodaj nowego klienta"
     }
@@ -117,11 +126,11 @@ export class AddCustomerComponent implements OnInit {
   validatorMessage() {
     this.validator.logValidationErrors(this.service.formModel, this.service.formErrors, this.service.validationMessages)
   }
-
+  @Output() titleChanged = new EventEmitter<string>();
   onSubmit() {
     this.showSpinner = true;
     this.mapFormValuesToCustomerModel();
-    if (this.customer.id == 0) {
+    if (this.customer.id == 0 && this.addClientInAddOrderView == false) {
       this.service.addCustomer(this.customer).subscribe(() => {
         this.redirectTo('klienci/wszyscy-klienci');
         this.close();
@@ -132,11 +141,41 @@ export class AddCustomerComponent implements OnInit {
           this.communicate.error('Dodawanie nowego klienta niepowiodło się', 'Spróbój ponownie');
           console.log(err);
         });
-    } else {
+    } 
+    if(this.customer.id != 0 && this.addClientInAddOrderView == false && this.editClientInAddOrderView ==false) {
     
       this.service.updateCustomer(this.customer).subscribe(() => {
-        this.close();
         this.redirectTo(this.router.url);
+        this.close();
+        
+        this.communicate.success('Dane klienta zostały zaktualizowane', 'Operacja zakończona pomyślnie');
+      },
+        err => {
+          this.showSpinner = false;
+          this.communicate.error('Aktualizacja klienta nie powiodła się', 'Spróbój ponownie');
+          console.log(err);
+        });
+    }
+
+    if(this.customer.id == 0 && this.addClientInAddOrderView ==true) {
+      this.service.addCustomer(this.customer).subscribe((id:number) => {
+        this.customer.id=id;
+        this.close();
+        this.tests.setCustomer( this.customer);
+        
+        this.communicate.success('Nowy Klient został dodany', 'Operacja zakończona pomyślnie');
+      },
+        err => {
+          this.showSpinner = false;
+          this.communicate.error('Dodawanie nowego klienta niepowiodło się', 'Spróbój ponownie');
+          console.log(err);
+        });
+    } 
+    if(this.customer.id!=0 && this.editClientInAddOrderView == true) {
+      this.service.updateCustomer(this.customer).subscribe(() => {
+        this.close();
+        this.customerTest = this.customer;
+        this.tests.setCustomer(this.customerTest);
         this.communicate.success('Dane klienta zostały zaktualizowane', 'Operacja zakończona pomyślnie');
       },
         err => {

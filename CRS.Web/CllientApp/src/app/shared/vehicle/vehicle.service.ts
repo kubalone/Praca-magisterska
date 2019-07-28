@@ -19,8 +19,8 @@ export class VehicleService {
   formModel = this.fb.group({
     modelYear: ['', Validators.required],
     brand: ['', Validators.required],
-    model: [''],
-    registration: [''],
+    model: ['', Validators.required],
+    registration: ['', Validators.required],
     colour: [''],
     vin: [''],
     fuel: [''],
@@ -67,7 +67,7 @@ export class VehicleService {
 
   validationMessages = {
     'modelYear': {
-      'required': 'Rocznik samochodu jest wymagana.',
+      'required': 'Rocznik samochodu jest wymagany.',
     },
     'brand': {
       'required:': 'Marka samochodu jest wymagana.'

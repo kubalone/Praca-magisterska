@@ -16,6 +16,7 @@ namespace CRS.Repository
         void Update(T entity);
         void Delete(T entity);
         IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetIncludeItems(params string[] navigationProperties);
         Task SaveChangesAsync();
     }
 }

@@ -30,10 +30,10 @@ namespace CRS.Web.Controllers.Customer
         [HttpPost]
         [Route("AddCustomer")]
         //Post: /api/Customer/AddCustomer
-        public async Task<IActionResult> PostCustomer(CustomerDto customer)
+        public async Task<ActionResult<int>> PostCustomer(CustomerDto customer)
         {
-            await _customerService.AddCustomer(customer);
-            return Ok();
+            
+            return Ok(await _customerService.AddCustomer(customer));
         }
         [HttpGet]
         [Route("GetAllCustomers")]

@@ -20,10 +20,10 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './shared/user/login.service';
 
 import { AuthInterceptor } from './auth/auth.interceptor';
-
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 import { UserService } from './shared/user/user.service';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { ModalService } from './shared/modal.service';
 
 import { ChangePasswordService } from './shared/user/change-password.service';
@@ -49,7 +49,9 @@ import { VehicleComponent } from './carRepairShopManagement/vehicle/vehicle.comp
 import { AddVehicleComponent } from './carRepairShopManagement/vehicle/add-vehicle/add-vehicle.component';
 import { VehicleDetailsComponent } from './carRepairShopManagement/vehicle/vehicle-details/vehicle-details.component';
 import { VehicleService } from './shared/vehicle/vehicle.service';
-
+import { VehicleListComponent } from './carRepairShopManagement/vehicle/vehicle-list/vehicle-list.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,7 @@ import { VehicleService } from './shared/vehicle/vehicle.service';
     VehicleComponent,
     AddVehicleComponent,
     VehicleDetailsComponent,
+    VehicleListComponent,
 
 
 
@@ -85,11 +88,13 @@ import { VehicleService } from './shared/vehicle/vehicle.service';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AutoCompleteModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     FormsModule,
     DataTablesModule,
-    NgbModule,
+    AutocompleteLibModule,
+    NgbModule
   
     
     

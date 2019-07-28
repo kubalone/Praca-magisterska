@@ -8,7 +8,7 @@
         <div class="card">
           <div class="card-header">
 
-            Klient
+            Klient <button class="btn btn-outline-danger btn-sm float-right" (click)="openAddCustomerModal(newCustomer)"><i class="fas fa-plus"></i></button>
           </div>
           <div class="card-body">
 
@@ -18,34 +18,159 @@
                   <i class="fab fa-searchengin"></i>
                 </div>
               </div>
-              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Wyszukaj klienta"
-                aria-describedby="inputGroupPrepend2" required>
+
+              <p-autoComplete [(ngModel)]="customer" [suggestions]="filteredCustomersSingle"
+                (completeMethod)="filterCustomerSingle($event)" field='namee' [size]="30" placeholder="Wyszukaj klienta"
+                [minLength]="1" id="validationDefaultUsername" emptyMessage="brak wyników">
+
+
+                <ng-template let-customer pTemplate="item">
+                  <div (click)="selectEvent()">{{customer.name}} {{customer.surname}}</div>
+                </ng-template>
+              </p-autoComplete>
             </div>
+          </div>
+
+          <div *ngIf="showClientData" class="client-data">
+         
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Imię:</p>
+              </div>
+              <div>
+                <label>{{customer.name}}</label>
+              </div>
+              <div>
+                <p class="font-weight-bold">Nazwisko:</p>
+              </div>
+              <div>
+                <label>{{customer.surname}}</label>
+              </div>
+              <div>
+                <i class="far fa-edit " (click)="openEditModal(editCustomer)" ngbTooltip="Edytuj klienta" id="edit-customer"></i>
+              </div>
+            </div>
+
+            <div class="form-group row" *ngIf="customer.typeOfCustomerID==2">
+              <div>
+                <p class="font-weight-bold">Nazwa przedsiębiorstwa:</p>
+              </div>
+              <div>
+                <label>{{customer.companyName !=""  ? customer.companyName ||customer.companyName:  '-'}}</label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Numer telefonu:</p>
+              </div>
+              <div>
+                <label>{{customer.phone !=""||customer.phone !=""  ? customer.phone ||customer.phone:  '-'}}</label>
+              </div>
+            </div>
+
+
+
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Województwo:</p>
+              </div>
+              <div>
+                <label>{{customer.province !="" ? customer.province ||customer.province:  '-'}}</label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Kod pocztowy:</p>
+              </div>
+              <div>
+                <label>{{customer.zipCode !=""  ? customer.zipCode ||customer.zipCode:  '-'}}</label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Miasto:</p>
+              </div>
+              <div>
+                <label>{{customer.city !=""  ? customer.city ||customer.city:  '-'}}</label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Ulica:</p>
+              </div>
+              <div>
+                <label>{{customer.street !=""  ? customer.street ||customer.street:  '-'}}</label>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Nr budynku:</p>
+              </div>
+              <div>
+                <label>{{customer.numberOfBuilding !=""  ? customer.numberOfBuilding ||customer.numberOfBuilding:  '-'}}</label>
+              </div>
+              <div>
+                <p class="font-weight-bold">Nr mieszkania:</p>
+              </div>
+              <div>
+                <label>{{customer.numberOfApartment !=""  ? customer.numberOfApartment ||customer.numberOfApartment:  '-'}}</label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div>
+                <p class="font-weight-bold">Email:</p>
+              </div>
+              <div>
+                <label>{{customer.email !=""  ? customer.email ||customer.email:  '-'}}</label>
+              </div>
+            </div>
+
+
 
           </div>
         </div>
+
+
       </div>
+
       <div class="col col-md-4 col-card-body">
-        <div class="card">
+        <div class="card" id="card-vehicle">
           <div class="card-header">
-
-            Pojazd
+            Pojazd <button class="btn btn-outline-danger btn-sm float-right" (click)="openAddVehicleModal(newVehicle)"><i class="fas fa-plus"></i></button>
           </div>
-          <div class="card-body">
-
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text  bg-white">
-                  <i class="fab fa-searchengin"></i>
+        
+          <div *ngIf="showClientData" class="client-data">
+            <div *ngFor="let item of customer.vehicles">
+              <div class="form-group row ">
+                  
+                <div>
+                    <input type="radio"  name="item" [value]="item.id">
                 </div>
-              </div>
-              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Wyszukaj pojazdu"
-                aria-describedby="inputGroupPrepend2" required>
-            </div>
+                 
+                <div>
+                  <p class="font-weight-bold">{{item.brand}}</p>
+                </div>
+                <div>
+                  <p class="font-weight-bold">{{item.model}}</p>
 
+                </div>
+              
+              </div>
+
+            </div>
           </div>
+
         </div>
+
       </div>
+
+
+
       <div class="col col-md-4 col-card-body">
         <div class="card">
           <div class="card-header">
@@ -53,44 +178,32 @@
           </div>
           <div class="card-body">
 
-            <div class="form-group row">
-              <label class="col-md-4 col-form-label">Data przyjęcia</label>
-              <div class="col-md-4">
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-              <div class="col-md-4">
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-            </div>
 
             <div class="form-group row">
-              <label class="col-md-4 col-form-label">Data odbioru</label>
-              <div class="col-md-4">
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
-              <div class="col-md-4">
-                <input type="email" class="form-control" placeholder="Email">
-              </div>
+                <label>Opis awarii</label>
+                <textarea class="form-control" rows="4"></textarea>
             </div>
 
 
             <fieldset class="form-group">
               <div class="row">
-                <legend class="col-form-label col-md-4 pt-0">Powiadomienie</legend>
+                <legend class="col-form-label col-md-4 pt-0">Potwierdzenie</legend>
                 <div class="col-md-8">
 
                   <div class="custom-control custom-radio">
-                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked data-toggle="collapse" data-target="#collapseExample.show">
+                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked
+                      data-toggle="collapse" data-target="#collapseExample.show">
                     <label class="custom-control-label" for="customRadio1">SMS</label>
                   </div>
                   <div class="custom-control custom-radio">
-                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"  data-toggle="collapse" data-target="#collapseExample:not(.show)">
+                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"
+                      data-toggle="collapse" data-target="#collapseExample:not(.show)">
                     <label class="custom-control-label" for="customRadio2">Inny</label>
                   </div>
 
                   <div class="form-group collapse" id="collapseExample">
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                    </div>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -101,7 +214,21 @@
       </div>
     </div>
   </div>
+
   <div class="card-footer">
     <button type="button" class="btn btn-primary float-right">Dodaj zlecenie</button>
   </div>
+
 </div>
+
+<ng-template #newVehicle let-modal>
+    <app-add-vehicle [addVehicleInAddOrderView]="true" [customer]=customer></app-add-vehicle>
+  </ng-template>
+
+  <ng-template #newCustomer let-modal >
+      <app-add-customer [addClientInAddOrderView]="true"></app-add-customer>
+    </ng-template>
+
+    <ng-template #editCustomer let-modal>
+      <app-add-customer [customer]="customer" [editClientInAddOrderView]="true"></app-add-customer>
+  </ng-template>
