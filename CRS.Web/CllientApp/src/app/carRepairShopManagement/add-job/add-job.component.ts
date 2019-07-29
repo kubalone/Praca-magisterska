@@ -7,6 +7,7 @@ import { ignoreElements } from 'rxjs/operators';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { Customer } from 'src/app/shared/model/Customers/customer';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-job',
@@ -15,7 +16,8 @@ import { Customer } from 'src/app/shared/model/Customers/customer';
 })
 export class AddJobComponent implements OnInit {
 
-  constructor(private orderService: OrderService, private countryService:VehicleService, private modalService: NgbModal, private routes: ActivatedRoute) { }
+  constructor(private orderService: OrderService, private countryService:VehicleService, private modalService: NgbModal, private routes: ActivatedRoute, 
+    private fb: FormBuilder) { }
   clienVehicles: clientDetails[];
   customer: Customer;
   
@@ -31,6 +33,25 @@ export class AddJobComponent implements OnInit {
     });
    
 
+  }
+
+  formModel = this.fb.group({
+    repairDetails: ['', Validators.required],
+    vehicle:['',Validators.required],
+    typeOfNotification:['', Validators.required]
+ 
+  });
+  onSubmit(id) {
+
+    var newOrder = {
+      clientId :id,
+      vehicleId: this.formModel.value.vehicle,
+      repairDetails: this.formModel.value.repairDetails,
+      typeOfNotification: this.formModel.value.typeOfNotification
+    }
+    console.log(newOrder);
+
+  
   }
 
     showClientData :boolean =false;
