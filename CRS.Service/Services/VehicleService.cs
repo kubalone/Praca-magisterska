@@ -8,6 +8,7 @@ using CRS.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,12 +47,18 @@ namespace CRS.Service.Services
         }
         public async Task<VehicleDto> GetVehicleById(int id)
         {
-            var vehicle = await GetAsync(id);
-            if (vehicle == null)
+            
+            var vehicleWithOrders = await GetIncludeItems("Orders").ToListAsync();
+
+            var vehicleToGet = vehicleWithOrders.Where(p => p.Id == id).FirstOrDefault();
+
+
+            if (vehicleToGet == null)
             {
-                throw new NotFoundException("Pojazd nie został odnaleziony");
+                throw new NotFoundException("Customer");
             }
-            var vehicleDto = _mapper.Map<VehicleDto>(vehicle);
+
+            var vehicleDto = _mapper.Map<VehicleDto>(vehicleToGet);
             return vehicleDto;
         }
       

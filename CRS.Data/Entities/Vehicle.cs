@@ -18,7 +18,7 @@ namespace CRS.Data.Entities
         public string DisplacementCapacity { get; set; }
         public int? CustomerID { get; set; }
         //Samochód może mieć wiele napraw
-        public ICollection<OrderVehicle> OrderVehicles { get; set; }
+        public ICollection<Order> Orders { get; set; }
         //jeden samochód może miec jedengo klienta
         public Customer Customer { get; set; }
     }

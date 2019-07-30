@@ -65,8 +65,10 @@ namespace CRS.Service.Services
         {
 
             //var customer = await GetAsync(id);
-            var customerWithVehicles = await GetIncludeItems("Vehicles").ToListAsync();
+            var customerWithVehicles = await GetIncludeItems("Vehicles","Orders").ToListAsync();
+  
             var customerToGet = customerWithVehicles.Where(p => p.Id == id).FirstOrDefault();
+               
 
             //customer.Vehicles = vehicles.Where(p=>p.Id==id).Select(p=>p.)
           

@@ -74,6 +74,7 @@ namespace CRS.Web
             services.AddTransient<IVehicleService, VehicleService>();
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<IVehicleModelService, VehicleModelService>();
+            services.AddTransient<IOrderService, OrderService>();
 
             services.Configure<IdentityOptions>(options =>
             {

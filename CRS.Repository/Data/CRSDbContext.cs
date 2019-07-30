@@ -24,7 +24,7 @@ namespace CRS.Repository.Data
         public DbSet<TypeOfCustomer> TypeofCustomer { get; set; }
         public DbSet<Vehicle> Vehicle { get; set; }
         public DbSet<Order> Order { get; set; }
-        public DbSet<OrderVehicle> OrderVehicle { get; set; }
+      
         public  DbSet<VehicleModel> VehicleModel{ get; set; }
         public DbSet<Brand> Brand{ get; set; }
 
@@ -39,7 +39,7 @@ namespace CRS.Repository.Data
             modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderVehicleConfiguration());
+          
             modelBuilder.ApplyConfiguration(new VehicleConfiguration());
          
 

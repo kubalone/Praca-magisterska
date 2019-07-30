@@ -14,15 +14,44 @@ namespace CRS.Web.Controllers.Order
     public class OrderController : ControllerBase
     {
         private ICustomerService _customerService;
-        public OrderController(ICustomerService customerService)
+        private IOrderService _orderService;
+        public OrderController(ICustomerService customerService, IOrderService orderService)
         {
             _customerService = customerService;
+            _orderService = orderService;
         }
         [HttpGet]
         [Route("GetCustomersWithVehicles")]
         public async Task<ActionResult<IEnumerable<CustomerDto>>> GetAllCustomersWithVehicle()
         {
             return Ok(await _customerService.GetCustomersWithVehicles());
+        }
+        [HttpGet]
+        [Route("GetAll")]
+        public async Task<ActionResult<IEnumerable<OrderDto>>> GetAll()
+        {
+            return Ok(await _orderService.GetAllOrders());
+        }
+
+        [HttpGet]
+        [Route("GetOrder/{id}")]
+        public async Task<ActionResult<OrderDto>> GetOrderById(int id)
+        {
+            return Ok(await _orderService.GetOrderById(id));
+        }
+        [HttpPost]
+        [Route("Create")]
+        public async Task<IActionResult> CreateOrder(OrderDto orderDto)
+        {
+            await _orderService.CreateOrder(orderDto);
+            return Ok();
+        }
+        [HttpPut]
+        [Route("PutOrder/{id}")]
+        public async Task<IActionResult> PutOrder(int id, OrderDto orderDto)
+        {
+            await _orderService.EditOrder(id, orderDto);
+            return Ok();
         }
     }
 }

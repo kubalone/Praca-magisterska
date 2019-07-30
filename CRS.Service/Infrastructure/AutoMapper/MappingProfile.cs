@@ -30,6 +30,9 @@ namespace CRS.Service.Infrastructure.AutoMapper
             CreateMap<VehicleModel, VehicleModelDto>();
             CreateMap<VehicleModelDto, VehicleModel>();
 
+            CreateMap<Order, OrderDto>();
+            CreateMap<OrderDto, Order>();
+
 
 
         }

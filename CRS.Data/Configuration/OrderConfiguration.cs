@@ -13,6 +13,11 @@ namespace CRS.Data.Configuration
             builder.HasOne<Customer>(s => s.Customer)
                    .WithMany(g => g.Orders)
                    .HasForeignKey(s => s.CustomerID);
+
+
+            builder.HasOne<Vehicle>(s => s.Vehicle)
+                .WithMany(g => g.Orders)
+                .HasForeignKey(s => s.VehicleId);
         }
     }
 }

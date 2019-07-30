@@ -165,26 +165,21 @@ namespace CRS.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CustomerID");
+                    b.Property<int>("CustomerID");
+
+                    b.Property<string>("RepairDetails");
+
+                    b.Property<string>("TypeOfNotification");
+
+                    b.Property<int>("VehicleId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerID");
 
+                    b.HasIndex("VehicleId");
+
                     b.ToTable("Order");
-                });
-
-            modelBuilder.Entity("CRS.Data.Entities.OrderVehicle", b =>
-                {
-                    b.Property<int>("OrderID");
-
-                    b.Property<int>("VehicleID");
-
-                    b.HasKey("OrderID", "VehicleID");
-
-                    b.HasIndex("VehicleID");
-
-                    b.ToTable("OrderVehicle");
                 });
 
             modelBuilder.Entity("CRS.Data.Entities.TypeOfCustomer", b =>
@@ -350,19 +345,12 @@ namespace CRS.Repository.Migrations
                 {
                     b.HasOne("CRS.Data.Entities.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerID");
-                });
-
-            modelBuilder.Entity("CRS.Data.Entities.OrderVehicle", b =>
-                {
-                    b.HasOne("CRS.Data.Entities.Order", "Orer")
-                        .WithMany("OrderVehicles")
-                        .HasForeignKey("OrderID")
+                        .HasForeignKey("CustomerID")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("CRS.Data.Entities.Vehicle", "Vehicle")
-                        .WithMany("OrderVehicles")
-                        .HasForeignKey("VehicleID")
+                        .WithMany("Orders")
+                        .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
