@@ -5,7 +5,7 @@ import { MainComponent } from './layout/main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OrderComponent } from './carRepairShopManagement/order/order.component';
-import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
+
 import { AddJobComponent } from './carRepairShopManagement/add-job/add-job.component';
 import { CustomerComponent } from './carRepairShopManagement/customer/customer.component';
 import { AllCustomerComponent } from './carRepairShopManagement/customer/type-of-customer/all-customer/all-customer.component';
@@ -17,6 +17,11 @@ import { CustomerDetailsComponent } from './carRepairShopManagement/customer/cus
 import { VehicleComponent } from './carRepairShopManagement/vehicle/vehicle.component';
 import { VehicleDetailsComponent } from './carRepairShopManagement/vehicle/vehicle-details/vehicle-details.component';
 import { VehicleListComponent } from './carRepairShopManagement/vehicle/vehicle-list/vehicle-list.component';
+import { AllOrdersComponent } from './carRepairShopManagement/order/type-of-order/all-orders/all-orders.component';
+import { FinishedOrdersComponent } from './carRepairShopManagement/order/type-of-order/finished-orders/finished-orders.component';
+import { ActualOrdersComponent } from './carRepairShopManagement/order/type-of-order/actual-orders/actual-orders.component';
+import { OrderDetailsComponent } from './carRepairShopManagement/order/order-details/order-details.component';
+import { TypeOfOrderComponent } from './carRepairShopManagement/order/type-of-order/type-of-order.component';
 
 
 
@@ -39,8 +44,8 @@ const routes: Routes = [
         path: 'pojazdy', component: VehicleComponent, canActivate: [AuthGuard],
         children: [
           {
-           
-            path: 'informacje/:id', component: VehicleDetailsComponent, canActivate:[AuthGuard]
+
+            path: 'informacje/:id', component: VehicleDetailsComponent, canActivate: [AuthGuard]
           },
           {
             path: '', component: VehicleListComponent, canActivate: [AuthGuard],
@@ -64,18 +69,32 @@ const routes: Routes = [
               }
             ]
           },
-          { path: 'informacje/:id', component: CustomerDetailsComponent, canActivate:[AuthGuard]}
+          { path: 'informacje/:id', component: CustomerDetailsComponent, canActivate: [AuthGuard] }
 
 
         ]
       },
 
       {
-        path: 'zlecenia', component: OrderComponent,
+        path: 'naprawy', component: OrderComponent, canActivate: [AuthGuard],
         children: [
-          { path: 'wszystkie-zlecenia', component: AllOrdersComponent }
+          {
+            path: '', component: TypeOfOrderComponent, canActivate: [AuthGuard],
+            children: [
+              {
+                path: 'wszystkie-naprawy', component: AllOrdersComponent, canActivate: [AuthGuard]
+              },
+              {
+                path: 'ukonczone-naprawy', component: FinishedOrdersComponent, canActivate: [AuthGuard]
+              },
+              {
+                path: 'aktualne-naprawy', component: ActualOrdersComponent, canActivate: [AuthGuard]
+              }
+            ]
+          }
         ]
-      }
+      },
+      { path: 'informacje/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] }
     ],
   },
   { path: 'login', component: LoginComponent },

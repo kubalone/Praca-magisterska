@@ -34,13 +34,29 @@ namespace CRS.Web.Controllers.Order
         }
 
         [HttpGet]
+        [Route("GetFinishedOrders")]
+        public async Task<ActionResult<IEnumerable<OrderDto>>> GetFinishedOrders()
+        {
+            return Ok(await _orderService.GetFinishedOrders());
+        }
+
+
+        [HttpGet]
+        [Route("GetActualOrders")]
+        public async Task<ActionResult<IEnumerable<OrderDto>>> GetActualOrders()
+        {
+            return Ok(await _orderService.GetActualOrders());
+        }
+
+
+        [HttpGet]
         [Route("GetOrder/{id}")]
         public async Task<ActionResult<OrderDto>> GetOrderById(int id)
         {
             return Ok(await _orderService.GetOrderById(id));
         }
         [HttpPost]
-        [Route("Create")]
+        [Route("AddOrder")]
         public async Task<IActionResult> CreateOrder(OrderDto orderDto)
         {
             await _orderService.CreateOrder(orderDto);
@@ -51,6 +67,13 @@ namespace CRS.Web.Controllers.Order
         public async Task<IActionResult> PutOrder(int id, OrderDto orderDto)
         {
             await _orderService.EditOrder(id, orderDto);
+            return Ok();
+        }
+        [HttpPut]
+        [Route("ChangeStatus/{id}")]
+        public async Task<IActionResult> ChangeStatus(int id, [FromBody]bool status)
+        {
+            await _orderService.ChangeStatus(id, status);
             return Ok();
         }
     }

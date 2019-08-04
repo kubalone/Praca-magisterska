@@ -11,7 +11,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 
-import { AllOrdersComponent } from './carRepairShopManagement/order/all-orders/all-orders.component';
 import { OrderComponent } from './carRepairShopManagement/order/order.component';
 import { MainComponent } from './layout/main/main.component';
 import { UserManagementComponent } from './userManagement/user-management.component';
@@ -52,6 +51,12 @@ import { VehicleService } from './shared/vehicle/vehicle.service';
 import { VehicleListComponent } from './carRepairShopManagement/vehicle/vehicle-list/vehicle-list.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TypeOfOrderComponent } from './carRepairShopManagement/order/type-of-order/type-of-order.component';
+import { OrderDetailsComponent } from './carRepairShopManagement/order/order-details/order-details.component';
+import { TypeOfOrdersTemplateComponent } from './carRepairShopManagement/order/type-of-order/type-of-orders-template/type-of-orders-template.component';
+import { ActualOrdersComponent } from './carRepairShopManagement/order/type-of-order/actual-orders/actual-orders.component';
+import { FinishedOrdersComponent } from './carRepairShopManagement/order/type-of-order/finished-orders/finished-orders.component';
+import { AllOrdersComponent } from './carRepairShopManagement/order/type-of-order/all-orders/all-orders.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +83,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AddVehicleComponent,
     VehicleDetailsComponent,
     VehicleListComponent,
+    TypeOfOrderComponent,
+    OrderDetailsComponent,
+    TypeOfOrdersTemplateComponent,
+    ActualOrdersComponent,
+    FinishedOrdersComponent,
 
 
 

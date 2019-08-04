@@ -50,7 +50,18 @@ export class OrderService {
   getCustomersWithVehicles() {
     return this.httpClient.get<clientDetails>(this.URL+'/GetCustomersWithVehicles').pipe((catchError(this.handleError)));;
   }
- 
+  addOrder(order) {
+    return this.httpClient.post(this.URL + "/AddOrder", order);
+   }
+   getOrders() {
+    return this.httpClient.get(this.URL + "/GetAll").pipe((catchError(this.handleError)));;
+   } 
+   getFinishedOrders() {
+    return this.httpClient.get(this.URL + "/GetFinishedOrders").pipe((catchError(this.handleError)));;
+   } 
+   getActualOrders() {
+    return this.httpClient.get(this.URL + "/GetActualOrders").pipe((catchError(this.handleError)));;
+   }
 
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {

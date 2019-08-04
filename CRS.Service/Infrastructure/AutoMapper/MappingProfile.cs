@@ -33,6 +33,13 @@ namespace CRS.Service.Infrastructure.AutoMapper
             CreateMap<Order, OrderDto>();
             CreateMap<OrderDto, Order>();
 
+            CreateMap<Order, OrderDetailsDto>()
+                .ForMember(dest => dest.Customer, opt => opt.MapFrom(src => src.Customer));
+                //.ForPath(d=>d.Customer.Vehicles, opt=>opt.Ignore())
+                //.ForPath(dest=>dest.Customer.Orders, opt=>opt.Ignore());
+                
+            //CreateMap<OrderDetailsDto, Order>();
+
 
 
         }

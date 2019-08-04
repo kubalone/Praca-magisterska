@@ -165,7 +165,13 @@ namespace CRS.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedAt");
+
                     b.Property<int>("CustomerID");
+
+                    b.Property<DateTime?>("FinishedAt");
+
+                    b.Property<bool>("IsFinished");
 
                     b.Property<string>("RepairDetails");
 

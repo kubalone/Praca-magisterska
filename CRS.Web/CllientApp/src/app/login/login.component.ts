@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('token') != null) {
-      this.router.navigateByUrl('/zlecenia/wszystkie-zlecenia');
+      this.router.navigateByUrl('/naprawy');
     }
   }
   formModel = {

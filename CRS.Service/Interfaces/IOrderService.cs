@@ -14,6 +14,9 @@ namespace CRS.Service.Interfaces
         Task<OrderDto> GetOrderById(int id);
         Task CreateOrder(OrderDto orderDto);
         Task EditOrder(int id, OrderDto orderDto);
+        Task ChangeStatus(int id, bool status);
+        Task<IEnumerable<OrderDto>> GetFinishedOrders();
+        Task<IEnumerable<OrderDto>> GetActualOrders();
 
     }
 }

@@ -1,161 +1,124 @@
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.Service.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.Service.pdb
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.csprojAssemblyReference.cache
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CoreCompileInputs.cache
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfoInputs.cache
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfo.cs
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.pdb
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Cookies.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Core.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.DataProtection.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.DataProtection.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Hosting.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Extensions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Features.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.WebUtilities.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Hosting.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Identity.Core.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Logging.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.ObjectPool.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Options.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Primitives.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.WebEncoders.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Net.Http.Headers.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Win32.Registry.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Buffers.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.ComponentModel.Annotations.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Memory.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Numerics.Vectors.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Security.AccessControl.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Security.Cryptography.Xml.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Security.Permissions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Security.Principal.Windows.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Text.Encodings.Web.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.Data.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.Data.pdb
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CopyComplete
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Remotion.Linq.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Collections.Immutable.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Diagnostics.DiagnosticSource.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Interactive.Async.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.xml
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.pdb
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.xml
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.pdb
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.xml
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\System.Data.SqlClient.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.DAL.dll
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.DAL.pdb
-C:\Users\kubalone\Desktop\Praca dyplomowa\CarRepairSystem\CRS.Service\bin\Debug\net472\CRS.DAL.dll.config
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Service.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Service.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Cookies.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Core.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.DataProtection.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.DataProtection.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Hosting.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Extensions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Features.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.WebUtilities.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Hosting.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Identity.Core.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Logging.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.ObjectPool.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Options.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Primitives.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Extensions.WebEncoders.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Net.Http.Headers.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.Win32.Registry.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Remotion.Linq.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Buffers.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Collections.Immutable.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.ComponentModel.Annotations.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Data.SqlClient.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Interactive.Async.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Memory.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Numerics.Vectors.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Security.AccessControl.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Security.Cryptography.Xml.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Security.Permissions.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Security.Principal.Windows.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.Text.Encodings.Web.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Data.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Data.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.xml
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.xml
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.xml
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.csprojAssemblyReference.cache
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CoreCompileInputs.cache
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfoInputs.cache
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfo.cs
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CopyComplete
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Newtonsoft.Json.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\SendGrid.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.xml
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Repository.dll
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Repository.pdb
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\CRS.Repository.dll.config
-C:\Users\Reno\Desktop\Praca dyplomowa\CRS.Service\bin\Debug\net472\AutoMapper.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Service.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Service.pdb
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\AutoMapper.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Cookies.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cors.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Localization.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Cors.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Localization.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.RazorPages.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Razor.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Routing.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.StaticFiles.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.CodeAnalysis.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Localization.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Logging.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Options.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.Primitives.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Net.Http.Headers.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.Win32.Registry.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Newtonsoft.Json.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Newtonsoft.Json.Bson.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Remotion.Linq.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\SendGrid.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Buffers.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Collections.Immutable.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.ComponentModel.Annotations.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Data.SqlClient.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Interactive.Async.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Memory.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Numerics.Vectors.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Reflection.Metadata.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Security.AccessControl.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Security.Cryptography.Xml.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Security.Permissions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Security.Principal.Windows.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Text.Encoding.CodePages.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Text.Encodings.Web.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.Threading.Tasks.Extensions.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Data.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Repository.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Repository.pdb
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Repository.dll.config
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\CRS.Data.pdb
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.pdb
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\bin\Debug\net472\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.csprojAssemblyReference.cache
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CoreCompileInputs.cache
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfoInputs.cache
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.AssemblyInfo.cs
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.csproj.CopyComplete
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.dll
+C:\Users\Reno\source\repos\Praca-magisterska\CRS.Service\obj\Debug\net472\CRS.Service.pdb

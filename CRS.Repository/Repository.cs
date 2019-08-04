@@ -25,10 +25,22 @@ namespace CRS.Repository
         {
             return _context.Set<T>().AsNoTracking();
         }
+        public IQueryable<T> GetWithOrderByDescending<TKey>(Expression<Func<T, TKey>> expression)
+      
+        {
+            return _context.Set<T>()
+                .OrderByDescending(expression);
+        }
+        public IQueryable<T> GetWithOrderByDescendingAndCondition<TKey>(Expression<Func<T, TKey>> expression, Expression<Func<T, bool>> condition)
 
+        {
+            return _context.Set<T>()
+                .OrderByDescending(expression)
+                .Where(condition);
+        }
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-            return this._context.Set<T>()
+            return _context.Set<T>()
                 .Where(expression);
         }
         public IQueryable<T> GetIncludeItems(params string[] navigationProperties)
