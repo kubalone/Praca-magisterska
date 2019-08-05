@@ -61,7 +61,25 @@ namespace CRS.Service.Services
             var vehicleDto = _mapper.Map<VehicleDto>(vehicleToGet);
             return vehicleDto;
         }
-      
+        public async Task<VehicleDto> GetVehicleWithoutOrders(int vehicleId)
+        {
+
+         
+            var vehicleById = await GetVehicleById(vehicleId);
+            var vehicle = new VehicleDto()
+            {
+                Id = vehicleById.Id,
+                Brand = vehicleById.Brand,
+                Model = vehicleById.Model,
+                ModelYear = vehicleById.ModelYear,
+                Registration = vehicleById.Registration,
+                Fuel = vehicleById.Fuel
+            };
+          
+            return vehicle;
+
+        }
+
 
     }
 }

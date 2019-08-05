@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let order of orders" class="customer-details" >
+    <tr *ngFor="let order of orders" class="customer-details" (click)="viewOrder(order.id)">
       <td>{{order.createdAt | date: 'dd-LL-yyyy'}}</td>
       <td *ngIf="showFinishedDate">{{order.finishedAt | date: 'dd-LL-yyyy'}}</td>
       <td>{{order.vehicle.brand}}</td>

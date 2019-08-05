@@ -49,6 +49,8 @@ export class TypeOfOrdersTemplateComponent implements OnInit {
       //searching: false,
       dom: '<lf<t>ip>' 
     };
-  
+  }
+  viewOrder(id:number){
+    this.router.navigate(['naprawy/informacje', id])
   }
 }

@@ -22,8 +22,8 @@ namespace CRS.Service.DTO
         public string NumberOfApartment { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public  ICollection<OrderDto> Orders { get; set; }
+        //public  ICollection<OrderDto> Orders { get; set; }
      
-        public  ICollection<VehicleDto> Vehicles { get; set; }
+        //public  ICollection<VehicleDto> Vehicles { get; set; }
     }
 }

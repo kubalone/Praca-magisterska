@@ -91,10 +91,11 @@ const routes: Routes = [
                 path: 'aktualne-naprawy', component: ActualOrdersComponent, canActivate: [AuthGuard]
               }
             ]
-          }
+          },
+          { path: 'informacje/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] }
         ]
       },
-      { path: 'informacje/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] }
+ 
     ],
   },
   { path: 'login', component: LoginComponent },

@@ -62,6 +62,9 @@ export class OrderService {
    getActualOrders() {
     return this.httpClient.get(this.URL + "/GetActualOrders").pipe((catchError(this.handleError)));;
    }
+   getOrder(id:number) {
+    return this.httpClient.get(`${this.URL}/${'GetOrder/'}${id}`).pipe((catchError(this.handleError)));
+  }
 
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {

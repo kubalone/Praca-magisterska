@@ -8,7 +8,7 @@
         </span>
       </div>
       <div class="row">
-        <h6><span class="badge badge-secondary">Właściciel: </span></h6>
+        <h6 (click)="viewCustomer(customer?.id)" id="customer-header"><span class="badge badge-secondary">Właściciel: </span> {{customer?.name}} {{customer?.surname}}</h6>
       </div>
       <div class="row">
         <label>Numer rejestracyjny:</label> {{vehicle?.registration}}
@@ -54,5 +54,5 @@
   </div>
   </div>
   <ng-template #editVehicle let-modal>
-      <app-add-vehicle [vehicle]="vehicle"></app-add-vehicle>
+      <app-add-vehicle [vehicle]="vehicle" [addVehicleInAddOrderView]="false"></app-add-vehicle>
   </ng-template>

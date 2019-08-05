@@ -1,20 +1,24 @@
-<div class="container">
+<div class="d-flex justify-content-center" *ngIf="showLoading">
+  <div class="spinner-border text-primary spinner-border-table" role="status">
+  </div>
+</div>
+<div class="container" *ngIf="showCustomerDetails">
 <div class="info-details col-md-12 row">
   <div class="col-md-3">
     <div class="row">
       <span class="name-head">
-        <h5><i class="fas fa-user"></i> {{customer?.name}} {{customer?.surname}}
+        <h5><i class="fas fa-user"></i> {{customer.name}} {{customer.surname}}
           <i class="far fa-edit" ngbTooltip="Edytuj klienta" (click)="openEditModal(editCustomer)"></i></h5>
       </span>
     </div>
     <div class="row">
-      <h6><span class="badge badge-secondary">{{getTypeOfClient(customer?.typeOfCustomerID)}}</span></h6>
+      <h6><span class="badge badge-secondary">{{getTypeOfClient(customer.typeOfCustomerID)}}</span></h6>
     </div>
     <div class="row">
-      <label>Nazwa przedsiębiorstwa:</label> {{customer?.companyName}}
+      <label>Nazwa przedsiębiorstwa:</label> {{customer.companyName}}
     </div>
     <div class="row">
-      <label>Dołączył:</label> {{customer?.dateTimeAddCustomer | date }}
+      <label>Dołączył:</label> {{customer.dateTimeAddCustomer | date }}
     </div>
   </div>
 
@@ -25,16 +29,16 @@
       </span>
     </div>
     <div class="row">
-      <label>Województwo:</label>{{checkIsNull(customer?.province)}}
+      <label>Województwo:</label>{{checkIsNull(customer.province)}}
     </div>
     <div class="row">
-      <label>Miasto:</label>{{checkIsNull(customer?.city)}}
+      <label>Miasto:</label>{{checkIsNull(customer.city)}}
       <div *ngIf="customer?.city">
         {{customer?.zipCode}}
       </div>
     </div>
     <div class="row">
-      <label>Ulica:</label>{{checkIsNull(customer?.street)}}
+      <label>Ulica:</label>{{checkIsNull(customer.street)}}
       <div *ngIf="customer?.street">
         {{customer?.numberOfBuilding}} / {{customer?.numberOfApartment}}
       </div>
@@ -48,10 +52,10 @@
       </span>
     </div>
     <div class="row">
-      <label>Telefon:</label> {{checkIsNull(customer?.phone)}}
+      <label>Telefon:</label> {{checkIsNull(customer.phone)}}
     </div>
     <div class="row">
-      <label>Email:</label>{{checkIsNull(customer?.email)}}
+      <label>Email:</label>{{checkIsNull(customer.email)}}
     </div>
   </div>
 </div>

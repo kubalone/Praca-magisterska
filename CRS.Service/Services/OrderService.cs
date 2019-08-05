@@ -110,40 +110,53 @@ namespace CRS.Service.Services
             {
                 throw new NotFoundException("Zlecenie nie zostało odnalezione");
             }
+            
             var orderDto = _mapper.Map<OrderDto>(order);
+            orderDto.Vehicle = await _vehicleService.GetVehicleById(orderDto.VehicleId);
+            orderDto.Customer = await _customerService.GetCustomerById(orderDto.CustomerID);
+            
             return orderDto;
         }
         public async Task<List<OrderDto>> GetItemsForOrder(List<OrderDto> ordersDto)
         {
             foreach (var item in ordersDto)
             {
-                var customer = await _customerService.GetCustomerById(item.CustomerID);
 
-                item.Customer = new CustomerDto()
-                {
-                    Id = customer.Id,
-                    Name = customer.Name,
-                    Surname = customer.Surname,
-                    Phone = customer.Phone,
-                    CompanyName = customer.CompanyName
-                };
+             
+
+                item.Customer = await _customerService.GetCustomerWithoutOrdersAndVehicles(item.CustomerID);
+                item.Vehicle = await _vehicleService.GetVehicleWithoutOrders(item.VehicleId);
                
+
             }
-            foreach (var item in ordersDto)
-            {
-                var vehicle = await _vehicleService.GetVehicleById(item.VehicleId);
-                item.Vehicle = new VehicleDto()
-                {
-                    Id = vehicle.Id,
-                    Brand = vehicle.Brand,
-                    Model = vehicle.Model,
-                    ModelYear = vehicle.ModelYear,
-                    Registration = vehicle.Registration,
-                    Fuel = vehicle.Fuel
-                };
           
-            }
+
             return ordersDto;
+        }
+        public async Task<OrderDto> GetOrderWithItem(OrderDto orderDto,int customerId, int vehicleId)
+        {
+
+            var customer = await _customerService.GetCustomerById(customerId);
+            var vehicle = await _vehicleService.GetVehicleById(vehicleId);
+            orderDto.Vehicle = new VehicleDto()
+            {
+                Id = vehicle.Id,
+                Brand = vehicle.Brand,
+                Model = vehicle.Model,
+                ModelYear = vehicle.ModelYear,
+                Registration = vehicle.Registration,
+                Fuel = vehicle.Fuel
+            };
+            orderDto.Customer = new CustomerDto()
+            {
+                Id = customer.Id,
+                Name = customer.Name,
+                Surname = customer.Surname,
+                Phone = customer.Phone,
+                CompanyName = customer.CompanyName
+            };
+            return orderDto;
+
         }
     }
 }

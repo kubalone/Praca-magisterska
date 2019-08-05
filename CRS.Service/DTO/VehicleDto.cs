@@ -18,6 +18,6 @@ namespace CRS.Service.DTO
         public string Power { get; set; }
         public string DisplacementCapacity { get; set; }
         public int? CustomerID { get; set; }
-        public ICollection<OrderDto> Orders { get; set; }
+        //public ICollection<OrderDto> Orders { get; set; }
     }
 }

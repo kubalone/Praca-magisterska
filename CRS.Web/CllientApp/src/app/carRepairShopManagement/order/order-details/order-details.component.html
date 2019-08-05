@@ -1,3 +1,68 @@
-<p>
-  order-details works!
-</p>
+<div class="d-flex justify-content-center" *ngIf="showLoading">
+  <div class="spinner-border text-primary spinner-border-table" role="status">
+  </div>
+</div>
+<div class="container" *ngIf="showOrderDetails"  style="margin-top:5.2rem">
+  <div class="info-details col-md-12 row">
+    <div class="col-md-3">
+      <div class="row">
+        <span class="name-head">
+          <h5 (click)="viewCustomer(order.customer.id)" id="customer-header"><i class="fas fa-user"></i> {{order.customer.name}} {{order.customer.surname}}</h5>
+        </span>
+      </div>
+      <div class="row">
+        <h6><span class="badge badge-secondary">{{getTypeOfClient(order.customer.typeOfCustomerID)}}</span></h6>
+      </div>
+      <div class="row" *ngIf="order.customer.typeOfCustomerID==2">
+        <label>Nazwa przedsiębiorstwa:</label> {{order.customer.companyName}}
+      </div>
+      <div class="row">
+        <label>Numer telefonu:</label> {{order.customer.phone}}
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="row">
+        <span class="name-head">
+          <h5><i class="fas fa-tools"></i> Naprawa</h5>
+        </span>
+      </div>
+      <div class="row">
+        <label>Szczegóły naprawy:</label>{{order.repairDetails}}
+      </div>
+      <div class="row">
+        <label>Powiadomienie:</label>{{order.typeOfNotification}}
+
+      </div>
+    
+    </div>
+
+    <div class="col-md-3">
+      <div class="row">
+        <span class="name-head">
+          <h5 (click)="viewVehicle(order.vehicle.id)" id="vehicle-header"><i class="fas fa-car"></i> Pojazd</h5>
+        </span>
+      </div>
+      <div class="row" >
+        <div>
+            <label>Marka:</label> {{order.vehicle.brand}}
+        </div>
+        <div class="col">
+            <label>Model:</label> {{order.vehicle.model}}
+        </div>
+      
+  
+      </div>
+     
+      <div class="row">
+          <label>Nr rejestracyjny:</label><h6><span class="badge badge-secondary">{{order.vehicle.registration}}</span></h6>
+      </div>
+      <div class="row">
+        <label>Rocznik:</label> {{order.vehicle.modelYear}}
+      </div>
+      <div class="row">
+        <label>Typ paliwa:</label> {{order.vehicle.fuel}}
+      </div>
+    </div>
+  </div>
+</div>

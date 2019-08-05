@@ -49,7 +49,7 @@ export class AddVehicleComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.customer.id);
+    console.log(this.addVehicleInAddOrderView);
     this.service.getBrand().subscribe((res: any) => {
       this.brands = res;
     });

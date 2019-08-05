@@ -12,7 +12,9 @@ namespace CRS.Service.Interfaces
         Task<IEnumerable<VehicleDto>> GetAllVehicle();
         Task EditVehicle(int id, VehicleDto vehicleDto);
         Task CreateVehicle(VehicleDto vehicleDto);
-        
+        Task<VehicleDto> GetVehicleWithoutOrders(int vehicleId);
+
+
 
     }
 }

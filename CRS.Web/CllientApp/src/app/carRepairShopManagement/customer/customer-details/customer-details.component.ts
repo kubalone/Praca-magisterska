@@ -15,6 +15,8 @@ export class CustomerDetailsComponent implements OnInit {
   typeOfClient: string;
   fieldName: string;
   fullName: string;  
+  showCustomerDetails = false;
+  showLoading=true;
 
   constructor(private route: ActivatedRoute, private service: CustomerService, private modalService: NgbModal) { }
 
@@ -22,6 +24,7 @@ export class CustomerDetailsComponent implements OnInit {
    this.route.paramMap.subscribe(param => {
      const id = +param.get('id');
      this.getCustomerById(id);
+     
 
    });
    
@@ -29,6 +32,8 @@ export class CustomerDetailsComponent implements OnInit {
   getCustomerById(id: number) {
     this.service.getCustomer(id).subscribe(res =>{
       this.customer = res;
+      this.showCustomerDetails = true;
+      this.showLoading=false;
    
     });
   }
