@@ -7,6 +7,6 @@ namespace CRS.Data.Entities
     public class TypeOfCustomer: BaseEntity
     {
         public string TypeName { get; set; }
-        public ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

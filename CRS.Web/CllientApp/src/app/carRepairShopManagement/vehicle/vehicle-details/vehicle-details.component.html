@@ -1,4 +1,8 @@
-<div class="container">
+<div class="d-flex justify-content-center" *ngIf="showLoading">
+  <div class="spinner-border text-primary spinner-border-table" role="status">
+  </div>
+</div>
+<div *ngIf="showVehicleDetails">
   <div class="info-details col-md-12 row">
     <div class="col-md-3">
       <div class="row">
@@ -52,7 +56,12 @@
       </div>
     </div>
   </div>
-  </div>
+  
+
+    <app-type-of-orders-template [orders]="orders" [showLoading]="false" [showTable]="showOrderTable" [header]="header" [showFinishedDate]="false">
+    </app-type-of-orders-template>
+  
+</div>
   <ng-template #editVehicle let-modal>
       <app-add-vehicle [vehicle]="vehicle" [addVehicleInAddOrderView]="false"></app-add-vehicle>
   </ng-template>

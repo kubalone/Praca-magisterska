@@ -12,3 +12,17 @@ C:\Users\Reno\source\repos\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp
 C:\Users\Reno\source\repos\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.csproj.CopyComplete
 C:\Users\Reno\source\repos\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.dll
 C:\Users\Reno\source\repos\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.pdb
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Repository.deps.json
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Repository.runtimeconfig.json
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Repository.runtimeconfig.dev.json
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Repository.dll
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Repository.pdb
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Data.dll
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\bin\Debug\netcoreapp2.2\CRS.Data.pdb
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.csprojAssemblyReference.cache
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.AssemblyInfoInputs.cache
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.AssemblyInfo.cs
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.csproj.CopyComplete
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.dll
+C:\Users\Reno\Desktop\Praca-magisterska\CRS.Repository\obj\Debug\netcoreapp2.2\CRS.Repository.pdb

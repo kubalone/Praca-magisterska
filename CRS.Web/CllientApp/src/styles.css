@@ -256,3 +256,15 @@ caption{
 #card-vehicle .client-data{
   margin-top: 1.4rem;
 }
+.table-details {
+  margin-top: 3rem;
+}
+.table-details .nav-pills .nav-link.active{
+
+  background-color: rgb(33, 150, 243);
+}
+.table-details{
+  background-color: #fff;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  border-radius: 5px;
+}

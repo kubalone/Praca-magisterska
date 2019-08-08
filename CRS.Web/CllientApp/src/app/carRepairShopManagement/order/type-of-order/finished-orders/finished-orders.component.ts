@@ -11,7 +11,7 @@ export class FinishedOrdersComponent implements OnInit {
   finishedOrders:  [];
   showLoading = true;
   showTable = false;
-  ordersType = "Klienci prywatni"
+  ordersType = "Zakończone naprawy"
 
   constructor(private service: OrderService) { }
 

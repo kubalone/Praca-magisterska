@@ -53,6 +53,10 @@ export class OrderService {
   addOrder(order) {
     return this.httpClient.post(this.URL + "/AddOrder", order);
    }
+   changeStatus(id:number, status) {
+ 
+    return this.httpClient.put(`${this.URL}/${'ChangeStatus/'}${id}`,status );
+   }
    getOrders() {
     return this.httpClient.get(this.URL + "/GetAll").pipe((catchError(this.handleError)));;
    } 

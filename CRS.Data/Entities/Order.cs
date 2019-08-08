@@ -11,9 +11,9 @@ namespace CRS.Data.Entities
         public string TypeOfNotification { get; set; }
         public int CustomerID { get; set; }
         public bool IsFinished { get; set; }
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
         public int VehicleId{ get; set; }  
-        public Vehicle Vehicle { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? FinishedAt { get; set; }
     }

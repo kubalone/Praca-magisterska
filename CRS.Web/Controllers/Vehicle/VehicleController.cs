@@ -35,6 +35,12 @@ namespace CRS.Web.Controllers.Vehicle
         {
             return Ok(await _vehicleService.GetVehicleById(id));
         }
+        [HttpGet]
+        [Route("GetVehicleByIdWithoutInclude/{id}")]
+        public async Task<ActionResult<VehicleDto>> GetVehicleByIdWithoutInclude(int id)
+        {
+            return Ok(await _vehicleService.GetVehicleByIdWithoutInclude(id));
+        }
         [HttpPost]
         [Route("CreateVehicle")]
         public async Task<IActionResult> CreateVehicle(VehicleDto vehicleDto)

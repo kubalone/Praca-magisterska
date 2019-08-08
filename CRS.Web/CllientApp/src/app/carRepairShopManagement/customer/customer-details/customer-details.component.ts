@@ -17,10 +17,13 @@ export class CustomerDetailsComponent implements OnInit {
   fullName: string;  
   showCustomerDetails = false;
   showLoading=true;
+  dtOptions: DataTables.Settings = {};
+  header="Naprawy"
 
-  constructor(private route: ActivatedRoute, private service: CustomerService, private modalService: NgbModal) { }
+  constructor(private route: ActivatedRoute, private service: CustomerService, private modalService: NgbModal, private router: Router) { }
 
   ngOnInit() {
+    this.datatableSettings();
    this.route.paramMap.subscribe(param => {
      const id = +param.get('id');
      this.getCustomerById(id);
@@ -34,8 +37,34 @@ export class CustomerDetailsComponent implements OnInit {
       this.customer = res;
       this.showCustomerDetails = true;
       this.showLoading=false;
+ 
    
     });
+  }
+  datatableSettings() {
+    this.dtOptions = {
+      info: false,
+      ordering:false,
+      language: {
+        lengthMenu:"Pokaż _MENU_ ",
+        search: "Wyszukaj",
+        infoEmpty: "Brak wyników",
+        emptyTable: "Brak danych",
+        paginate: {
+          first: "pierwszy",
+          last: "następny",
+          previous: "<<",
+          next: ">>"
+        }
+        
+      },
+      lengthMenu: [ 5, 10, 15, 20, 30,40 ],
+      pageLength: 20,
+      //paging: false,
+     //lengthChange: false,
+      //searching: false,
+      dom: '<lf<t>ip>' 
+    };
   }
   getTypeOfClient(id){
 
@@ -49,5 +78,8 @@ export class CustomerDetailsComponent implements OnInit {
   }
   openEditModal(content) {
     this.modalService.open(content);
+  }
+  viewVehicle(id:number) {
+    this.router.navigate(['pojazdy/informacje', id])
   }
 }

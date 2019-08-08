@@ -15,7 +15,7 @@ export class AllOrdersComponent implements OnInit {
   showLoading = true;
   showTable = false;
  
-  ordersType = "Wszystkie zlecenia";
+  ordersType = "Wszystkie naprawy";
   ngOnInit() { 
    this.getAllOrders();
    

@@ -71,7 +71,7 @@ namespace CRS.Web.Controllers.Order
         }
         [HttpPut]
         [Route("ChangeStatus/{id}")]
-        public async Task<IActionResult> ChangeStatus(int id, [FromBody]bool status)
+        public async Task<IActionResult> ChangeStatus(int id,bool status)
         {
             await _orderService.ChangeStatus(id, status);
             return Ok();

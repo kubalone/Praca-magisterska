@@ -7,6 +7,6 @@ namespace CRS.Data.Entities
     public class Brand:BaseEntity
     {
         public string Name { get; set; }
-        public ICollection<VehicleModel> VehicleModels { get; set; }
+        public virtual ICollection<VehicleModel> VehicleModels { get; set; }
     }
 }

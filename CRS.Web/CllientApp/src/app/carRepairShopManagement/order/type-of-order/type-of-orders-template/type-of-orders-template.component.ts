@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/shared/order/order.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-type-of-orders-template',
@@ -14,15 +16,19 @@ export class TypeOfOrdersTemplateComponent implements OnInit {
   @Input() showTable;
   @Input() showFinishedDate;
   dataTable: any;
-
+  statusOptions = [
+    { id: false , status: "Przyjęte"},
+    { id: true, status: "Zakończone" }
+]
   dtOptions: DataTables.Settings = {};
 
   fieldName: string;
   
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: OrderService, private communicate: ToastrService,) { }
 
   ngOnInit() {
+  
     this.datatableSettings();
   }
   datatableSettings() {
@@ -52,5 +58,20 @@ export class TypeOfOrdersTemplateComponent implements OnInit {
   }
   viewOrder(id:number){
     this.router.navigate(['naprawy/informacje', id])
+  }
+  changeStatus(event, id) {
+    console.log(event+" "+id);
+    this.service.changeStatus(id, event).subscribe(() => {
+      this.redirectTo(this.router.url);
+      this.communicate.success('Status został zauktualizowany');
+    },
+    err =>{
+      this.communicate.error('Nie udało się zaktualizować klienta');
+    })
+   
+  }
+  redirectTo(uri) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+      this.router.navigate([uri]));
   }
 }

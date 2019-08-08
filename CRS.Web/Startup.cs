@@ -46,7 +46,8 @@ namespace CRS.Web
 
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("AuthMessageSenderOptions"));
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             // Auto Mapper Configurations
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -65,7 +66,9 @@ namespace CRS.Web
             //services.Configure<AppSettings>(appSettingsSection);
 
             services.AddDbContext<CRSDbContext>(options =>
-               options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystemDB;Trusted_Connection=True;"));
+               options
+               .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystemDB;Trusted_Connection=True;")
+            );
 
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IEmailSender, EmailSender>();

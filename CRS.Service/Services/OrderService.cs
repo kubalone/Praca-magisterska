@@ -76,16 +76,7 @@ namespace CRS.Service.Services
             await SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<OrderDto>> GetAllOrders()
-        {
-            var orders = await GetWithOrderByDescending(p => p.Id).ToListAsync();
-         
-       
-            var ordersDto = _mapper.Map<List<OrderDto>>(orders);
-            var ordersDtoWithItems = await GetItemsForOrder(ordersDto);
-            return ordersDtoWithItems;
-        }
-
+    
       
         public async Task<IEnumerable<OrderDto>> GetFinishedOrders()
         {
@@ -110,6 +101,7 @@ namespace CRS.Service.Services
             {
                 throw new NotFoundException("Zlecenie nie zostało odnalezione");
             }
+
             
             var orderDto = _mapper.Map<OrderDto>(order);
             orderDto.Vehicle = await _vehicleService.GetVehicleById(orderDto.VehicleId);
@@ -117,6 +109,17 @@ namespace CRS.Service.Services
             
             return orderDto;
         }
+        public async Task<IEnumerable<OrderDto>> GetAllOrders()
+        {
+            var orders = await GetWithOrderByDescending(p => p.Id).ToListAsync();
+
+
+            var ordersDto = _mapper.Map<List<OrderDto>>(orders);
+            var ordersWithItems = await GetItemsForOrder(ordersDto);
+            return ordersWithItems;
+        }
+        
+
         public async Task<List<OrderDto>> GetItemsForOrder(List<OrderDto> ordersDto)
         {
             foreach (var item in ordersDto)
@@ -124,8 +127,8 @@ namespace CRS.Service.Services
 
              
 
-                item.Customer = await _customerService.GetCustomerWithoutOrdersAndVehicles(item.CustomerID);
-                item.Vehicle = await _vehicleService.GetVehicleWithoutOrders(item.VehicleId);
+                item.Customer = await _customerService.GetCustomerById(item.CustomerID);
+                item.Vehicle = await _vehicleService.GetVehicleByIdWithoutInclude(item.VehicleId);
                
 
             }

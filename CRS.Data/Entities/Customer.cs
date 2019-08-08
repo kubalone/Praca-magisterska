@@ -22,11 +22,11 @@ namespace CRS.Data.Entities
         public string Email { get; set; }
         public string Phone { get; set; }
         //Jeden klient może mieć wiele napraw
-        public  ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
         //Jeden klient może mieć tylko jeden typ klienta
-        public TypeOfCustomer TypeOfCustomer { get; set; }
+        public virtual TypeOfCustomer TypeOfCustomer { get; set; }
         //Jeden użytkownik może mieć wiele samochodow
-        public  ICollection<Vehicle> Vehicles { get; set; }
+        public virtual ICollection<Vehicle> Vehicles { get; set; }
 
     }
 }

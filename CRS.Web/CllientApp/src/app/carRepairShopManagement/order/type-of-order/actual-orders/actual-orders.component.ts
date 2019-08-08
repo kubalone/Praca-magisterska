@@ -12,7 +12,7 @@ export class ActualOrdersComponent implements OnInit {
   actualOrders:  [];
   showLoading = true;
   showTable = false;
-  ordersType = "Naprawy zakończone"
+  ordersType = "Aktualne naprawy"
 
   constructor(private service: OrderService) { }
 

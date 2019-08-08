@@ -11,4 +11,5 @@ export class Vehicle {
     power: string;
     displacementCapacity: string;
     customerID?: number
+    
 }

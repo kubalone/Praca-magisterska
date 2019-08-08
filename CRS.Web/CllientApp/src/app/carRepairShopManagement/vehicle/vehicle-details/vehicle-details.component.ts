@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VehicleService } from 'src/app/shared/vehicle/vehicle.service';
 import { Vehicle } from 'src/app/shared/model/Vehicles/vehicle';
 import { CustomerService } from 'src/app/shared/customer/customer.service';
+import { OrderService } from 'src/app/shared/order/order.service';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -11,10 +12,16 @@ import { CustomerService } from 'src/app/shared/customer/customer.service';
   styleUrls: ['./vehicle-details.component.css']
 })
 export class VehicleDetailsComponent implements OnInit {
-  vehicle: Vehicle;
+  vehicle
   fieldName: string;
   customer;
-  constructor(private route: ActivatedRoute, private router: Router, private service: VehicleService, private modalService: NgbModal, private serviceCustomer: CustomerService) { }
+  showVehicleDetails = false;
+  showLoading=true;
+  showOrderTable;
+  header="Naprawy";
+  orders:any[]=[];
+
+  constructor(private route: ActivatedRoute, private orderService:OrderService, private router: Router, private service: VehicleService, private modalService: NgbModal, private serviceCustomer: CustomerService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
@@ -26,11 +33,37 @@ export class VehicleDetailsComponent implements OnInit {
   getVehicleById(id: number) {
     this.service.getVehicle(id).subscribe(res =>{
       this.vehicle = res;
-      this.serviceCustomer.getCustomer(this.vehicle.customerID).subscribe(cus => {
-        this.customer=cus;
-      })
+  
+        this.serviceCustomer.getCustomer(this.vehicle.customerID).subscribe(cus => {
+          this.customer=cus;
+        
+          this.showLoading=false;
+         
+         // this.showVehicleDetails= true;
+          if(this.vehicle.orders.length==0) {
+            this.showVehicleDetails= true;
+            this.showOrderTable= false;
+          }
+          
+            this.vehicle.orders.forEach(element => {
+              this.orderService.getOrder(element.id).subscribe((res:any) => {
+                this.orders.push(res);
+                this.showOrderTable = true;
+                this.showVehicleDetails= true;
+              })
+          
+            });
+           
+          
+          
+        
+        })
+     // });
+  
+    
    
     });
+
   }
   openEditModal(content) {
     this.modalService.open(content);

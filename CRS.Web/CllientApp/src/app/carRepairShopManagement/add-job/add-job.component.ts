@@ -57,7 +57,7 @@ export class AddJobComponent implements OnInit {
       typeOfNotification: this.formModel.value.typeOfNotification
     }
     this.orderService.addOrder(newOrder).subscribe(() => {
-      this.router.navigateByUrl('/zlecenia/wszystkie-zlecenia');
+      this.router.navigateByUrl('/naprawy/aktualne-naprawy');
       this.communicate.success('Zamówienie zostało dodane', 'Operacja zakończona pomyślnie');
     },
     err => {

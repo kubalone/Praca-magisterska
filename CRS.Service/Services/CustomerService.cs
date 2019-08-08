@@ -90,25 +90,25 @@ namespace CRS.Service.Services
             Update(customer);
             await SaveChangesAsync();
         }
-        public async Task<CustomerDto> GetCustomerWithoutOrdersAndVehicles(int customerId)
-        {
+        //public async Task<CustomerDto> GetCustomerWithoutOrdersAndVehicles(int customerId)
+        //{
 
 
-            var customerById = await GetCustomerById(customerId);
-            var customer = new CustomerDto()
-            {
+        //    var customerById = await GetCustomerById(customerId);
+        //    var customer = new CustomerDto()
+        //    {
 
-                Id = customerById.Id,
-                Name = customerById.Name,
-                Surname = customerById.Surname,
-                Phone = customerById.Phone,
-                CompanyName = customerById.CompanyName,
-                TypeOfCustomerID=customerById.TypeOfCustomerID
-            };
+        //        Id = customerById.Id,
+        //        Name = customerById.Name,
+        //        Surname = customerById.Surname,
+        //        Phone = customerById.Phone,
+        //        CompanyName = customerById.CompanyName,
+        //        TypeOfCustomerID=customerById.TypeOfCustomerID
+        //    };
 
-            return customer;
+        //    return customer;
 
-        }
+        //}
 
     }
 }
