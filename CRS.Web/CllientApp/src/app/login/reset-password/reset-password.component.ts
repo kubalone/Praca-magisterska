@@ -21,7 +21,7 @@ export class ResetPasswordComponent implements OnInit {
     this.showSpinner = true;
     this.service.resetPasswordForAdmin().subscribe((res:any) =>{
       this.close();
-      if(res.successful == true) {
+      if(res.value.successful == true) {
         this.communicate.success("Link do resetowania hasła został wysłany", "Sprawdź swoją pocztę");
       } else {
         this.communicate.error("Wystąpił błąd", "Nie można wysłać maila do zresetowania hasła");

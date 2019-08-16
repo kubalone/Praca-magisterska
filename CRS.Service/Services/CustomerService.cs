@@ -42,10 +42,7 @@ namespace CRS.Service.Services
         }
         public async Task<IEnumerable<CustomerDto>> GetCustomersWithVehicles()
         {
-            //var customers = await GetAll()
-            //    .OrderByDescending(p => p.DateTimeAddCustomer)
-            //    .Include(p=>p.Vehicles)
-            //    .ToListAsync();
+
             var customers = await GetIncludeItems("Vehicles").ToListAsync();
             var customersDto = _mapper.Map<List<CustomerDto>>(customers);
             return customersDto;
@@ -54,9 +51,6 @@ namespace CRS.Service.Services
         {
             var customers = await FindByCondition(p => p.TypeOfCustomerID.Equals(id)).ToListAsync();
           
-            //var  = await GetAll()
-            //    .Where(p => p.TypeOfCustomerID == id)
-            //    .ToListAsync();
 
             var customersDto = _mapper.Map<List<CustomerDto>>(customers);
             return customersDto;
@@ -64,13 +58,10 @@ namespace CRS.Service.Services
         public async Task <CustomerDto> GetCustomerById(int id)
         {
 
-            //var customer = await GetAsync(id);
             var customerWithVehicles = await GetIncludeItems("Vehicles","Orders").ToListAsync();
   
             var customerToGet = customerWithVehicles.Where(p => p.Id == id).FirstOrDefault();
                
-
-            //customer.Vehicles = vehicles.Where(p=>p.Id==id).Select(p=>p.)
           
             if (customerToGet == null)
             {
@@ -90,25 +81,23 @@ namespace CRS.Service.Services
             Update(customer);
             await SaveChangesAsync();
         }
-        //public async Task<CustomerDto> GetCustomerWithoutOrdersAndVehicles(int customerId)
-        //{
+        public async Task Delete(int id)
+        {
+            var customerWithVehicles = await GetIncludeItems("Vehicles", "Orders").ToListAsync();
 
+            var customerToDelete = customerWithVehicles.Where(p => p.Id == id).FirstOrDefault();
 
-        //    var customerById = await GetCustomerById(customerId);
-        //    var customer = new CustomerDto()
-        //    {
+            
+            if (customerToDelete == null)
+            {
+                throw new NotFoundException("customer to delete not exist");
+            }
 
-        //        Id = customerById.Id,
-        //        Name = customerById.Name,
-        //        Surname = customerById.Surname,
-        //        Phone = customerById.Phone,
-        //        CompanyName = customerById.CompanyName,
-        //        TypeOfCustomerID=customerById.TypeOfCustomerID
-        //    };
+            Delete(customerToDelete);
+            await SaveChangesAsync();
 
-        //    return customer;
+        }
 
-        //}
 
     }
 }

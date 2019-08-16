@@ -136,30 +136,18 @@ namespace CRS.Service.Services
 
             return ordersDto;
         }
-        public async Task<OrderDto> GetOrderWithItem(OrderDto orderDto,int customerId, int vehicleId)
+        public async Task Delete(int id)
         {
+            var order = await GetAsync(id);
+            if (order == null)
+            {
+                throw new NotFoundException("order to delete not exist");
+            }
 
-            var customer = await _customerService.GetCustomerById(customerId);
-            var vehicle = await _vehicleService.GetVehicleById(vehicleId);
-            orderDto.Vehicle = new VehicleDto()
-            {
-                Id = vehicle.Id,
-                Brand = vehicle.Brand,
-                Model = vehicle.Model,
-                ModelYear = vehicle.ModelYear,
-                Registration = vehicle.Registration,
-                Fuel = vehicle.Fuel
-            };
-            orderDto.Customer = new CustomerDto()
-            {
-                Id = customer.Id,
-                Name = customer.Name,
-                Surname = customer.Surname,
-                Phone = customer.Phone,
-                CompanyName = customer.CompanyName
-            };
-            return orderDto;
+            Delete(order);
+            await SaveChangesAsync();
 
         }
+
     }
 }

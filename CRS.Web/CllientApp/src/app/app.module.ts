@@ -57,7 +57,7 @@ import { TypeOfOrdersTemplateComponent } from './carRepairShopManagement/order/t
 import { ActualOrdersComponent } from './carRepairShopManagement/order/type-of-order/actual-orders/actual-orders.component';
 import { FinishedOrdersComponent } from './carRepairShopManagement/order/type-of-order/finished-orders/finished-orders.component';
 import { AllOrdersComponent } from './carRepairShopManagement/order/type-of-order/all-orders/all-orders.component';
-
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,7 +104,10 @@ import { AllOrdersComponent } from './carRepairShopManagement/order/type-of-orde
     FormsModule,
     DataTablesModule,
     AutocompleteLibModule,
-    NgbModule
+    NgbModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger' // set defaults here
+    })
   
     
     

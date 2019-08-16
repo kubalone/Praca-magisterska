@@ -49,5 +49,8 @@ export class OrderDetailsComponent implements OnInit {
     console.log(id);
     this.router.navigate(['pojazdy/informacje', id])
   } 
+  edit(id) {
+    this.router.navigate(['edytuj-zlecenie', id])
+  }
 
 }

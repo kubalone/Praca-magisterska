@@ -5,6 +5,8 @@ import { Brand } from 'src/app/shared/model/Vehicles/brand';
 import { VehicleModel } from 'src/app/shared/model/Vehicles/vehicleModel';
 import { Vehicle } from 'src/app/shared/model/Vehicles/vehicle';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-vehicle-list',
@@ -18,8 +20,8 @@ export class VehicleListComponent implements OnInit {
   showLoading = true;
   showTable = false;
   fieldName: string;
-
-  constructor(private modalService: NgbModal,  private service: VehicleService, private router: Router) { }
+  userRole: boolean;
+  constructor(private modalService: NgbModal,private communicate: ToastrService,  private service: VehicleService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
   this.service.getVehicles().subscribe((res:any) => {
@@ -27,7 +29,18 @@ export class VehicleListComponent implements OnInit {
     this.showLoading= false;
     this.showTable = true;
   });
-  
+  this.dataTableOptions();
+  this.userRole = this.userService.getUserRole() === 'Admin';
+  }
+
+  popoverTitle: string = 'Usuwanie pojazdu';
+  popoverMessage: string = 'Czy jesteś <b>pewny</b> że chcesz usunąć dany pojazd?';
+  confirmText: string = 'Tak';
+  cancelText: string = 'Anuluj';
+  confirmClicked: boolean = false;
+  cancelClicked: boolean = false;
+ 
+dataTableOptions() {
   this.dtOptions = {
     info: false,
     ordering:false,
@@ -51,8 +64,8 @@ export class VehicleListComponent implements OnInit {
     //searching: false,
     dom: '<lf<t>ip>' 
   };
-  }
- 
+}
+
   checkIsNull(item)
   {
     item == '' ? this.fieldName = "-" : this.fieldName = item;
@@ -62,4 +75,13 @@ export class VehicleListComponent implements OnInit {
     this.router.navigate(['pojazdy/informacje', id])
   }
 
+  delete(id) {
+    this.service.deleteVehicle(id).subscribe(res => {
+      this.vehicles = this.vehicles.filter(item => item.id != id);
+      this.communicate.success('Pojazd został usunięty');
+    },
+    err => {
+      this.communicate.error('Nie udało się usunąć pojazdu');
+    })
+  }
 }

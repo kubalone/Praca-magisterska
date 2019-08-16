@@ -268,3 +268,10 @@ caption{
   padding: 1rem 0.5rem 1rem 0.5rem;
   border-radius: 5px;
 }
+.management-button  .btn:hover, .management-button  .btn i:hover {
+  color: #fff!important;
+}
+
+.management-button button {
+margin: 0.3rem;
+}

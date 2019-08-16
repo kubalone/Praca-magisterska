@@ -28,7 +28,7 @@ namespace CRS.Web.Controllers.User
 
         [HttpGet]
         [Route("GetUsers")]
-        //POST : /api/User/GetUsers
+        [Authorize]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
         {
 
@@ -36,8 +36,8 @@ namespace CRS.Web.Controllers.User
 
         }
         [HttpPost]
+        [AllowAnonymous]
         [Route("Login")]
-        //POST : /api/User/Login
         public async Task<ActionResult> Login(AuthenticationDto userDataToLogin)
         {
 
@@ -46,7 +46,7 @@ namespace CRS.Web.Controllers.User
 
         [HttpPost]
         [Route("Register")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Register(AuthenticationDto userDataToRegister)
         {
 
@@ -54,7 +54,8 @@ namespace CRS.Web.Controllers.User
         }
         [HttpDelete]
         [Route("DeleteUser/{id}")]
-        //POST: /api/ApplicationUser/DeleteUser
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(string id)
         {
             await _userService.Delete(id);
@@ -81,7 +82,6 @@ namespace CRS.Web.Controllers.User
         [HttpGet]
         [Authorize]
         [Route("GetUser")]
-        //GET : /api/User/GetUser
         public async Task<ActionResult> GetUserProfile()
         {
             string userId = User.Claims.First(c => c.Type == "UserID").Value;

@@ -28,7 +28,7 @@ import { TypeOfOrderComponent } from './carRepairShopManagement/order/type-of-or
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'klienci', redirectTo: 'klienci/wszyscy-klienci' },
-  //{path: '', redirectTo: 'wszystkie-zlecenia', pathMatch: 'full', canActivate: [AuthGuard]},
+  {path: 'naprawy', redirectTo: 'naprawy/aktualne-naprawy'},
   {
     path: '', component: MainComponent, canActivate: [AuthGuard],
 
@@ -39,6 +39,9 @@ const routes: Routes = [
       },
       {
         path: 'dodaj-zlecenie', component: AddJobComponent, canActivate: [AuthGuard]
+      },
+      {
+        path: 'edytuj-zlecenie/:id', component: AddJobComponent, canActivate: [AuthGuard] 
       },
       {
         path: 'pojazdy', component: VehicleComponent, canActivate: [AuthGuard],

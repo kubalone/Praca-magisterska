@@ -93,6 +93,18 @@ namespace CRS.Service.Services
             return vehicle;
 
         }
+        public async Task Delete(int id)
+        {
+            var vehicle = await GetAsync(id);
+            if (vehicle == null)
+            {
+                throw new NotFoundException("vehicle to delete not exist");
+            }
+
+            Delete(vehicle);
+            await SaveChangesAsync();
+
+        }
 
 
     }

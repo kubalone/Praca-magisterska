@@ -12,16 +12,40 @@
       <th>Nr rejestracyjny</th>
       <th>Rocznik</th>
       <th>Rodzaj paliwa</th>
+      <th>Operacje</th>
 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let vehicle of vehicles;" class="customer-details" (click)="viewVehicle(vehicle.id)">
+    <tr *ngFor="let vehicle of vehicles;" class="customer-details" >
       <td >{{vehicle.brand}}</td>
       <td>{{vehicle.model}}</td>
       <td>{{vehicle.registration}}</td>
       <td>{{vehicle.modelYear}}</td>
       <td>{{checkIsNull(vehicle.fuel)}}</td>
+      <td class="management-button">
+    
+          <button type="button" class="btn btn-outline-info" ngbTooltip="Szczegóły pojazdu" (click)="viewVehicle(vehicle.id)"> <i class="fas fa-info-circle"
+              ></i></button>
+       
+          <button type="button" class="btn btn-outline-danger" *ngIf="userRole"
+          mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          [confirmText]="confirmText"
+          [cancelText]="cancelText"
+          (confirm)="delete(vehicle.id)"
+          (cancel)="cancelClicked = true"
+          confirmButtonType="outline-danger"
+          cancelButtonType="outline-dark"
+          (click)="confirmClicked = false; cancelClicked = false"
+          [appendToBody]="true"
+          ngbTooltip="Usuń"
+          > <i class="fas fa-times-circle"></i></button>
+            
+        
+
+      </td>
     </tr>
   </tbody>
 </table>

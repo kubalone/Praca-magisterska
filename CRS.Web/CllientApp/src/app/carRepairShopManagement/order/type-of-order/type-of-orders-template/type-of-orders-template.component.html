@@ -13,20 +13,51 @@
       <th>Model</th>
       <th>Szczegóły naprawy</th>
       <th>Status</th>
+      <th>Operacje</th>
 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let order of orders" class="customer-details" >
-      <td (click)="viewOrder(order.id)">{{order.createdAt | date: 'dd-LL-yyyy'}}</td>
+    <tr *ngFor="let order of orders" class="customer-details">
+      <td>{{order.createdAt | date: 'dd-LL-yyyy'}}</td>
       <td *ngIf="showFinishedDate">{{order.finishedAt | date: 'dd-LL-yyyy'}}</td>
-      <td>{{order.vehicle.brand}}</td>
-      <td>{{order.vehicle.model}}</td>
+      <td (click)="viewVehicle(order.vehicle.id)">{{order.vehicle.brand}}</td>
+      <td (click)="viewVehicle(order.vehicle.id)">{{order.vehicle.model}}</td>
       <td>{{order.repairDetails}}</td>
-      <td> {{order.isFinished}}
-        <select class="form-control" [(ngModel)]="order.isFinished" (change)="changeStatus($event.target.value, order.id)">
-          <option *ngFor="let option of statusOptions" [value]="option.id" [selected]="order.isFinished">{{ option.status }}</option>
+      <td>
+        <select class="form-control" [(ngModel)]="order.isFinished"
+          (change)="changeStatus($event.target.value, order.id)">
+          <option *ngFor="let option of statusOptions" [value]="option.id" [selected]="order.isFinished">
+            {{ option.status }}</option>
         </select>
+      </td>
+      <td class="management-button">
+    
+          <button type="button" class="btn btn-outline-info" ngbTooltip="Szczegóły naprawy" (click)="viewOrder(order.id)"> <i class="fas fa-info-circle" 
+              ></i></button>
+
+       
+          <button type="button" class="btn btn-outline-warning" ngbTooltip="Edytuj naprawę"  (click)="edit(order.id)"> <i class="fas fa-edit"
+              ></i></button>
+
+       
+          <button type="button" class="btn btn-outline-danger" *ngIf="order.isFinished && userRole"
+          mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          [confirmText]="confirmText"
+          [cancelText]="cancelText"
+          (confirm)="delete(order.id)"
+          (cancel)="cancelClicked = true"
+          confirmButtonType="outline-danger"
+          cancelButtonType="outline-dark"
+          (click)="confirmClicked = false; cancelClicked = false"
+          [appendToBody]="true"
+          ngbTooltip="Usuń"
+          > <i class="fas fa-times-circle"></i></button>
+            
+        
+
       </td>
     </tr>
   </tbody>

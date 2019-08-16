@@ -224,6 +224,6 @@ export class AddVehicleComponent implements OnInit {
     this.service.formModel.reset();
     this.modalService.dismissAll();
 
-    this.redirectTo(this.router.url);
+   // this.redirectTo(this.router.url);
   }
 }

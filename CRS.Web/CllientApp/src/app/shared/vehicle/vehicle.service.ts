@@ -51,6 +51,9 @@ export class VehicleService {
   getModel(id:number) {
     return this.httpClient.get(`${this.URL}/${'GetConcreteModels/'}${id}`).pipe((catchError(this.handleError)));
   }
+  deleteVehicle(id:number) {
+    return this.httpClient.delete(`${this.URL}/${'DeleteVehicle/'}${id}`);
+  }
 
   formErrors = {
     'modelYear': '',

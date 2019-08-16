@@ -14,6 +14,7 @@ namespace CRS.Service.Interfaces
         Task CreateVehicle(VehicleDto vehicleDto);
         Task<VehicleDto> GetVehicleWithoutOrders(int vehicleId);
         Task<VehicleDto> GetVehicleByIdWithoutInclude(int id);
+        Task Delete(int id);
 
 
 

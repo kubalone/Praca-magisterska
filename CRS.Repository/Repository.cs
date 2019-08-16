@@ -54,7 +54,10 @@ namespace CRS.Repository
         }
         public async Task<T>  GetAsync(int id)
         {
-            return await entities.FindAsync(id);
+             
+             var entity = await entities.FindAsync(id);
+            _context.Entry(entity).State = EntityState.Detached;
+            return entity;
         }
 
         public  void Insert(T entity)

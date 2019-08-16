@@ -23,14 +23,24 @@ export class AddJobComponent implements OnInit {
     private modalService: NgbModal,
     private routes: ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder, ) { }
   clienVehicles: clientDetails[];
   customer: Customer;
   showSpinner = false;
-
+  showLoading = false;
+  showSearch=true;
+  showData = true;
+  order;
+  id:number;
   customerTest: Customer;
   ngOnInit() {
-
+    this.id = +this.routes.snapshot.paramMap.get("id");
+    if (this.id != 0) {
+      this.showData=false;
+      this.showLoading=true;
+      this.getOrder(this.id)
+  
+    }
     this.orderService.currentCustomer.subscribe(customer => {
       this.customer = customer;
       if (this.customer.name != null) {
@@ -48,24 +58,56 @@ export class AddJobComponent implements OnInit {
     typeOfNotification: ['', Validators.required]
 
   });
+  getOrder(id) {
+    this.showSearch=false;
+    this.orderService.getOrder(id).subscribe((res => {
+      this.order = res;
+      this.showLoading=false;
+      this.showData=true;
+      this.customer = this.order.customer;
+      this.showClientData = true;
+      this.formModel.patchValue({
+        repairDetails: this.order.repairDetails,
+        vehicle: this.order.vehicle.id,
+        typeOfNotification: this.order.typeOfNotification,
+      });
+    }))
+  }
   onSubmit(id) {
-  this.showSpinner = true;
+    this.showSpinner = true;
     var newOrder = {
+      id: this.id!=0?this.id:0,
       customerId: id,
       vehicleId: this.formModel.value.vehicle,
       repairDetails: this.formModel.value.repairDetails,
       typeOfNotification: this.formModel.value.typeOfNotification
     }
-    this.orderService.addOrder(newOrder).subscribe(() => {
-      this.router.navigateByUrl('/naprawy/aktualne-naprawy');
-      this.communicate.success('Zamówienie zostało dodane', 'Operacja zakończona pomyślnie');
-    },
-    err => {
-      this.showSpinner = false;
-      this.communicate.error('Dodawanie nowego zamówienia niepowiodło się', 'Spróbój ponownie');
-      console.log(err);
-    });
-    
+
+    if(this.id!=0) {
+      console.log(newOrder);
+      
+      this.orderService.updateOrder(newOrder).subscribe(() => {
+        this.router.navigateByUrl('/naprawy/aktualne-naprawy');
+        this.communicate.success('Zamówienie zostało zaaktualizowane', 'Operacja zakończona pomyślnie');
+      },
+        err => {
+          this.showSpinner = false;
+          this.communicate.error('Dodawanie nowego zamówienia niepowiodło się', 'Spróbój ponownie');
+          console.log(err);
+        });
+    } else {
+      this.orderService.addOrder(newOrder).subscribe(() => {
+        this.router.navigateByUrl('/naprawy/aktualne-naprawy');
+        this.communicate.success('Zamówienie zostało dodane', 'Operacja zakończona pomyślnie');
+      },
+        err => {
+          this.showSpinner = false;
+          this.communicate.error('Dodawanie nowego zamówienia niepowiodło się', 'Spróbój ponownie');
+          console.log(err);
+        });
+    }
+ 
+
 
   }
 

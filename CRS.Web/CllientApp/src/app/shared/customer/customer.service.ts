@@ -77,6 +77,9 @@ export class CustomerService {
   updateCustomer(customer: Customer) {
     return this.httpClient.put<Customer>(`${this.URL}/${'PutCustomer/'}${customer.id}`, customer);
   }
+  deleteCustomer(id:number) {
+    return this.httpClient.delete(`${this.URL}/${'DeleteCustomer/'}${id}`);
+  }
 
   checkRequiredInstitutionName(id: number) {
     console.log(id);

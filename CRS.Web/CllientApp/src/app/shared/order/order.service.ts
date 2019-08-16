@@ -53,9 +53,12 @@ export class OrderService {
   addOrder(order) {
     return this.httpClient.post(this.URL + "/AddOrder", order);
    }
+   updateOrder(order) {
+    return this.httpClient.put(`${this.URL}/${'EditOrder/'}${order.id}`, order);
+   }
    changeStatus(id:number, status) {
- 
-    return this.httpClient.put(`${this.URL}/${'ChangeStatus/'}${id}`,status );
+
+    return this.httpClient.get(`${this.URL}/${'ChangeStatus/'}${id}/${status}`);
    }
    getOrders() {
     return this.httpClient.get(this.URL + "/GetAll").pipe((catchError(this.handleError)));;
@@ -69,6 +72,10 @@ export class OrderService {
    getOrder(id:number) {
     return this.httpClient.get(`${this.URL}/${'GetOrder/'}${id}`).pipe((catchError(this.handleError)));
   }
+  deleteOrder(id:number) {
+    return this.httpClient.delete(`${this.URL}/${'DeleteOrder/'}${id}`);
+  }
+
 
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
