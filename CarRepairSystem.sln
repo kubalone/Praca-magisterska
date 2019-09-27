@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRS.Web", "CRS.Web\CRS.Web.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRS.Repository", "CRS.Repository\CRS.Repository.csproj", "{DDCC3215-F25B-4532-8CEA-2804987850E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRS.Web.NET.Framework", "CRS.Web.NET.Framework\CRS.Web.NET.Framework.csproj", "{14C98699-B8EC-4EFA-B403-8F24E096FBE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDCC3215-F25B-4532-8CEA-2804987850E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C98699-B8EC-4EFA-B403-8F24E096FBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C98699-B8EC-4EFA-B403-8F24E096FBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C98699-B8EC-4EFA-B403-8F24E096FBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C98699-B8EC-4EFA-B403-8F24E096FBE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

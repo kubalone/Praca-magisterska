@@ -19,7 +19,6 @@ namespace CRS.Repository.Data
 
         }
      
-
         public DbSet<Customer> Customer { get; set; }
         public DbSet<TypeOfCustomer> TypeofCustomer { get; set; }
         public DbSet<Vehicle> Vehicle { get; set; }
@@ -28,22 +27,9 @@ namespace CRS.Repository.Data
         public  DbSet<VehicleModel> VehicleModel{ get; set; }
         public DbSet<Brand> Brand{ get; set; }
 
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
-            base.OnModelCreating(modelBuilder);
-     
-            modelBuilder.ApplyConfiguration(new VehicleModelConfiguration());
-            modelBuilder.ApplyConfiguration(new ApplicationRoleConfiguration());
-            modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration());
-            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
-            modelBuilder.ApplyConfiguration(new OrderConfiguration());
-          
-            modelBuilder.ApplyConfiguration(new VehicleConfiguration());
-         
-
-
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=CarRepairSystemDB;Trusted_Connection=True;");
         }
     }
 }

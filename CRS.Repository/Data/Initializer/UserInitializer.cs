@@ -15,17 +15,11 @@ namespace CRS.Repository.Data.Initializer
         {
             context.Database.EnsureCreated();
 
-            // String adminId1 = "";
-
-
             string role1 = "Admin";
             string desc1 = "Rola administratora";
-
             string role2 = "Pracownik";
             string desc2 = "Rola pracownika";
-
             string password = "Muszlowa17!";
-            //dodawanie roli administratora
             if (await roleManager.FindByNameAsync(role1) == null)
             {
                 var admin = new ApplicationRole()
@@ -35,7 +29,6 @@ namespace CRS.Repository.Data.Initializer
                 };
                 await roleManager.CreateAsync(admin);
             }
-            //dodawanie roli pracownika
             if (await roleManager.FindByNameAsync(role2) == null)
             {
                 var employee = new ApplicationRole()
@@ -46,7 +39,6 @@ namespace CRS.Repository.Data.Initializer
                 await roleManager.CreateAsync(employee);
             }
 
-            //tworzenie konta administratora
             if (await userManager.FindByNameAsync("Admin") == null)
             {
                 var user = new ApplicationUser
@@ -56,16 +48,12 @@ namespace CRS.Repository.Data.Initializer
 
 
                 };
-
                 var result = await userManager.CreateAsync(user);
-                //dodawanie roli administratorowi
                 if (result.Succeeded)
                 {
                     await userManager.AddPasswordAsync(user, password);
                     await userManager.AddToRoleAsync(user, role1);
                 }
-                //adminId1 = user.Id;
-
             }
 
         }

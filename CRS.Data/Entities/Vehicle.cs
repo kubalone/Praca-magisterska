@@ -16,10 +16,8 @@ namespace CRS.Data.Entities
         public string MileAge { get; set; }
         public string Power { get; set; }
         public string DisplacementCapacity { get; set; }
-        public int? CustomerID { get; set; }
-        //Samochód może mieć wiele napraw
+        public int CustomerID { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-        //jeden samochód może miec jedengo klienta
         public virtual Customer Customer { get; set; }
     }
 }

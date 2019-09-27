@@ -25,14 +25,14 @@ namespace CRS.Web.Controllers.Vehicle
             _brandService = brandService;
         }
         [HttpGet]
-        [Authorize]
+       // [Authorize]
         [Route("GetAllVehicle")]
         public async Task<ActionResult<IEnumerable<VehicleDto>>> GetAllVehicles()
         {
             return Ok(await _vehicleService.GetAllVehicle());
         }
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         [Route("GetVehicle/{id}")]
         public async Task<ActionResult<VehicleDto>> GetVehicleById(int id)
         {
@@ -46,7 +46,7 @@ namespace CRS.Web.Controllers.Vehicle
             return Ok(await _vehicleService.GetVehicleByIdWithoutInclude(id));
         }
         [HttpPost]
-        [Authorize]
+       // [Authorize]
         [Route("CreateVehicle")]
         public async Task<IActionResult> CreateVehicle(VehicleDto vehicleDto)
         {
@@ -54,7 +54,7 @@ namespace CRS.Web.Controllers.Vehicle
             return Ok();
         }
         [HttpPut]
-        [Authorize]
+        //[Authorize]
         [Route("PutVehicle/{id}")]
         public async Task<IActionResult> PutVehicle(int id, VehicleDto vehicleDto)
         {
@@ -75,7 +75,7 @@ namespace CRS.Web.Controllers.Vehicle
             return Ok(await _vehicleModelService.GetConcreteModels(id));
         }
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [Route("DeleteVehicle/{id}")]
 
         public async Task<IActionResult> DeleteVehicle(int id)

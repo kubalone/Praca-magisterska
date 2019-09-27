@@ -6,7 +6,6 @@ namespace CRS.Data.Entities
 {
     public class Order : BaseEntity
     {
-
         public string RepairDetails { get; set; }
         public string TypeOfNotification { get; set; }
         public int CustomerID { get; set; }
