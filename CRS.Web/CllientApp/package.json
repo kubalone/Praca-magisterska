@@ -27,7 +27,7 @@
     "angular-ng-autocomplete": "^1.1.13",
     "bootstrap-select-v4": "^1.12.4",
     "core-js": "^2.5.4",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.19",
     "ngx-mat-select-search": "^1.7.5",
     "ngx-toastr": "^10.0.2",
